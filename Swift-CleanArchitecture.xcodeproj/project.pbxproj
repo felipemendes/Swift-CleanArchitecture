@@ -12,6 +12,7 @@
 		DBD154BA246A33A3003A04AC /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B9246A33A3003A04AC /* AddAccount.swift */; };
 		DBD154CC246A363A003A04AC /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; };
 		DBD154CD246A363A003A04AC /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DBD154D8246A3B7E003A04AC /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154D7246A3B7E003A04AC /* DataTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,9 @@
 		DBD154B9246A33A3003A04AC /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
 		DBD154C2246A35D4003A04AC /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD154C5246A35D4003A04AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBD154D5246A3B7E003A04AC /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD154D7246A3B7E003A04AC /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
+		DBD154D9246A3B7E003A04AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBD154D2246A3B7E003A04AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -72,6 +83,7 @@
 			children = (
 				DBD154AD246A3151003A04AC /* Domain */,
 				DBD154C3246A35D4003A04AC /* Data */,
+				DBD154D6246A3B7E003A04AC /* DataTests */,
 				DBD1549D246A2DF3003A04AC /* Products */,
 				DBD154CB246A363A003A04AC /* Frameworks */,
 			);
@@ -82,6 +94,7 @@
 			children = (
 				DBD154AC246A3151003A04AC /* Domain.framework */,
 				DBD154C2246A35D4003A04AC /* Data.framework */,
+				DBD154D5246A3B7E003A04AC /* DataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +157,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DBD154D6246A3B7E003A04AC /* DataTests */ = {
+			isa = PBXGroup;
+			children = (
+				DBD154D7246A3B7E003A04AC /* DataTests.swift */,
+				DBD154D9246A3B7E003A04AC /* Info.plist */,
+			);
+			path = DataTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -202,12 +224,30 @@
 			productReference = DBD154C2246A35D4003A04AC /* Data.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		DBD154D4246A3B7E003A04AC /* DataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBD154DA246A3B7E003A04AC /* Build configuration list for PBXNativeTarget "DataTests" */;
+			buildPhases = (
+				DBD154D1246A3B7E003A04AC /* Sources */,
+				DBD154D2246A3B7E003A04AC /* Frameworks */,
+				DBD154D3246A3B7E003A04AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DataTests;
+			productName = DataTests;
+			productReference = DBD154D5246A3B7E003A04AC /* DataTests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		DBD15493246A2DF3003A04AC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Felipe Mendes";
 				TargetAttributes = {
@@ -216,6 +256,9 @@
 						LastSwiftMigration = 1120;
 					};
 					DBD154C1246A35D4003A04AC = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					DBD154D4246A3B7E003A04AC = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
@@ -235,6 +278,7 @@
 			targets = (
 				DBD154AB246A3151003A04AC /* Domain */,
 				DBD154C1246A35D4003A04AC /* Data */,
+				DBD154D4246A3B7E003A04AC /* DataTests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,6 +292,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DBD154C0246A35D4003A04AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD154D3246A3B7E003A04AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -271,6 +322,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD154D1246A3B7E003A04AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBD154D8246A3B7E003A04AC /* DataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +572,46 @@
 			};
 			name = Release;
 		};
+		DBD154DB246A3B7E003A04AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = DataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.felipemendes.DataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DBD154DC246A3B7E003A04AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = DataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.felipemendes.DataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -539,6 +638,15 @@
 			buildConfigurations = (
 				DBD154C8246A35D4003A04AC /* Debug */,
 				DBD154C9246A35D4003A04AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBD154DA246A3B7E003A04AC /* Build configuration list for PBXNativeTarget "DataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBD154DB246A3B7E003A04AC /* Debug */,
+				DBD154DC246A3B7E003A04AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
