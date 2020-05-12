@@ -10,7 +10,33 @@
 		DBD154B5246A3209003A04AC /* AddAccountUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B4246A3209003A04AC /* AddAccountUseCaseProtocol.swift */; };
 		DBD154B8246A3383003A04AC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B7246A3383003A04AC /* Account.swift */; };
 		DBD154BA246A33A3003A04AC /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B9246A33A3003A04AC /* AddAccount.swift */; };
+		DBD154CC246A363A003A04AC /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; };
+		DBD154CD246A363A003A04AC /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBD154CE246A363A003A04AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBD15493246A2DF3003A04AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBD154AB246A3151003A04AC;
+			remoteInfo = Domain;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DBD154D0246A363A003A04AC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DBD154CD246A363A003A04AC /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DBD154AC246A3151003A04AC /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -18,6 +44,8 @@
 		DBD154B4246A3209003A04AC /* AddAccountUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountUseCaseProtocol.swift; sourceTree = "<group>"; };
 		DBD154B7246A3383003A04AC /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		DBD154B9246A33A3003A04AC /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
+		DBD154C2246A35D4003A04AC /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD154C5246A35D4003A04AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +56,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBD154BF246A35D4003A04AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBD154CC246A363A003A04AC /* Domain.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -35,7 +71,9 @@
 			isa = PBXGroup;
 			children = (
 				DBD154AD246A3151003A04AC /* Domain */,
+				DBD154C3246A35D4003A04AC /* Data */,
 				DBD1549D246A2DF3003A04AC /* Products */,
+				DBD154CB246A363A003A04AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -43,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				DBD154AC246A3151003A04AC /* Domain.framework */,
+				DBD154C2246A35D4003A04AC /* Data.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,10 +121,40 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DBD154C3246A35D4003A04AC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DBD154CA246A35EE003A04AC /* Resources */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DBD154CA246A35EE003A04AC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DBD154C5246A35D4003A04AC /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DBD154CB246A363A003A04AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
 		DBD154A7246A3151003A04AC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD154BD246A35D4003A04AC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -113,6 +182,26 @@
 			productReference = DBD154AC246A3151003A04AC /* Domain.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		DBD154C1246A35D4003A04AC /* Data */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBD154C7246A35D4003A04AC /* Build configuration list for PBXNativeTarget "Data" */;
+			buildPhases = (
+				DBD154BD246A35D4003A04AC /* Headers */,
+				DBD154BE246A35D4003A04AC /* Sources */,
+				DBD154BF246A35D4003A04AC /* Frameworks */,
+				DBD154C0246A35D4003A04AC /* Resources */,
+				DBD154D0246A363A003A04AC /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBD154CF246A363A003A04AC /* PBXTargetDependency */,
+			);
+			name = Data;
+			productName = Data;
+			productReference = DBD154C2246A35D4003A04AC /* Data.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -125,6 +214,9 @@
 					DBD154AB246A3151003A04AC = {
 						CreatedOnToolsVersion = 11.2.1;
 						LastSwiftMigration = 1120;
+					};
+					DBD154C1246A35D4003A04AC = {
+						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
 			};
@@ -142,12 +234,20 @@
 			projectRoot = "";
 			targets = (
 				DBD154AB246A3151003A04AC /* Domain */,
+				DBD154C1246A35D4003A04AC /* Data */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DBD154AA246A3151003A04AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBD154C0246A35D4003A04AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -167,7 +267,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBD154BE246A35D4003A04AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBD154CF246A363A003A04AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBD154AB246A3151003A04AC /* Domain */;
+			targetProxy = DBD154CE246A363A003A04AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DBD154A2246A2DF3003A04AC /* Debug */ = {
@@ -346,6 +461,58 @@
 			};
 			name = Release;
 		};
+		DBD154C8246A35D4003A04AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Data/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.felipemendes.Data;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DBD154C9246A35D4003A04AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Data/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.felipemendes.Data;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -363,6 +530,15 @@
 			buildConfigurations = (
 				DBD154B2246A3151003A04AC /* Debug */,
 				DBD154B3246A3151003A04AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBD154C7246A35D4003A04AC /* Build configuration list for PBXNativeTarget "Data" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBD154C8246A35D4003A04AC /* Debug */,
+				DBD154C9246A35D4003A04AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
