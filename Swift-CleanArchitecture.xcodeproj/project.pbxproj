@@ -6,9 +6,18 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DBD154B5246A3209003A04AC /* AddAccountUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B4246A3209003A04AC /* AddAccountUseCaseProtocol.swift */; };
+		DBD154B8246A3383003A04AC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B7246A3383003A04AC /* Account.swift */; };
+		DBD154BA246A33A3003A04AC /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B9246A33A3003A04AC /* AddAccount.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		DBD154AC246A3151003A04AC /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD154AF246A3151003A04AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBD154B4246A3209003A04AC /* AddAccountUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountUseCaseProtocol.swift; sourceTree = "<group>"; };
+		DBD154B7246A3383003A04AC /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		DBD154B9246A33A3003A04AC /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,9 +50,36 @@
 		DBD154AD246A3151003A04AC /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				DBD154AF246A3151003A04AC /* Info.plist */,
+				DBD154B6246A336B003A04AC /* Models */,
+				DBD154BB246A33AE003A04AC /* UseCases */,
+				DBD154BC246A33E7003A04AC /* Resources */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		DBD154B6246A336B003A04AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DBD154B7246A3383003A04AC /* Account.swift */,
+				DBD154B9246A33A3003A04AC /* AddAccount.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DBD154BB246A33AE003A04AC /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DBD154B4246A3209003A04AC /* AddAccountUseCaseProtocol.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		DBD154BC246A33E7003A04AC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DBD154AF246A3151003A04AC /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,6 +124,7 @@
 				TargetAttributes = {
 					DBD154AB246A3151003A04AC = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -124,6 +161,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBD154BA246A33A3003A04AC /* AddAccount.swift in Sources */,
+				DBD154B5246A3209003A04AC /* AddAccountUseCaseProtocol.swift in Sources */,
+				DBD154B8246A3383003A04AC /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +293,7 @@
 		DBD154B2246A3151003A04AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -261,7 +302,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Domain/Info.plist;
+				INFOPLIST_FILE = Domain/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -273,6 +314,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -280,6 +322,7 @@
 		DBD154B3246A3151003A04AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -287,7 +330,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Domain/Info.plist;
+				INFOPLIST_FILE = Domain/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
