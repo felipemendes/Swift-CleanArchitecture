@@ -84,6 +84,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DBA7E32D246B94BD002D67FE /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DBA7E329246B934D002D67FE /* RemoteAddAccount.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		DBA7E32E246B94C4002D67FE /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				DBA7E32B246B93D8002D67FE /* HttpPostClientProtocol.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		DBA7E32F246B94DB002D67FE /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DBD154D7246A3B7E003A04AC /* RemoteAddAccountTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		DBD15492246A2DF3003A04AC = {
 			isa = PBXGroup;
 			children = (
@@ -144,8 +168,8 @@
 		DBD154C3246A35D4003A04AC /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DBA7E32B246B93D8002D67FE /* HttpPostClientProtocol.swift */,
-				DBA7E329246B934D002D67FE /* RemoteAddAccount.swift */,
+				DBA7E32E246B94C4002D67FE /* Http */,
+				DBA7E32D246B94BD002D67FE /* UseCases */,
 				DBD154CA246A35EE003A04AC /* Resources */,
 			);
 			path = Data;
@@ -169,7 +193,7 @@
 		DBD154D6246A3B7E003A04AC /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				DBD154D7246A3B7E003A04AC /* RemoteAddAccountTests.swift */,
+				DBA7E32F246B94DB002D67FE /* UseCases */,
 				DBD154D9246A3B7E003A04AC /* Info.plist */,
 			);
 			path = DataTests;
