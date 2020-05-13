@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DBA7E328246B9230002D67FE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7E327246B9230002D67FE /* Model.swift */; };
 		DBD154B5246A3209003A04AC /* AddAccountUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B4246A3209003A04AC /* AddAccountUseCaseProtocol.swift */; };
 		DBD154B8246A3383003A04AC /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B7246A3383003A04AC /* AccountResponse.swift */; };
 		DBD154BA246A33A3003A04AC /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B9246A33A3003A04AC /* AccountRequest.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DBA7E327246B9230002D67FE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DBD154AC246A3151003A04AC /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD154AF246A3151003A04AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD154B4246A3209003A04AC /* AddAccountUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountUseCaseProtocol.swift; sourceTree = "<group>"; };
@@ -112,8 +114,9 @@
 		DBD154B6246A336B003A04AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DBD154B7246A3383003A04AC /* AccountResponse.swift */,
+				DBA7E327246B9230002D67FE /* Model.swift */,
 				DBD154B9246A33A3003A04AC /* AccountRequest.swift */,
+				DBD154B7246A3383003A04AC /* AccountResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				DBD154BA246A33A3003A04AC /* AccountRequest.swift in Sources */,
 				DBD154B5246A3209003A04AC /* AddAccountUseCaseProtocol.swift in Sources */,
 				DBD154B8246A3383003A04AC /* AccountResponse.swift in Sources */,
+				DBA7E328246B9230002D67FE /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
