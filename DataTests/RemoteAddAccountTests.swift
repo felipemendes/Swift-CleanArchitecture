@@ -1,5 +1,5 @@
 //
-//  DataTests.swift
+//  RemoteAddAccountTests.swift
 //  DataTests
 //
 //  Created by Felipe Ribeiro Mendes on 11/05/20.
@@ -26,7 +26,7 @@ protocol HttpPostClient {
     func post(url: URL)
 }
 
-class DataTests: XCTestCase {
+class RemoteAddAccountTests: XCTestCase {
     func test_add_should_call_httpClient_with_correct_url() {
         let url = URL(string: "http://url.com")!
         let httpClientSpy = HttpClientSpy()
@@ -34,7 +34,9 @@ class DataTests: XCTestCase {
         sut.add()
         XCTAssertEqual(httpClientSpy.url, url)
     }
+}
 
+extension RemoteAddAccountTests {
     class HttpClientSpy: HttpPostClient {
         var url: URL?
 
