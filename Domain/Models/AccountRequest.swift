@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct AccountRequest {
+public struct AccountRequest: Encodable {
     public var name: String
     public var email: String
     public var password: String
