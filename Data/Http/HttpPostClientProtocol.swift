@@ -9,5 +9,8 @@
 import Foundation
 
 public protocol HttpPostClientProtocol {
+    var url: URL? { get }
+    var data: Data? { get }
+
     func post(to url: URL, with data: Data?)
 }
