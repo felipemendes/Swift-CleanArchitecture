@@ -1,5 +1,5 @@
 //
-//  AddAccount.swift
+//  AccountResponse.swift
 //  Domain
 //
 //  Created by Felipe Ribeiro Mendes on 11/05/20.
@@ -8,9 +8,8 @@
 
 import Foundation
 
-struct AddAccount {
-    var name: String
-    var email: String
-    var password: String
-    var passwordConfirmation: String
+public struct AccountResponse {
+    public var id: String
+    public var name: String
+    public var email: String
 }

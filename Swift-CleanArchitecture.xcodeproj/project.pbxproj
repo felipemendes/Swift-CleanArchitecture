@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DBD154B5246A3209003A04AC /* AddAccountUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B4246A3209003A04AC /* AddAccountUseCaseProtocol.swift */; };
-		DBD154B8246A3383003A04AC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B7246A3383003A04AC /* Account.swift */; };
-		DBD154BA246A33A3003A04AC /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B9246A33A3003A04AC /* AddAccount.swift */; };
+		DBD154B8246A3383003A04AC /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B7246A3383003A04AC /* AccountResponse.swift */; };
+		DBD154BA246A33A3003A04AC /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B9246A33A3003A04AC /* AccountRequest.swift */; };
 		DBD154CC246A363A003A04AC /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; };
 		DBD154CD246A363A003A04AC /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBD154D8246A3B7E003A04AC /* RemoteAddAccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154D7246A3B7E003A04AC /* RemoteAddAccountTests.swift */; };
@@ -43,8 +43,8 @@
 		DBD154AC246A3151003A04AC /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD154AF246A3151003A04AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD154B4246A3209003A04AC /* AddAccountUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountUseCaseProtocol.swift; sourceTree = "<group>"; };
-		DBD154B7246A3383003A04AC /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		DBD154B9246A33A3003A04AC /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
+		DBD154B7246A3383003A04AC /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
+		DBD154B9246A33A3003A04AC /* AccountRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRequest.swift; sourceTree = "<group>"; };
 		DBD154C2246A35D4003A04AC /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD154C5246A35D4003A04AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD154D5246A3B7E003A04AC /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,8 +112,8 @@
 		DBD154B6246A336B003A04AC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DBD154B7246A3383003A04AC /* Account.swift */,
-				DBD154B9246A33A3003A04AC /* AddAccount.swift */,
+				DBD154B7246A3383003A04AC /* AccountResponse.swift */,
+				DBD154B9246A33A3003A04AC /* AccountRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,9 +312,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBD154BA246A33A3003A04AC /* AddAccount.swift in Sources */,
+				DBD154BA246A33A3003A04AC /* AccountRequest.swift in Sources */,
 				DBD154B5246A3209003A04AC /* AddAccountUseCaseProtocol.swift in Sources */,
-				DBD154B8246A3383003A04AC /* Account.swift in Sources */,
+				DBD154B8246A3383003A04AC /* AccountResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
