@@ -14,7 +14,8 @@ class RemoteAddAccountTests: XCTestCase {
     func test_add_should_call_httpClient_with_correct_url() {
         let url = URL(string: "http://url.com")!
         let (sut, httpClientSpy) = makeSut(url: url)
-        sut.add(accountRequest: makeAccountRequest())
+        let accountRequest = makeAccountRequest()
+        sut.add(accountRequest: accountRequest) { _ in }
 
         XCTAssertEqual(httpClientSpy.url, url)
     }
@@ -22,15 +23,27 @@ class RemoteAddAccountTests: XCTestCase {
     func test_add_should_call_httpClient_with_correct_data() {
         let accountRequest = makeAccountRequest()
         let (sut, httpClientSpy) = makeSut()
-        sut.add(accountRequest: accountRequest)
+        sut.add(accountRequest: accountRequest) { _ in }
 
         XCTAssertEqual(httpClientSpy.data, accountRequest.toData())
+    }
+
+    func test_add_should_complete_with_error_if_client_completes_with_error() {
+        let (sut, httpClientSpy) = makeSut()
+        let accountRequest = makeAccountRequest()
+        let exp = expectation(description: "waiting")
+        sut.add(accountRequest: accountRequest) { error in
+            XCTAssertEqual(error, .message("Error: Unexpected"))
+            exp.fulfill()
+        }
+        httpClientSpy.completeWith(error: .message("Error: No connectivity"))
+        wait(for: [exp], timeout: 1)
     }
 }
 
 extension RemoteAddAccountTests {
     
-    // Factory
+    // MARK: - Factory
 
     func makeSut(url: URL = URL(string: "http://url.com")!) -> (sut: RemoteAddAccount, httpClientSpy: HttpClientSpy) {
         let url = url
@@ -43,15 +56,21 @@ extension RemoteAddAccountTests {
         return AccountRequest(name: "Felipe", email: "felipe@email.com", password: "123456", passwordConfirmation: "123456")
     }
 
-    // HttpClient Test Double
+    // MARK: - HttpClient Test Double
 
     class HttpClientSpy: HttpPostClientProtocol {
         var url: URL?
         var data: Data?
+        var completion: ((MessageError) -> Void)?
 
-        func post(to url: URL, with data: Data?) {
+        func post(to url: URL, with data: Data?, completion: @escaping (MessageError) -> Void) {
             self.url = url
             self.data = data
+            self.completion = completion
+        }
+
+        func completeWith(error: MessageError) {
+            completion?(error)
         }
     }
 }

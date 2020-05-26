@@ -7,10 +7,14 @@
 //
 
 import Foundation
+import Domain
 
 public protocol HttpPostClientProtocol {
     var url: URL? { get }
     var data: Data? { get }
+    var completion: ((MessageError) -> Void)? { get }
 
-    func post(to url: URL, with data: Data?)
+    func post(to url: URL, with data: Data?, completion: @escaping (MessageError) -> Void)
+
+    func completeWith(error: MessageError)
 }

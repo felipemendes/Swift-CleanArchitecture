@@ -18,7 +18,9 @@ public final class RemoteAddAccount {
         self.httpClient = httpClient
     }
 
-    public func add(accountRequest: AccountRequest) {
-        httpClient.post(to: url, with: accountRequest.toData())
+    public func add(accountRequest: AccountRequest, completion: @escaping (MessageError) -> Void) {
+        httpClient.post(to: url, with: accountRequest.toData()) { error in
+            completion(.message("Error: Unexpected"))
+        }
     }
 }

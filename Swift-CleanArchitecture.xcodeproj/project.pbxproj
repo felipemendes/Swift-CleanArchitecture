@@ -16,6 +16,7 @@
 		DBD154CC246A363A003A04AC /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; };
 		DBD154CD246A363A003A04AC /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBD154D8246A3B7E003A04AC /* RemoteAddAccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154D7246A3B7E003A04AC /* RemoteAddAccountTests.swift */; };
+		DBFC085224708F6000E11FF2 /* MessageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFC085124708F6000E11FF2 /* MessageError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		DBD154D5246A3B7E003A04AC /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD154D7246A3B7E003A04AC /* RemoteAddAccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccountTests.swift; sourceTree = "<group>"; };
 		DBD154D9246A3B7E003A04AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBFC085124708F6000E11FF2 /* MessageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				DBA7E327246B9230002D67FE /* Model.swift */,
 				DBD154B9246A33A3003A04AC /* AccountRequest.swift */,
 				DBD154B7246A3383003A04AC /* AccountResponse.swift */,
+				DBFC085124708F6000E11FF2 /* MessageError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBD154BA246A33A3003A04AC /* AccountRequest.swift in Sources */,
+				DBFC085224708F6000E11FF2 /* MessageError.swift in Sources */,
 				DBD154B5246A3209003A04AC /* AddAccountUseCaseProtocol.swift in Sources */,
 				DBD154B8246A3383003A04AC /* AccountResponse.swift in Sources */,
 				DBA7E328246B9230002D67FE /* Model.swift in Sources */,
