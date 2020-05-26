@@ -12,9 +12,9 @@ import Domain
 public protocol HttpPostClientProtocol {
     var url: URL? { get }
     var data: Data? { get }
-    var completion: ((MessageError) -> Void)? { get }
+    var completion: ((Result<AccountResponse, MessageError>) -> Void)? { get }
 
-    func post(to url: URL, with data: Data?, completion: @escaping (MessageError) -> Void)
+    func post(to url: URL, with data: Data?, completion: @escaping (Result<AccountResponse, MessageError>) -> Void)
 
     func completeWith(error: MessageError)
 }

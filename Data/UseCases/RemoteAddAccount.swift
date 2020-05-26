@@ -9,7 +9,7 @@
 import Foundation
 import Domain
 
-public final class RemoteAddAccount {
+public final class RemoteAddAccount: AddAccountUseCaseProtocol {
     private let url: URL
     private let httpClient: HttpPostClientProtocol
 
@@ -18,9 +18,9 @@ public final class RemoteAddAccount {
         self.httpClient = httpClient
     }
 
-    public func add(accountRequest: AccountRequest, completion: @escaping (MessageError) -> Void) {
-        httpClient.post(to: url, with: accountRequest.toData()) { error in
-            completion(.message("Error: Unexpected"))
+    public func add(accountRequest: AccountRequest, completion: @escaping (Result<AccountResponse, MessageError>) -> Void) {
+        httpClient.post(to: url, with: accountRequest.toData()) { result in
+            completion(.failure(.message("Error: Unexpected")))
         }
     }
 }

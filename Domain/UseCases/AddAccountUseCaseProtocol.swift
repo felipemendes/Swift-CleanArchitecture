@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol AddAccountUseCaseProtocol {
-    func add(accountRequest: AccountRequest, completion: @escaping (Result<AccountResponse, Error>) -> Void)
+    func add(accountRequest: AccountRequest, completion: @escaping (Result<AccountResponse, MessageError>) -> Void)
 }

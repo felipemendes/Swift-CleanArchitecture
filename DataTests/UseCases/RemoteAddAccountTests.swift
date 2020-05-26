@@ -32,10 +32,17 @@ class RemoteAddAccountTests: XCTestCase {
         let (sut, httpClientSpy) = makeSut()
         let accountRequest = makeAccountRequest()
         let exp = expectation(description: "waiting")
-        sut.add(accountRequest: accountRequest) { error in
-            XCTAssertEqual(error, .message("Error: Unexpected"))
+
+        sut.add(accountRequest: accountRequest) { result in
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .message("Error: Unexpected"))
+            case .success:
+                XCTFail("Error: Expected error but received \(result) instead")
+            }
             exp.fulfill()
         }
+        
         httpClientSpy.completeWith(error: .message("Error: No connectivity"))
         wait(for: [exp], timeout: 1)
     }
@@ -61,16 +68,16 @@ extension RemoteAddAccountTests {
     class HttpClientSpy: HttpPostClientProtocol {
         var url: URL?
         var data: Data?
-        var completion: ((MessageError) -> Void)?
+        var completion: ((Result<AccountResponse, MessageError>) -> Void)?
 
-        func post(to url: URL, with data: Data?, completion: @escaping (MessageError) -> Void) {
+        func post(to url: URL, with data: Data?, completion: @escaping (Result<AccountResponse, MessageError>) -> Void) {
             self.url = url
             self.data = data
             self.completion = completion
         }
 
         func completeWith(error: MessageError) {
-            completion?(error)
+            completion?(.failure(error))
         }
     }
 }
