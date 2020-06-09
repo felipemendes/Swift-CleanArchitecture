@@ -24,6 +24,8 @@ public final class RemoteAddAccount: AddAccountUseCaseProtocol {
             case .success(let data):
                 if let model: AccountResponse = data.toModel() {
                     completion(.success(model))
+                } else {
+                    completion(.failure(.message("Error: Invalid data")))
                 }
             case .failure:
                 completion(.failure(.message("Error: Unexpected")))

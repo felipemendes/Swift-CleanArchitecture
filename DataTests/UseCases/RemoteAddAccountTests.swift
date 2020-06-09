@@ -12,7 +12,7 @@ import Data
 
 class RemoteAddAccountTests: XCTestCase {
     func test_add_should_call_httpClient_with_correct_url() {
-        let url = URL(string: "http://url.com")!
+        let url = makeUrl()
         let (sut, httpClientSpy) = makeSut(url: url)
         let accountRequest = makeAccountRequest()
         sut.add(accountRequest: accountRequest) { _ in }
@@ -66,6 +66,25 @@ class RemoteAddAccountTests: XCTestCase {
         httpClientSpy.completeWith(data: expectedAccount.toData()!)
         wait(for: [exp], timeout: 1)
     }
+
+    func test_add_should_complete_with_error_if_client_completes_with_invalid_data() {
+        let (sut, httpClientSpy) = makeSut()
+        let accountRequest = makeAccountRequest()
+        let exp = expectation(description: "waiting")
+
+        sut.add(accountRequest: accountRequest) { result in
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .message("Error: Invalid data"))
+            case .success:
+                XCTFail("Error: Expected error but received \(result) instead")
+            }
+            exp.fulfill()
+        }
+
+        httpClientSpy.completeWith(data: makeInvalidData())
+        wait(for: [exp], timeout: 1)
+    }
 }
 
 extension RemoteAddAccountTests {
@@ -77,6 +96,14 @@ extension RemoteAddAccountTests {
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
         return (sut, httpClientSpy)
+    }
+
+    func makeUrl() -> URL {
+        return URL(string: "http://url.com")!
+    }
+
+    func makeInvalidData() -> Data {
+        return Data("invalid_json".utf8)
     }
 
     func makeAccountRequest() -> AccountRequest {
