@@ -8,8 +8,16 @@
 
 import Foundation
 
-public struct AccountResponse {
+public struct AccountResponse: Model {
     public var id: String
     public var name: String
     public var email: String
+
+    public init(id: String,
+                name: String,
+                email: String) {
+        self.id = id
+        self.name = name
+        self.email = email
+    }
 }

@@ -46,6 +46,26 @@ class RemoteAddAccountTests: XCTestCase {
         httpClientSpy.completeWith(error: .message("Error: No connectivity"))
         wait(for: [exp], timeout: 1)
     }
+
+    func test_add_should_complete_with_account_if_client_completes_with_valid_data() {
+        let (sut, httpClientSpy) = makeSut()
+        let accountRequest = makeAccountRequest()
+        let expectedAccount = makeAccountResponse()
+        let exp = expectation(description: "waiting")
+
+        sut.add(accountRequest: accountRequest) { result in
+            switch result {
+            case .failure:
+                XCTFail("Error: Expected success but received \(result) instead")
+            case .success(let receivedAcccount):
+                XCTAssertEqual(receivedAcccount, expectedAccount)
+            }
+            exp.fulfill()
+        }
+
+        httpClientSpy.completeWith(data: expectedAccount.toData()!)
+        wait(for: [exp], timeout: 1)
+    }
 }
 
 extension RemoteAddAccountTests {
@@ -63,14 +83,18 @@ extension RemoteAddAccountTests {
         return AccountRequest(name: "Felipe", email: "felipe@email.com", password: "123456", passwordConfirmation: "123456")
     }
 
+    func makeAccountResponse() -> AccountResponse {
+        return AccountResponse(id: "123", name: "Felipe", email: "felipe@email.com")
+    }
+
     // MARK: - HttpClient Test Double
 
     class HttpClientSpy: HttpPostClientProtocol {
         var url: URL?
         var data: Data?
-        var completion: ((Result<AccountResponse, MessageError>) -> Void)?
+        var completion: ((Result<Data, MessageError>) -> Void)?
 
-        func post(to url: URL, with data: Data?, completion: @escaping (Result<AccountResponse, MessageError>) -> Void) {
+        func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, MessageError>) -> Void) {
             self.url = url
             self.data = data
             self.completion = completion
@@ -78,6 +102,10 @@ extension RemoteAddAccountTests {
 
         func completeWith(error: MessageError) {
             completion?(.failure(error))
+        }
+
+        func completeWith(data: Data) {
+            completion?(.success(data))
         }
     }
 }

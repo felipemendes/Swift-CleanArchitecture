@@ -20,7 +20,14 @@ public final class RemoteAddAccount: AddAccountUseCaseProtocol {
 
     public func add(accountRequest: AccountRequest, completion: @escaping (Result<AccountResponse, MessageError>) -> Void) {
         httpClient.post(to: url, with: accountRequest.toData()) { result in
-            completion(.failure(.message("Error: Unexpected")))
+            switch result {
+            case .success(let data):
+                if let model: AccountResponse = data.toModel() {
+                    completion(.success(model))
+                }
+            case .failure:
+                completion(.failure(.message("Error: Unexpected")))
+            }
         }
     }
 }
