@@ -13,7 +13,7 @@ public final class RemoteAddAccount: AddAccountUseCaseProtocol {
     private let url: URL
     private let httpClient: HttpPostClientProtocol
 
-    public init(url: URL, httpClient: HttpPostClientProtocol  ) {
+    public init(url: URL, httpClient: HttpPostClientProtocol) {
         self.url = url
         self.httpClient = httpClient
     }
@@ -22,11 +22,13 @@ public final class RemoteAddAccount: AddAccountUseCaseProtocol {
         httpClient.post(to: url, with: accountRequest.toData()) { result in
             switch result {
             case .success(let data):
-                if let model: AccountResponse = data.toModel() {
-                    completion(.success(model))
-                } else {
+                guard let model: AccountResponse = data.toModel() else {
                     completion(.failure(.message("Error: Invalid data")))
+                    return
                 }
+
+                completion(.success(model))
+
             case .failure:
                 completion(.failure(.message("Error: Unexpected")))
             }
