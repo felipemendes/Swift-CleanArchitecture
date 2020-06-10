@@ -91,10 +91,16 @@ extension RemoteAddAccountTests {
     
     // MARK: - Factory
 
-    func makeSut(url: URL = URL(string: "http://url.com")!) -> (sut: RemoteAddAccount, httpClientSpy: HttpClientSpy) {
+    func makeSut(url: URL = URL(string: "http://url.com")!,
+                 file: StaticString = #file,
+                 line: UInt = #line) -> (sut: RemoteAddAccount, httpClientSpy: HttpClientSpy) {
         let url = url
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
+
+        checkMemoryLeak(for: httpClientSpy, file: file, line: line)
+        checkMemoryLeak(for: sut, file: file, line: line)
+
         return (sut, httpClientSpy)
     }
 
@@ -112,6 +118,12 @@ extension RemoteAddAccountTests {
 
     func makeAccountResponse() -> AccountResponse {
         return AccountResponse(id: "123", name: "Felipe", email: "felipe@email.com")
+    }
+
+    func checkMemoryLeak(for instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance, file: file, line: line)
+        }
     }
 
     // MARK: - HttpClient Test Double
