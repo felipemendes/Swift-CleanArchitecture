@@ -19,14 +19,15 @@ public final class RemoteAddAccount: AddAccountUseCaseProtocol {
     }
 
     public func add(accountRequest: AccountRequest, completion: @escaping (Result<AccountResponse, MessageError>) -> Void) {
-        httpClient.post(to: url, with: accountRequest.toData()) { result in
+        httpClient.post(to: url, with: accountRequest.toData()) { [weak self] result in
+            guard self != nil else { return }
+
             switch result {
             case .success(let data):
                 guard let model: AccountResponse = data.toModel() else {
                     completion(.failure(.message("Error: Invalid data")))
                     return
                 }
-
                 completion(.success(model))
 
             case .failure:
