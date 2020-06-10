@@ -18,7 +18,8 @@ public final class RemoteAddAccount: AddAccountUseCaseProtocol {
         self.httpClient = httpClient
     }
 
-    public func add(accountRequest: AccountRequest, completion: @escaping (Result<AccountResponse, MessageError>) -> Void) {
+    public func add(accountRequest: AccountRequest,
+                    completion: @escaping (Result<AccountResponse, MessageError>) -> Void) {
         httpClient.post(to: url, with: accountRequest.toData()) { [weak self] result in
             guard self != nil else { return }
 

@@ -6,9 +6,9 @@
 //  Copyright © 2020 Felipe Mendes. All rights reserved.
 //
 
-import XCTest
-import Domain
 import Data
+import Domain
+import XCTest
 
 class RemoteAddAccountTests: XCTestCase {
     func test_add_should_call_httpClient_with_correct_url() {
@@ -42,7 +42,7 @@ class RemoteAddAccountTests: XCTestCase {
             }
             exp.fulfill()
         }
-        
+
         httpClientSpy.completeWith(error: .message("Error: No connectivity"))
         wait(for: [exp], timeout: 1)
     }
@@ -96,67 +96,5 @@ class RemoteAddAccountTests: XCTestCase {
         sut = nil
         httpClientSpy.completeWith(error: .message("Error: Unexpected"))
         XCTAssertNil(result)
-    }
-}
-
-extension RemoteAddAccountTests {
-    
-    // MARK: - Factory
-
-    func makeSut(url: URL = URL(string: "http://url.com")!,
-                 file: StaticString = #file,
-                 line: UInt = #line) -> (sut: RemoteAddAccount, httpClientSpy: HttpClientSpy) {
-        let url = url
-        let httpClientSpy = HttpClientSpy()
-        let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
-
-        checkMemoryLeak(for: httpClientSpy, file: file, line: line)
-        checkMemoryLeak(for: sut, file: file, line: line)
-
-        return (sut, httpClientSpy)
-    }
-
-    func makeUrl() -> URL {
-        return URL(string: "http://url.com")!
-    }
-
-    func makeInvalidData() -> Data {
-        return Data("invalid_json".utf8)
-    }
-
-    func makeAccountRequest() -> AccountRequest {
-        return AccountRequest(name: "Felipe", email: "felipe@email.com", password: "123456", passwordConfirmation: "123456")
-    }
-
-    func makeAccountResponse() -> AccountResponse {
-        return AccountResponse(id: "123", name: "Felipe", email: "felipe@email.com")
-    }
-
-    func checkMemoryLeak(for instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, file: file, line: line)
-        }
-    }
-
-    // MARK: - HttpClient Test Double
-
-    class HttpClientSpy: HttpPostClientProtocol {
-        var url: URL?
-        var data: Data?
-        var completion: ((Result<Data, MessageError>) -> Void)?
-
-        func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, MessageError>) -> Void) {
-            self.url = url
-            self.data = data
-            self.completion = completion
-        }
-
-        func completeWith(error: MessageError) {
-            completion?(.failure(error))
-        }
-
-        func completeWith(data: Data) {
-            completion?(.success(data))
-        }
     }
 }

@@ -9,14 +9,14 @@
 import Foundation
 
 public struct AccountResponse: Model {
-    public var id: String
+    public var identifier: String
     public var name: String
     public var email: String
 
-    public init(id: String,
+    public init(identifier: String,
                 name: String,
                 email: String) {
-        self.id = id
+        self.identifier = identifier
         self.name = name
         self.email = email
     }
