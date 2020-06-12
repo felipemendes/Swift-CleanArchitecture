@@ -27,14 +27,6 @@ extension RemoteAddAccountTests {
         return (sut, httpClientSpy)
     }
 
-    func makeUrl() -> URL {
-        return URL(string: "http://url.com")!
-    }
-
-    func makeInvalidData() -> Data {
-        return Data("invalid_json".utf8)
-    }
-
     func makeAccountRequest() -> AccountRequest {
         return AccountRequest(name: "Felipe",
                               email: "felipe@email.com",

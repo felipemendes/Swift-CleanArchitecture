@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		DB2A7D9424941E7D00DB59E9 /* Infrastructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2A7D8B24941E7D00DB59E9 /* Infrastructure.framework */; };
 		DB2A7D9924941E7D00DB59E9 /* AlamofireAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2A7D9824941E7D00DB59E9 /* AlamofireAdapterTests.swift */; };
+		DB2A7DA22494216800DB59E9 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154C2246A35D4003A04AC /* Data.framework */; };
+		DB2A7DA32494216800DB59E9 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154C2246A35D4003A04AC /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB2A7DA7249421A000DB59E9 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */; };
+		DB2A7DAA249421E900DB59E9 /* TestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2A7DA9249421E900DB59E9 /* TestFactory.swift */; };
+		DB2A7DAB249421F900DB59E9 /* TestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2A7DA9249421E900DB59E9 /* TestFactory.swift */; };
 		DB32CB4224906CD700C30E7D /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */; };
 		DB32CB4424906D9D00C30E7D /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */; };
 		DB32CB4624906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */; };
@@ -33,6 +38,13 @@
 			remoteGlobalIDString = DB2A7D8A24941E7D00DB59E9;
 			remoteInfo = Infrastructure;
 		};
+		DB2A7DA42494216800DB59E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBD15493246A2DF3003A04AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBD154C1246A35D4003A04AC;
+			remoteInfo = Data;
+		};
 		DBD154CE246A363A003A04AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DBD15493246A2DF3003A04AC /* Project object */;
@@ -43,6 +55,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		DB2A7DA62494216800DB59E9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DB2A7DA32494216800DB59E9 /* Data.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBD154D0246A363A003A04AC /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,6 +85,7 @@
 		DB2A7D9324941E7D00DB59E9 /* InfrastructureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfrastructureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB2A7D9824941E7D00DB59E9 /* AlamofireAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterTests.swift; sourceTree = "<group>"; };
 		DB2A7D9A24941E7D00DB59E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB2A7DA9249421E900DB59E9 /* TestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactory.swift; sourceTree = "<group>"; };
 		DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
 		DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteAddAccountTests+Extensions.swift"; sourceTree = "<group>"; };
@@ -87,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2A7DA22494216800DB59E9 /* Data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +171,7 @@
 				DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */,
 				DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */,
 				DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */,
+				DB2A7DA9249421E900DB59E9 /* TestFactory.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -315,10 +341,12 @@
 				DB2A7D8724941E7D00DB59E9 /* Sources */,
 				DB2A7D8824941E7D00DB59E9 /* Frameworks */,
 				DB2A7D8924941E7D00DB59E9 /* Resources */,
+				DB2A7DA62494216800DB59E9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB2A7DA52494216800DB59E9 /* PBXTargetDependency */,
 			);
 			name = Infrastructure;
 			productName = Infrastructure;
@@ -540,6 +568,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2A7DAB249421F900DB59E9 /* TestFactory.swift in Sources */,
+				DB2A7DA7249421A000DB59E9 /* XCTestCase+Extensions.swift in Sources */,
 				DB2A7D9924941E7D00DB59E9 /* AlamofireAdapterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +600,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2A7DAA249421E900DB59E9 /* TestFactory.swift in Sources */,
 				DB32CB4624906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift in Sources */,
 				DB32CB4224906CD700C30E7D /* XCTestCase+Extensions.swift in Sources */,
 				DB32CB4424906D9D00C30E7D /* HttpClientSpy.swift in Sources */,
@@ -584,6 +615,11 @@
 			isa = PBXTargetDependency;
 			target = DB2A7D8A24941E7D00DB59E9 /* Infrastructure */;
 			targetProxy = DB2A7D9524941E7D00DB59E9 /* PBXContainerItemProxy */;
+		};
+		DB2A7DA52494216800DB59E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBD154C1246A35D4003A04AC /* Data */;
+			targetProxy = DB2A7DA42494216800DB59E9 /* PBXContainerItemProxy */;
 		};
 		DBD154CF246A363A003A04AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
