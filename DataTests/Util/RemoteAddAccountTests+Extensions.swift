@@ -43,7 +43,7 @@ extension RemoteAddAccountTests {
     }
 
     func makeAccountResponse() -> AccountResponse {
-        return AccountResponse(id: "123",
+        return AccountResponse(identifier: "123",
                                name: "Felipe",
                                email: "felipe@email.com")
     }
