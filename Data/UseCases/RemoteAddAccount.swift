@@ -10,13 +10,22 @@ import Foundation
 import Domain
 
 public final class RemoteAddAccount: AddAccountUseCaseProtocol {
+
+    // MARK: - PRIVATE PROPERTIES
+
     private let url: URL
     private let httpClient: HttpPostClientProtocol
+
+    // MARK: - INITIALIZERS
 
     public init(url: URL, httpClient: HttpPostClientProtocol) {
         self.url = url
         self.httpClient = httpClient
     }
+
+    // MARK: - PUBLIC API
+
+    // MARK: Add new account
 
     public func add(accountRequest: AccountRequest,
                     completion: @escaping (Result<AccountResponse, MessageError>) -> Void) {
