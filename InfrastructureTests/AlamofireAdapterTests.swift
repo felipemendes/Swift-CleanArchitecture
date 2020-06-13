@@ -10,6 +10,7 @@ import XCTest
 import Alamofire
 
 class AlamofireAdapter {
+
     // MARK: - PRIVATE PROPERTIES
 
     private let session: Session
@@ -31,10 +32,7 @@ class AlamofireAdapter {
 class AlamofireAdapterTests: XCTestCase {
     func test_post_should_make_request_with_valid_url_and_method() {
         let url = makeUrl()
-        let configuration = URLSessionConfiguration.default
-        configuration.protocolClasses = [UrlProtocolStub.self]
-        let session = Session(configuration: configuration)
-        let sut = AlamofireAdapter(session: session)
+        let sut = makeSut()
 
         sut.post(to: url, with: makeValidData())
 
@@ -50,10 +48,7 @@ class AlamofireAdapterTests: XCTestCase {
 
     func test_post_should_make_request_without_data() {
         let url = makeUrl()
-        let configuration = URLSessionConfiguration.default
-        configuration.protocolClasses = [UrlProtocolStub.self]
-        let session = Session(configuration: configuration)
-        let sut = AlamofireAdapter(session: session)
+        let sut = makeSut()
 
         sut.post(to: url, with: nil)
 
