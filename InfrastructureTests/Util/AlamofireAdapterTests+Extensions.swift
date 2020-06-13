@@ -17,4 +17,17 @@ extension AlamofireAdapterTests {
 
         return AlamofireAdapter(session: session)
     }
+
+    func testRequestFor(url: URL = makeUrl(), data: Data?, action: @escaping (URLRequest) -> Void) {
+        let sut = makeSut()
+
+        sut.post(to: url, with: data)
+
+        let exp = expectation(description: "waiting")
+        UrlProtocolStub.requestObserver { request in
+            action(request)
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
+    }
 }

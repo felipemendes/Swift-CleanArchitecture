@@ -32,32 +32,19 @@ class AlamofireAdapter {
 class AlamofireAdapterTests: XCTestCase {
     func test_post_should_make_request_with_valid_url_and_method() {
         let url = makeUrl()
-        let sut = makeSut()
+        let data = makeValidData()
 
-        sut.post(to: url, with: makeValidData())
-
-        let exp = expectation(description: "waiting")
-        UrlProtocolStub.requestObserver { request in
+        testRequestFor(url: url, data: data) { request in
             XCTAssertEqual(url, request.url)
             XCTAssertEqual("POST", request.httpMethod)
             XCTAssertNotNil(request.httpBodyStream)
-            exp.fulfill()
         }
-        wait(for: [exp], timeout: 1)
     }
 
     func test_post_should_make_request_without_data() {
-        let url = makeUrl()
-        let sut = makeSut()
-
-        sut.post(to: url, with: nil)
-
-        let exp = expectation(description: "waiting")
-        UrlProtocolStub.requestObserver { request in
+        testRequestFor(data: nil) { request in
             XCTAssertNil(request.httpBodyStream)
-            exp.fulfill()
         }
-        wait(for: [exp], timeout: 1)
     }
 }
 
