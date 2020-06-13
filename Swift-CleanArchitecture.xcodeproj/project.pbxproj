@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,7 @@
 		DBD154CD246A363A003A04AC /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBD154D8246A3B7E003A04AC /* RemoteAddAccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154D7246A3B7E003A04AC /* RemoteAddAccountTests.swift */; };
 		DBFC085224708F6000E11FF2 /* MessageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFC085124708F6000E11FF2 /* MessageError.swift */; };
+		DBFF0E51249564570055D207 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DBFF0E50249564570055D207 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB2A7DA22494216800DB59E9 /* Data.framework in Frameworks */,
+				DBFF0E51249564570055D207 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +344,7 @@
 				DB2A7D8824941E7D00DB59E9 /* Frameworks */,
 				DB2A7D8924941E7D00DB59E9 /* Resources */,
 				DB2A7DA62494216800DB59E9 /* Embed Frameworks */,
+				DBFF0E52249565BE0055D207 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -349,6 +352,9 @@
 				DB2A7DA52494216800DB59E9 /* PBXTargetDependency */,
 			);
 			name = Infrastructure;
+			packageProductDependencies = (
+				DBFF0E50249564570055D207 /* Alamofire */,
+			);
 			productName = Infrastructure;
 			productReference = DB2A7D8B24941E7D00DB59E9 /* Infrastructure.framework */;
 			productType = "com.apple.product-type.framework";
@@ -466,6 +472,9 @@
 				Base,
 			);
 			mainGroup = DBD15492246A2DF3003A04AC;
+			packageReferences = (
+				DBFF0E4F249564570055D207 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = DBD1549D246A2DF3003A04AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -537,6 +546,24 @@
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		DB32CB48249070C800C30E7D /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		DBFF0E52249565BE0055D207 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1050,6 +1077,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DBFF0E4F249564570055D207 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DBFF0E50249564570055D207 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBFF0E4F249564570055D207 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DBD15493246A2DF3003A04AC /* Project object */;
 }
