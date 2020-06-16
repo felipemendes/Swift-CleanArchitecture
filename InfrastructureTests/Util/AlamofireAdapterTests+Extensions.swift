@@ -22,14 +22,15 @@ extension AlamofireAdapterTests {
 
     func testRequestFor(url: URL = makeUrl(), data: Data?, action: @escaping (URLRequest) -> Void) {
         let sut = makeSut()
-
-        sut.post(to: url, with: data) { _ in }
-
+        var request: URLRequest?
         let exp = expectation(description: "waiting")
-        UrlProtocolStub.requestObserver { request in
-            action(request)
+
+        sut.post(to: url, with: data) { _ in
             exp.fulfill()
         }
+
+        UrlProtocolStub.requestObserver { request = $0 }
         wait(for: [exp], timeout: 1)
+        action(request!)
     }
 }
