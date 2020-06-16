@@ -6,8 +6,10 @@
 //  Copyright © 2020 Felipe Mendes. All rights reserved.
 //
 
-import Foundation
 import Alamofire
+import Domain
+import Foundation
+import XCTest
 
 extension AlamofireAdapterTests {
     func makeSut(file: StaticString = #file, line: UInt = #line) -> AlamofireAdapter {
@@ -32,5 +34,29 @@ extension AlamofireAdapterTests {
         UrlProtocolStub.requestObserver { request = $0 }
         wait(for: [exp], timeout: 1)
         action(request!)
+    }
+
+    func expectResult(_ expectedResult: Result<Data, MessageError>,
+                      when stub: (data: Data?, response: HTTPURLResponse?, error: Error?),
+                      file: StaticString = #file,
+                      line: UInt = #line) {
+        let sut = makeSut()
+        let exp = expectation(description: "waiting")
+
+        UrlProtocolStub.simulate(data: stub.data, response: stub.response, error: stub.error)
+
+        sut.post(to: makeUrl(), with: nil) { receivedResult in
+            switch (expectedResult, receivedResult) {
+            case (.failure(let expectedError), .failure(let receivedError)):
+                XCTAssertEqual(expectedError, receivedError, file: file, line: line)
+            case (.success(let expectedResult), .success(let receivedResult)):
+                XCTAssertEqual(expectedResult, receivedResult, file: file, line: line)
+            default:
+                XCTFail("Expected \(expectedResult) but received \(receivedResult) instead", file: file, line: line)
+            }
+            exp.fulfill()
+        }
+
+        wait(for: [exp], timeout: 1)
     }
 }

@@ -56,23 +56,7 @@ class AlamofireAdapterTests: XCTestCase {
     }
 
     func test_post_should_completes_with_error_when_request_completes_with_error() {
-        let sut = makeSut()
-        let url = makeUrl()
-        let exp = expectation(description: "waiting")
-
-        UrlProtocolStub.simulate(data: nil, response: nil, error: makeError())
-
-        sut.post(to: url, with: nil) { result in
-            switch result {
-            case .failure(let error):
-                XCTAssertEqual(error, MessageError.message("Error: Unexpected"))
-            case .success:
-                XCTFail("Expected error but received \(result) instead")
-            }
-            exp.fulfill()
-        }
-
-        wait(for: [exp], timeout: 1)
+        expectResult(.failure(.message("Error: Unexpected")), when: (data: nil, response: nil, error: makeError()))
     }
 }
 
