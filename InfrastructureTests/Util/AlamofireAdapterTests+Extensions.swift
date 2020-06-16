@@ -23,7 +23,7 @@ extension AlamofireAdapterTests {
     func testRequestFor(url: URL = makeUrl(), data: Data?, action: @escaping (URLRequest) -> Void) {
         let sut = makeSut()
 
-        sut.post(to: url, with: data)
+        sut.post(to: url, with: data) { _ in }
 
         let exp = expectation(description: "waiting")
         UrlProtocolStub.requestObserver { request in
