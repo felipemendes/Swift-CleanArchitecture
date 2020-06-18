@@ -10,6 +10,7 @@ import Foundation
 
 public enum MessageError: Error, Equatable {
     case message(String)
+    case unexpected
 }
 
 extension MessageError: RawRepresentable {
@@ -22,6 +23,7 @@ extension MessageError: RawRepresentable {
     public var rawValue: RawValue {
         switch self {
         case .message(let message): return message
+        case .unexpected: return "Unexpected Error"
         }
     }
 }
@@ -31,6 +33,8 @@ extension MessageError: LocalizedError {
         switch self {
         case .message(let errorMessage):
             return NSLocalizedString(errorMessage, comment: "")
+        case .unexpected:
+            return NSLocalizedString("Unexpected Error", comment: "")
         }
     }
 }

@@ -36,14 +36,14 @@ class RemoteAddAccountTests: XCTestCase {
         sut.add(accountRequest: accountRequest) { result in
             switch result {
             case .failure(let error):
-                XCTAssertEqual(error, .message("Error: Unexpected"))
+                XCTAssertEqual(error, .unexpected)
             case .success:
                 XCTFail("Error: Expected error but received \(result) instead")
             }
             exp.fulfill()
         }
 
-        httpClientSpy.completeWith(error: .message("Error: No connectivity"))
+        httpClientSpy.completeWith(error: .unexpected)
         wait(for: [exp], timeout: 1)
     }
 
@@ -75,7 +75,7 @@ class RemoteAddAccountTests: XCTestCase {
         sut.add(accountRequest: accountRequest) { result in
             switch result {
             case .failure(let error):
-                XCTAssertEqual(error, .message("Error: Invalid data"))
+                XCTAssertEqual(error, .unexpected)
             case .success:
                 XCTFail("Error: Expected error but received \(result) instead")
             }
@@ -94,7 +94,7 @@ class RemoteAddAccountTests: XCTestCase {
 
         sut?.add(accountRequest: accountRequest) { result = $0 }
         sut = nil
-        httpClientSpy.completeWith(error: .message("Error: Unexpected"))
+        httpClientSpy.completeWith(error: .unexpected)
         XCTAssertNil(result)
     }
 }

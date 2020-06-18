@@ -35,13 +35,13 @@ public final class RemoteAddAccount: AddAccountUseCaseProtocol {
             switch result {
             case .success(let data):
                 guard let model: AccountResponse = data.toModel() else {
-                    completion(.failure(.message("Error: Invalid data")))
+                    completion(.failure(.unexpected))
                     return
                 }
                 completion(.success(model))
 
             case .failure:
-                completion(.failure(.message("Error: Unexpected")))
+                completion(.failure(.unexpected))
             }
         }
     }

@@ -31,7 +31,7 @@ class AlamofireAdapter {
             case .success:
                 break
             case .failure:
-                completion(.failure(.message("Error: Unexpected")))
+                completion(.failure(.unexpected))
             }
         }
     }
@@ -56,7 +56,7 @@ class AlamofireAdapterTests: XCTestCase {
     }
 
     func test_post_should_completes_with_error_when_request_completes_with_error() {
-        expectResult(.failure(.message("Error: Unexpected")), when: (data: nil, response: nil, error: makeError()))
+        expectResult(.failure(.unexpected), when: (data: nil, response: nil, error: makeError()))
     }
 }
 
