@@ -11,7 +11,10 @@ import Data
 import Domain
 import XCTest
 
-class AlamofireAdapter {
+class AlamofireAdapter: HttpPostClientProtocol {
+    var url: URL?
+    var data: Data?
+    var completion: ((Result<Data?, MessageError>) -> Void)?
 
     // MARK: - PRIVATE PROPERTIES
 
@@ -25,16 +28,35 @@ class AlamofireAdapter {
 
     // MARK: - PUBLIC API
 
-    func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, MessageError>) -> Void) {
+    func post(to url: URL, with data: Data?, completion: @escaping (Result<Data?, MessageError>) -> Void) {
+        self.url = url
+        self.data = data
+        self.completion = completion
+        
         session.request(url, method: .post, parameters: data?.toJson(), encoding: JSONEncoding.default).responseData { dataResponse in
 
-            guard dataResponse.response?.statusCode != nil else {
+            guard let statusCode = dataResponse.response?.statusCode else {
                 return completion(.failure(.unexpected))
             }
 
             switch dataResponse.result {
-            case .success:
-                break
+            case .success(let data):
+                switch statusCode {
+                case 204:
+                    completion(.success(nil))
+                case 200...299:
+                    completion(.success(data))
+                case 401:
+                    completion(.failure(.unauthorized))
+                case 403:
+                    completion(.failure(.forbidden))
+                case 400...499:
+                    completion(.failure(.badRequest))
+                case 500...599:
+                    completion(.failure(.serverError))
+                default:
+                    completion(.failure(.noConnectivity))
+                }
             case .failure:
                 completion(.failure(.unexpected))
             }
@@ -71,6 +93,23 @@ class AlamofireAdapterTests: XCTestCase {
         expectResult(.failure(.unexpected), when: (data: nil, response: makeHttpResponse(), error: makeError()))
         expectResult(.failure(.unexpected), when: (data: nil, response: makeHttpResponse(), error: nil))
         expectResult(.failure(.unexpected), when: (data: nil, response: nil, error: nil))
+    }
+
+    func test_post_should_completes_with_data_when_request_completes_with_200() {
+        expectResult(.success(makeValidData()), when: (data: makeValidData(), response: makeHttpResponse(), error: nil))
+    }
+
+    func test_post_should_completes_without_data_when_request_completes_with_204() {
+        expectResult(.success(nil), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 204), error: nil))
+        expectResult(.success(nil), when: (data: nil, response: makeHttpResponse(statusCode: 204), error: nil))
+        expectResult(.success(nil), when: (data: makeEmptyData(), response: makeHttpResponse(statusCode: 204), error: nil))
+    }
+
+    func test_post_should_completes_with_data_when_request_completes_with_non_400() {
+        expectResult(.failure(.badRequest), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 400), error: nil))
+        expectResult(.failure(.unauthorized), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 401), error: nil))
+        expectResult(.failure(.forbidden), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 403), error: nil))
+        expectResult(.failure(.serverError), when: (data: makeValidData(), response: makeHttpResponse(statusCode: 500), error: nil))
     }
 }
 

@@ -36,7 +36,7 @@ extension AlamofireAdapterTests {
         action(request!)
     }
 
-    func expectResult(_ expectedResult: Result<Data, MessageError>,
+    func expectResult(_ expectedResult: Result<Data?, MessageError>,
                       when stub: (data: Data?, response: HTTPURLResponse?, error: Error?),
                       file: StaticString = #file,
                       line: UInt = #line) {

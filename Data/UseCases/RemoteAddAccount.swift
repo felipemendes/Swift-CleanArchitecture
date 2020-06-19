@@ -34,7 +34,7 @@ public final class RemoteAddAccount: AddAccountUseCaseProtocol {
 
             switch result {
             case .success(let data):
-                guard let model: AccountResponse = data.toModel() else {
+                guard let model: AccountResponse = data?.toModel() else {
                     completion(.failure(.unexpected))
                     return
                 }

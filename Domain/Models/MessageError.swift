@@ -11,6 +11,11 @@ import Foundation
 public enum MessageError: Error, Equatable {
     case message(String)
     case unexpected
+    case unauthorized
+    case forbidden
+    case badRequest
+    case serverError
+    case noConnectivity
 }
 
 extension MessageError: RawRepresentable {
@@ -24,6 +29,11 @@ extension MessageError: RawRepresentable {
         switch self {
         case .message(let message): return message
         case .unexpected: return "Unexpected Error"
+        case .unauthorized: return "Unauthorized"
+        case .forbidden: return "Forbidden"
+        case .badRequest: return "Bad Request"
+        case .serverError: return "Server Error"
+        case .noConnectivity: return "No Connectivity"
         }
     }
 }
@@ -35,6 +45,16 @@ extension MessageError: LocalizedError {
             return NSLocalizedString(errorMessage, comment: "")
         case .unexpected:
             return NSLocalizedString("Unexpected Error", comment: "")
+        case .unauthorized:
+            return NSLocalizedString("Unauthorized", comment: "")
+        case .forbidden:
+            return NSLocalizedString("Forbidden", comment: "")
+        case .badRequest:
+            return NSLocalizedString("Bad Request", comment: "")
+        case .serverError:
+            return NSLocalizedString("Server Error", comment: "")
+        case .noConnectivity:
+            return NSLocalizedString("No Connectivity", comment: "")
         }
     }
 }

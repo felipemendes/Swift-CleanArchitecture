@@ -15,9 +15,9 @@ import Foundation
 class HttpClientSpy: HttpPostClientProtocol {
     var url: URL?
     var data: Data?
-    var completion: ((Result<Data, MessageError>) -> Void)?
+    var completion: ((Result<Data?, MessageError>) -> Void)?
 
-    func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, MessageError>) -> Void) {
+    func post(to url: URL, with data: Data?, completion: @escaping (Result<Data?, MessageError>) -> Void) {
         self.url = url
         self.data = data
         self.completion = completion
