@@ -28,6 +28,7 @@
 		DBD154CC246A363A003A04AC /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; };
 		DBD154CD246A363A003A04AC /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DBD154D8246A3B7E003A04AC /* RemoteAddAccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154D7246A3B7E003A04AC /* RemoteAddAccountTests.swift */; };
+		DBD7B13B249EB62400C10C78 /* UrlProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7B13A249EB62400C10C78 /* UrlProtocolStub.swift */; };
 		DBFC085224708F6000E11FF2 /* MessageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFC085124708F6000E11FF2 /* MessageError.swift */; };
 		DBFF0E51249564570055D207 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DBFF0E50249564570055D207 /* Alamofire */; };
 		DBFF0E542495709C0055D207 /* AlamofireAdapterTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFF0E532495709C0055D207 /* AlamofireAdapterTests+Extensions.swift */; };
@@ -107,6 +108,7 @@
 		DBD154D5246A3B7E003A04AC /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD154D7246A3B7E003A04AC /* RemoteAddAccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccountTests.swift; sourceTree = "<group>"; };
 		DBD154D9246A3B7E003A04AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBD7B13A249EB62400C10C78 /* UrlProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolStub.swift; sourceTree = "<group>"; };
 		DBFC085124708F6000E11FF2 /* MessageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageError.swift; sourceTree = "<group>"; };
 		DBFF0E532495709C0055D207 /* AlamofireAdapterTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlamofireAdapterTests+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				DBFF0E55249571460055D207 /* Util */,
-				DB2A7D9824941E7D00DB59E9 /* AlamofireAdapterTests.swift */,
+				DBD7B139249EB61A00C10C78 /* Http */,
 				DB2A7D9A24941E7D00DB59E9 /* Info.plist */,
 			);
 			path = InfrastructureTests;
@@ -322,9 +324,18 @@
 			path = DataTests;
 			sourceTree = "<group>";
 		};
+		DBD7B139249EB61A00C10C78 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				DB2A7D9824941E7D00DB59E9 /* AlamofireAdapterTests.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
 		DBFF0E55249571460055D207 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				DBD7B13A249EB62400C10C78 /* UrlProtocolStub.swift */,
 				DBFF0E532495709C0055D207 /* AlamofireAdapterTests+Extensions.swift */,
 			);
 			path = Util;
@@ -623,6 +634,7 @@
 				DB2A7DAB249421F900DB59E9 /* TestFactory.swift in Sources */,
 				DB2A7DA7249421A000DB59E9 /* XCTestCase+Extensions.swift in Sources */,
 				DB2A7D9924941E7D00DB59E9 /* AlamofireAdapterTests.swift in Sources */,
+				DBD7B13B249EB62400C10C78 /* UrlProtocolStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
