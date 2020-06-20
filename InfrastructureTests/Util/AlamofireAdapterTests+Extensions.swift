@@ -9,6 +9,7 @@
 import Alamofire
 import Domain
 import Foundation
+import Infrastructure
 import XCTest
 
 extension AlamofireAdapterTests {
