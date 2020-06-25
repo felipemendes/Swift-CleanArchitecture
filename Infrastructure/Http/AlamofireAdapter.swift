@@ -12,9 +12,6 @@ import Domain
 import Foundation
 
 public class AlamofireAdapter: HttpPostClientProtocol {
-    public var url: URL?
-    public var data: Data?
-    public var completion: ((Result<Data?, MessageError>) -> Void)?
 
     // MARK: - PRIVATE PROPERTIES
 
@@ -29,10 +26,6 @@ public class AlamofireAdapter: HttpPostClientProtocol {
     // MARK: - PUBLIC API
 
     public func post(to url: URL, with data: Data?, completion: @escaping (Result<Data?, MessageError>) -> Void) {
-        self.url = url
-        self.data = data
-        self.completion = completion
-
         session.request(url, method: .post, parameters: data?.toJson(), encoding: JSONEncoding.default)
             .responseData { dataResponse in
 
