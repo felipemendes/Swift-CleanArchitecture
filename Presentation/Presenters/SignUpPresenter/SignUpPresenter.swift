@@ -46,8 +46,8 @@ public final class SignUpPresenter {
             return "As senhas devem ser iguais"
         }
 
-        if let email = signUpViewModel.email {
-            _ = emailValidator.isValid(email: email)
+        if let email = signUpViewModel.email, !emailValidator.isValid(email: email) {
+            return "Email inválido"
         }
 
         return nil
