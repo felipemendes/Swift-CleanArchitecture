@@ -18,7 +18,7 @@ class AddAccountIntegrationTests: XCTestCase {
         let sut = RemoteAddAccount(url: url, httpClient: alamofireAdapter)
         let newAccount = AccountRequest(name: "Name",
                                         email: "name@mail.com",
-                                        password: "123",
+                                        password: "123456",
                                         passwordConfirmation: "123456")
 
         let exp = expectation(description: "waiting")
