@@ -23,15 +23,24 @@ class SignUpPresenter {
     // MARK: - PUBLIC API
 
     func signUp(signUpViewModel: SignUpViewModel) {
-        if signUpViewModel.name == nil || signUpViewModel.name!.isEmpty {
-            alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: "O campo Nome é obrigatório"))
-        } else if signUpViewModel.email == nil || signUpViewModel.email!.isEmpty {
-            alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: "O campo Email é obrigatório"))
-        } else if signUpViewModel.password == nil || signUpViewModel.password!.isEmpty {
-            alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: "O campo Senha é obrigatório"))
-        } else if signUpViewModel.passwordConfirmation == nil || signUpViewModel.passwordConfirmation!.isEmpty {
-            alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: "O campo Confirmar Senha é obrigatório"))
+        if let message = validate(signUpViewModel: signUpViewModel) {
+             alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: message))
         }
+    }
+
+    // MARK: - PRIVATE FUNCTIONS
+
+    private func validate(signUpViewModel: SignUpViewModel) -> String? {
+        if signUpViewModel.name == nil || signUpViewModel.name!.isEmpty {
+            return "O campo Nome é obrigatório"
+        } else if signUpViewModel.email == nil || signUpViewModel.email!.isEmpty {
+            return "O campo Email é obrigatório"
+        } else if signUpViewModel.password == nil || signUpViewModel.password!.isEmpty {
+            return "O campo Senha é obrigatório"
+        } else if signUpViewModel.passwordConfirmation == nil || signUpViewModel.passwordConfirmation!.isEmpty {
+            return "O campo Confirmar Senha é obrigatório"
+        }
+        return nil
     }
 }
 
