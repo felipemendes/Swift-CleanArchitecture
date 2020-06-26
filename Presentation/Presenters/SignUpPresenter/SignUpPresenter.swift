@@ -13,11 +13,14 @@ public final class SignUpPresenter {
     // MARK: - PRIVATE PROPERTIES
 
     private let alertView: AlertViewProtocol
+    private let emailValidator: EmailValidator
 
     // MARK: - INITIALIZER
 
-    public init(alertView: AlertViewProtocol) {
+    public init(alertView: AlertViewProtocol,
+                emailValidator: EmailValidator) {
         self.alertView = alertView
+        self.emailValidator = emailValidator
     }
 
     // MARK: - PUBLIC API
@@ -42,6 +45,11 @@ public final class SignUpPresenter {
         } else if signUpViewModel.password != signUpViewModel.passwordConfirmation {
             return "As senhas devem ser iguais"
         }
+
+        if let email = signUpViewModel.email {
+            _ = emailValidator.isValid(email: email)
+        }
+
         return nil
     }
 }
