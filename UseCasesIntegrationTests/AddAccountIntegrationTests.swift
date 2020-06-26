@@ -19,7 +19,7 @@ class AddAccountIntegrationTests: XCTestCase {
         let newAccount = AccountRequest(name: "Name",
                                         email: "name@mail.com",
                                         password: "123",
-                                        passwordConfirmation: "123")
+                                        passwordConfirmation: "123456")
 
         let exp = expectation(description: "waiting")
         sut.add(accountRequest: newAccount) { accountResponse in
