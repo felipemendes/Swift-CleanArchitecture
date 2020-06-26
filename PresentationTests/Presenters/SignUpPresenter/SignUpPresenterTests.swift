@@ -7,59 +7,7 @@
 //
 
 import XCTest
-
-class SignUpPresenter {
-
-    // MARK: - PRIVATE PROPERTIES
-
-    private let alertView: AlertView
-
-    // MARK: - INITIALIZER
-
-    init(alertView: AlertView) {
-        self.alertView = alertView
-    }
-
-    // MARK: - PUBLIC API
-
-    func signUp(signUpViewModel: SignUpViewModel) {
-        if let message = validate(signUpViewModel: signUpViewModel) {
-             alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: message))
-        }
-    }
-
-    // MARK: - PRIVATE FUNCTIONS
-
-    private func validate(signUpViewModel: SignUpViewModel) -> String? {
-        if signUpViewModel.name == nil || signUpViewModel.name!.isEmpty {
-            return "O campo Nome é obrigatório"
-        } else if signUpViewModel.email == nil || signUpViewModel.email!.isEmpty {
-            return "O campo Email é obrigatório"
-        } else if signUpViewModel.password == nil || signUpViewModel.password!.isEmpty {
-            return "O campo Senha é obrigatório"
-        } else if signUpViewModel.passwordConfirmation == nil || signUpViewModel.passwordConfirmation!.isEmpty {
-            return "O campo Confirmar Senha é obrigatório"
-        }
-        return nil
-    }
-}
-
-protocol AlertView {
-    var alertViewModel: AlertViewModel? { get }
-    func showMessage(alertViewModel: AlertViewModel)
-}
-
-struct AlertViewModel: Equatable {
-    let title: String
-    let message: String
-}
-
-struct SignUpViewModel {
-    var name: String?
-    var email: String?
-    var password: String?
-    var passwordConfirmation: String?
-}
+import Presentation
 
 class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_show_error_message_if_name_is_not_provided() {
@@ -102,7 +50,7 @@ extension SignUpPresenterTests {
         return (sut, alertViewSpy)
     }
 
-    class AlertViewSpy: AlertView {
+    class AlertViewSpy: AlertViewProtocol {
         var alertViewModel: AlertViewModel?
 
         func showMessage(alertViewModel: AlertViewModel) {
