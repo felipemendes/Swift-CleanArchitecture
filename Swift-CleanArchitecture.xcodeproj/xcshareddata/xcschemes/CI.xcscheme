@@ -135,6 +135,13 @@
             BlueprintName = "Infrastructure"
             ReferencedContainer = "container:Swift-CleanArchitecture.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DBAB648424A5799800450E71"
+            BuildableName = "Presentation.framework"
+            BlueprintName = "Presentation"
+            ReferencedContainer = "container:Swift-CleanArchitecture.xcodeproj">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
