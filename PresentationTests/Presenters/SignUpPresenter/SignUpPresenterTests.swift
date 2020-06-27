@@ -11,7 +11,8 @@ import Presentation
 
 class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_show_error_message_if_name_is_not_provided() {
-        let (sut, alertViewSpy, _) = makeSut()
+        let alertViewSpy = AlertViewSpy()
+        let sut = makeSut(alertView: alertViewSpy)
         let signUpViewModel = SignUpViewModel(email: "felipe@email.com",
                                               password: "123456",
                                               passwordConfirmation: "123456")
@@ -22,7 +23,8 @@ class SignUpPresenterTests: XCTestCase {
     }
 
     func test_signUp_should_show_error_message_if_email_is_not_provided() {
-        let (sut, alertViewSpy, _) = makeSut()
+        let alertViewSpy = AlertViewSpy()
+        let sut = makeSut(alertView: alertViewSpy)
         let signUpViewModel = SignUpViewModel(name: "Felipe",
                                               password: "123456",
                                               passwordConfirmation: "123456")
@@ -33,7 +35,8 @@ class SignUpPresenterTests: XCTestCase {
     }
 
     func test_signUp_should_show_error_message_if_password_is_not_provided() {
-        let (sut, alertViewSpy, _) = makeSut()
+        let alertViewSpy = AlertViewSpy()
+        let sut = makeSut(alertView: alertViewSpy)
         let signUpViewModel = SignUpViewModel(name: "Felipe",
                                               email: "felipe@email.com",
                                               passwordConfirmation: "123456")
@@ -44,7 +47,8 @@ class SignUpPresenterTests: XCTestCase {
     }
 
     func test_signUp_should_show_error_message_if_password_confirmation_is_not_provided() {
-        let (sut, alertViewSpy, _) = makeSut()
+        let alertViewSpy = AlertViewSpy()
+        let sut = makeSut(alertView: alertViewSpy)
         let signUpViewModel = SignUpViewModel(name: "Felipe",
                                               email: "felipe@email.com",
                                               password: "123456")
@@ -55,7 +59,8 @@ class SignUpPresenterTests: XCTestCase {
     }
 
     func test_signUp_should_show_error_message_if_password_confirmation_not_match() {
-        let (sut, alertViewSpy, _) = makeSut()
+        let alertViewSpy = AlertViewSpy()
+        let sut = makeSut(alertView: alertViewSpy)
         let signUpViewModel = SignUpViewModel(name: "Felipe",
                                               email: "felipe@email.com",
                                               password: "123456",
@@ -67,7 +72,8 @@ class SignUpPresenterTests: XCTestCase {
     }
 
     func test_signUp_should_call_emailValidator_with_correct_email() {
-        let (sut, _, emailValidatorSpy) = makeSut()
+        let emailValidatorSpy = EmailValidatorSpy()
+        let sut = makeSut(emailValidator: emailValidatorSpy)
         let signUpViewModel = SignUpViewModel(name: "Felipe",
                                               email: "invalid@email.com",
                                               password: "123456",
@@ -78,7 +84,9 @@ class SignUpPresenterTests: XCTestCase {
     }
 
     func test_signUp_should_show_error_message_if_invalid_email_is_provided() {
-        let (sut, alertViewSpy, emailValidatorSpy) = makeSut()
+        let alertViewSpy = AlertViewSpy()
+        let emailValidatorSpy = EmailValidatorSpy()
+        let sut = makeSut(alertView: alertViewSpy, emailValidator: emailValidatorSpy)
         let signUpViewModel = SignUpViewModel(name: "Felipe",
                                               email: "invalid@email.com",
                                               password: "123456",
@@ -92,11 +100,10 @@ class SignUpPresenterTests: XCTestCase {
 }
 
 extension SignUpPresenterTests {
-    func makeSut() -> (signUpPresenter: SignUpPresenter, alertViewSpy: AlertViewSpy, emailValidatorSpy: EmailValidatorSpy) {
-        let alertViewSpy = AlertViewSpy()
-        let emailValidatorSpy = EmailValidatorSpy()
-        let sut = SignUpPresenter(alertView: alertViewSpy, emailValidator: emailValidatorSpy)
-        return (sut, alertViewSpy, emailValidatorSpy)
+    func makeSut(alertView: AlertViewProtocol = AlertViewSpy(),
+                 emailValidator: EmailValidator = EmailValidatorSpy()) -> SignUpPresenter {
+        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator)
+        return sut
     }
 
     class AlertViewSpy: AlertViewProtocol {
