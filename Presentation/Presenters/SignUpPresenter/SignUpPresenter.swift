@@ -33,10 +33,15 @@ public final class SignUpPresenter {
         if let message = validate(signUpViewModel: signUpViewModel) {
             alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: message))
         } else {
-            let accountRequest = AccountRequest(name: signUpViewModel.name!,
-                                                email: signUpViewModel.email!,
-                                                password: signUpViewModel.password!,
-                                                passwordConfirmation: signUpViewModel.passwordConfirmation!)
+            guard let name = signUpViewModel.name,
+                let email = signUpViewModel.email,
+                let password = signUpViewModel.password,
+                let passwordConfirmation = signUpViewModel.passwordConfirmation else { return }
+
+            let accountRequest = AccountRequest(name: name,
+                                                email: email,
+                                                password: password,
+                                                passwordConfirmation: passwordConfirmation)
             addAccount.add(accountRequest: accountRequest) { _ in }
         }
     }
