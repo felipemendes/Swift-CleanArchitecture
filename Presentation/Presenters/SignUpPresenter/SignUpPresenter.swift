@@ -42,7 +42,15 @@ public final class SignUpPresenter {
                                                 email: email,
                                                 password: password,
                                                 passwordConfirmation: passwordConfirmation)
-            addAccount.add(accountRequest: accountRequest) { _ in }
+            addAccount.add(accountRequest: accountRequest) { result in
+                switch result {
+                case .success:
+                    break
+                case .failure:
+                    self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Erro",
+                                                                              message: "Algo inesperado aconteceu. Tente novamente em alguns instantes."))
+                }
+            }
         }
     }
 
