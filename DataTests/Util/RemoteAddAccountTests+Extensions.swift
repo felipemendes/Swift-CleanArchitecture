@@ -26,17 +26,4 @@ extension RemoteAddAccountTests {
 
         return (sut, httpClientSpy)
     }
-
-    func makeAccountRequest() -> AccountRequest {
-        return AccountRequest(name: "Felipe",
-                              email: "felipe@email.com",
-                              password: "123456",
-                              passwordConfirmation: "123456")
-    }
-
-    func makeAccountResponse() -> AccountResponse {
-        return AccountResponse(identifier: "123",
-                               name: "Felipe",
-                               email: "felipe@email.com")
-    }
 }

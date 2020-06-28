@@ -8,6 +8,7 @@
 
 import XCTest
 import Presentation
+import Domain
 
 class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_show_error_message_if_name_is_not_provided() {
@@ -75,17 +76,27 @@ class SignUpPresenterTests: XCTestCase {
 
         XCTAssertEqual(emailValidatorSpy.email, signUpViewModel.email)
     }
+
+    func test_signUp_should_call_addAccount_with_correct_data() {
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(addAccount: addAccountSpy)
+
+        sut.signUp(signUpViewModel: makeSignUpViewModel())
+
+        XCTAssertEqual(addAccountSpy.accountRequest, makeAccountRequest())
+    }
 }
 
 extension SignUpPresenterTests {
     func makeSut(alertView: AlertViewProtocol = AlertViewSpy(),
-                 emailValidator: EmailValidator = EmailValidatorSpy()) -> SignUpPresenter {
-        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator)
+                 emailValidator: EmailValidator = EmailValidatorSpy(),
+                 addAccount: AddAccountUseCaseProtocol = AddAccountSpy()) -> SignUpPresenter {
+        let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator, addAccount: addAccount)
         return sut
     }
 
     func makeSignUpViewModel(name: String? = "Felipe",
-                             email: String? = "invalid@email.com",
+                             email: String? = "felipe@email.com",
                              password: String? = "123456",
                              passwordConfirmation: String? = "123456") -> SignUpViewModel {
         return SignUpViewModel(name: name,
@@ -121,6 +132,14 @@ extension SignUpPresenterTests {
 
         func simulateInvalidEmail() {
             isValid = false
+        }
+    }
+
+    class AddAccountSpy: AddAccountUseCaseProtocol {
+        var accountRequest: AccountRequest?
+
+        func add(accountRequest: AccountRequest, completion: @escaping (Result<AccountResponse, MessageError>) -> Void) {
+            self.accountRequest = accountRequest
         }
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Domain
 
 public final class SignUpPresenter {
 
@@ -14,13 +15,16 @@ public final class SignUpPresenter {
 
     private let alertView: AlertViewProtocol
     private let emailValidator: EmailValidator
+    private let addAccount: AddAccountUseCaseProtocol
 
     // MARK: - INITIALIZER
 
     public init(alertView: AlertViewProtocol,
-                emailValidator: EmailValidator) {
+                emailValidator: EmailValidator,
+                addAccount: AddAccountUseCaseProtocol) {
         self.alertView = alertView
         self.emailValidator = emailValidator
+        self.addAccount = addAccount
     }
 
     // MARK: - PUBLIC API
@@ -28,6 +32,12 @@ public final class SignUpPresenter {
     public func signUp(signUpViewModel: SignUpViewModel) {
         if let message = validate(signUpViewModel: signUpViewModel) {
             alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: message))
+        } else {
+            let accountRequest = AccountRequest(name: signUpViewModel.name!,
+                                                email: signUpViewModel.email!,
+                                                password: signUpViewModel.password!,
+                                                passwordConfirmation: signUpViewModel.passwordConfirmation!)
+            addAccount.add(accountRequest: accountRequest) { _ in }
         }
     }
 
