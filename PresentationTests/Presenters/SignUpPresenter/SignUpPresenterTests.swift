@@ -92,7 +92,7 @@ class SignUpPresenterTests: XCTestCase {
         let sut = makeSut(alertView: alertViewSpy, addAccount: addAccountSpy)
 
         sut.signUp(signUpViewModel: makeSignUpViewModel())
-        addAccountSpy.completeWithError(.unexpected)
+        addAccountSpy.completeWith(error: .unexpected)
 
         XCTAssertEqual(alertViewSpy.alertViewModel, makeErrorAlertViewModel(message: "Algo inesperado aconteceu. Tente novamente em alguns instantes."))
     }
@@ -159,8 +159,8 @@ extension SignUpPresenterTests {
             self.completion = completion
         }
 
-        func completeWithError(_ error: MessageError) {
-            completion?(.failure(.unexpected))
+        func completeWith(error: MessageError) {
+            completion?(.failure(error))
         }
     }
 }
