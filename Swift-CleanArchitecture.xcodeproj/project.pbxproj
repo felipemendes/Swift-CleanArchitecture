@@ -23,6 +23,8 @@
 		DBA1536024A850F300031972 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1535F24A850F300031972 /* AccountModelFactory.swift */; };
 		DBA1536124A8512400031972 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1535F24A850F300031972 /* AccountModelFactory.swift */; };
 		DBA1536224A97ACD00031972 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */; };
+		DBA1536524A97FA100031972 /* LoadingViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1536424A97FA100031972 /* LoadingViewProtocol.swift */; };
+		DBA1536724A97FF200031972 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1536624A97FF200031972 /* LoadingViewModel.swift */; };
 		DBA7E328246B9230002D67FE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7E327246B9230002D67FE /* Model.swift */; };
 		DBA7E32A246B934D002D67FE /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7E329246B934D002D67FE /* RemoteAddAccount.swift */; };
 		DBA7E32C246B93D8002D67FE /* HttpPostClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7E32B246B93D8002D67FE /* HttpPostClientProtocol.swift */; };
@@ -157,6 +159,8 @@
 		DB3FFFB1248F1BDC00641666 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		DB86ECD424A63EF10067DDDA /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		DBA1535F24A850F300031972 /* AccountModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModelFactory.swift; sourceTree = "<group>"; };
+		DBA1536424A97FA100031972 /* LoadingViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewProtocol.swift; sourceTree = "<group>"; };
+		DBA1536624A97FF200031972 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 		DBA7E327246B9230002D67FE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DBA7E329246B934D002D67FE /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
 		DBA7E32B246B93D8002D67FE /* HttpPostClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClientProtocol.swift; sourceTree = "<group>"; };
@@ -309,6 +313,15 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
+		DBA1536324A97F9800031972 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				DBA1536424A97FA100031972 /* LoadingViewProtocol.swift */,
+				DBA1536624A97FF200031972 /* LoadingViewModel.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
 		DBA7E32D246B94BD002D67FE /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +386,7 @@
 		DBAB64A324A6334200450E71 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DBA1536324A97F9800031972 /* LoadingView */,
 				DBAB64A924A633DD00450E71 /* AlertView */,
 			);
 			path = Views;
@@ -936,6 +950,8 @@
 				DBAB64A824A633C000450E71 /* SignUpViewModel.swift in Sources */,
 				DBAB64A524A6338E00450E71 /* SignUpPresenter.swift in Sources */,
 				DB86ECD524A63EF10067DDDA /* EmailValidator.swift in Sources */,
+				DBA1536724A97FF200031972 /* LoadingViewModel.swift in Sources */,
+				DBA1536524A97FA100031972 /* LoadingViewProtocol.swift in Sources */,
 				DBAB64AB24A633E600450E71 /* AlertViewProtocol.swift in Sources */,
 				DBAB64AD24A633F200450E71 /* AlertViewModel.swift in Sources */,
 			);

@@ -16,15 +16,18 @@ public final class SignUpPresenter {
     private let alertView: AlertViewProtocol
     private let emailValidator: EmailValidator
     private let addAccount: AddAccountUseCaseProtocol
+    private let loadingView: LoadingViewProtocol
 
     // MARK: - INITIALIZER
 
     public init(alertView: AlertViewProtocol,
                 emailValidator: EmailValidator,
-                addAccount: AddAccountUseCaseProtocol) {
+                addAccount: AddAccountUseCaseProtocol,
+                loadingView: LoadingViewProtocol) {
         self.alertView = alertView
         self.emailValidator = emailValidator
         self.addAccount = addAccount
+        self.loadingView = loadingView
     }
 
     // MARK: - PUBLIC API
@@ -42,6 +45,8 @@ public final class SignUpPresenter {
                                                 email: email,
                                                 password: password,
                                                 passwordConfirmation: passwordConfirmation)
+
+            loadingView.display(loadingViewModel: LoadingViewModel(isLoading: true))
             addAccount.add(accountRequest: accountRequest) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
