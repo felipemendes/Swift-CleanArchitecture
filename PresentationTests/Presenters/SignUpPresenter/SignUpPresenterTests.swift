@@ -136,8 +136,11 @@ class SignUpPresenterTests: XCTestCase {
 extension SignUpPresenterTests {
     func makeSut(alertView: AlertViewProtocol = AlertViewSpy(),
                  emailValidator: EmailValidator = EmailValidatorSpy(),
-                 addAccount: AddAccountUseCaseProtocol = AddAccountSpy()) -> SignUpPresenter {
+                 addAccount: AddAccountUseCaseProtocol = AddAccountSpy(),
+                 file: StaticString = #file,
+                 line: UInt = #line) -> SignUpPresenter {
         let sut = SignUpPresenter(alertView: alertView, emailValidator: emailValidator, addAccount: addAccount)
+        checkMemoryLeak(for: sut, file: file, line: line)
         return sut
     }
 
@@ -169,7 +172,7 @@ extension SignUpPresenterTests {
         func observer(completion: @escaping (AlertViewModel) -> Void) {
             self.emit = completion
         }
-        
+
         func showMessage(alertViewModel: AlertViewModel) {
             self.emit?(alertViewModel)
         }

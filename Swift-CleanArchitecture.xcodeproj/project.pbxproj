@@ -22,6 +22,7 @@
 		DB86ECD524A63EF10067DDDA /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86ECD424A63EF10067DDDA /* EmailValidator.swift */; };
 		DBA1536024A850F300031972 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1535F24A850F300031972 /* AccountModelFactory.swift */; };
 		DBA1536124A8512400031972 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1535F24A850F300031972 /* AccountModelFactory.swift */; };
+		DBA1536224A97ACD00031972 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */; };
 		DBA7E328246B9230002D67FE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7E327246B9230002D67FE /* Model.swift */; };
 		DBA7E32A246B934D002D67FE /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7E329246B934D002D67FE /* RemoteAddAccount.swift */; };
 		DBA7E32C246B93D8002D67FE /* HttpPostClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7E32B246B93D8002D67FE /* HttpPostClientProtocol.swift */; };
@@ -945,6 +946,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBA1536124A8512400031972 /* AccountModelFactory.swift in Sources */,
+				DBA1536224A97ACD00031972 /* XCTestCase+Extensions.swift in Sources */,
 				DBAB649324A5799800450E71 /* SignUpPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

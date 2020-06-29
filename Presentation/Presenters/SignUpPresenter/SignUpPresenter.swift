@@ -42,7 +42,8 @@ public final class SignUpPresenter {
                                                 email: email,
                                                 password: password,
                                                 passwordConfirmation: passwordConfirmation)
-            addAccount.add(accountRequest: accountRequest) { result in
+            addAccount.add(accountRequest: accountRequest) { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case .success:
                     break
