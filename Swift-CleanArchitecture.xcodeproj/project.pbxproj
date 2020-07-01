@@ -36,6 +36,7 @@
 		DBAB64A824A633C000450E71 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB64A724A633C000450E71 /* SignUpViewModel.swift */; };
 		DBAB64AB24A633E600450E71 /* AlertViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB64AA24A633E600450E71 /* AlertViewProtocol.swift */; };
 		DBAB64AD24A633F200450E71 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB64AC24A633F200450E71 /* AlertViewModel.swift */; };
+		DBC0654124AC21B300C3E8F2 /* SignUpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0654024AC21B300C3E8F2 /* SignUpMapper.swift */; };
 		DBD154B5246A3209003A04AC /* AddAccountUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B4246A3209003A04AC /* AddAccountUseCaseProtocol.swift */; };
 		DBD154B8246A3383003A04AC /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B7246A3383003A04AC /* AccountResponse.swift */; };
 		DBD154BA246A33A3003A04AC /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B9246A33A3003A04AC /* AccountRequest.swift */; };
@@ -173,6 +174,7 @@
 		DBAB64A724A633C000450E71 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		DBAB64AA24A633E600450E71 /* AlertViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewProtocol.swift; sourceTree = "<group>"; };
 		DBAB64AC24A633F200450E71 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
+		DBC0654024AC21B300C3E8F2 /* SignUpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpMapper.swift; sourceTree = "<group>"; };
 		DBD154AC246A3151003A04AC /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD154AF246A3151003A04AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD154B4246A3209003A04AC /* AddAccountUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountUseCaseProtocol.swift; sourceTree = "<group>"; };
@@ -313,13 +315,13 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
-		DBA1536324A97F9800031972 /* LoadingView */ = {
+		DBA1536324A97F9800031972 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
 				DBA1536424A97FA100031972 /* LoadingViewProtocol.swift */,
 				DBA1536624A97FF200031972 /* LoadingViewModel.swift */,
 			);
-			path = LoadingView;
+			path = Loading;
 			sourceTree = "<group>";
 		};
 		DBA7E32D246B94BD002D67FE /* UseCases */ = {
@@ -369,52 +371,53 @@
 		DBAB64A124A6333700450E71 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				DBAB64AF24A636E800450E71 /* SignUpPresenter */,
+				DBAB64AF24A636E800450E71 /* SignUp */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
 		};
-		DBAB64A224A6333E00450E71 /* SignUpPresenter */ = {
+		DBAB64A224A6333E00450E71 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				DBAB64A424A6338E00450E71 /* SignUpPresenter.swift */,
 				DBAB64A724A633C000450E71 /* SignUpViewModel.swift */,
+				DBC0654024AC21B300C3E8F2 /* SignUpMapper.swift */,
 			);
-			path = SignUpPresenter;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		DBAB64A324A6334200450E71 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DBA1536324A97F9800031972 /* LoadingView */,
-				DBAB64A924A633DD00450E71 /* AlertView */,
+				DBA1536324A97F9800031972 /* Loading */,
+				DBAB64A924A633DD00450E71 /* Alert */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		DBAB64A924A633DD00450E71 /* AlertView */ = {
+		DBAB64A924A633DD00450E71 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
 				DBAB64AA24A633E600450E71 /* AlertViewProtocol.swift */,
 				DBAB64AC24A633F200450E71 /* AlertViewModel.swift */,
 			);
-			path = AlertView;
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		DBAB64AE24A6362400450E71 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				DBAB64A224A6333E00450E71 /* SignUpPresenter */,
+				DBAB64A224A6333E00450E71 /* SignUp */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
 		};
-		DBAB64AF24A636E800450E71 /* SignUpPresenter */ = {
+		DBAB64AF24A636E800450E71 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
 				DBAB649224A5799800450E71 /* SignUpPresenterTests.swift */,
 			);
-			path = SignUpPresenter;
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		DBD15492246A2DF3003A04AC = {
@@ -947,6 +950,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC0654124AC21B300C3E8F2 /* SignUpMapper.swift in Sources */,
 				DBAB64A824A633C000450E71 /* SignUpViewModel.swift in Sources */,
 				DBAB64A524A6338E00450E71 /* SignUpPresenter.swift in Sources */,
 				DB86ECD524A63EF10067DDDA /* EmailValidator.swift in Sources */,

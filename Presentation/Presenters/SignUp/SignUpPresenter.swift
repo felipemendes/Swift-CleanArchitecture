@@ -36,15 +36,7 @@ public final class SignUpPresenter {
         if let message = validate(signUpViewModel: signUpViewModel) {
             alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: message))
         } else {
-            guard let name = signUpViewModel.name,
-                let email = signUpViewModel.email,
-                let password = signUpViewModel.password,
-                let passwordConfirmation = signUpViewModel.passwordConfirmation else { return }
-
-            let accountRequest = AccountRequest(name: name,
-                                                email: email,
-                                                password: password,
-                                                passwordConfirmation: passwordConfirmation)
+            guard let accountRequest = SignUpMapper.toAddAccount(signUpViewModel: signUpViewModel) else { return }
 
             loadingView.display(loadingViewModel: LoadingViewModel(isLoading: true))
             addAccount.add(accountRequest: accountRequest) { [weak self] result in
