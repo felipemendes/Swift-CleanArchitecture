@@ -56,6 +56,7 @@ public final class SignUpPresenter {
                     self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Erro",
                                                                               message: "Algo inesperado aconteceu. Tente novamente em alguns instantes."))
                 }
+                self.loadingView.display(loadingViewModel: LoadingViewModel(isLoading: false))
             }
         }
     }
