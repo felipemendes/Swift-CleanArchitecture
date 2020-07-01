@@ -1,3 +1,5 @@
 excluded:
   - DataTests
   - InfrastructureTests
+  - UseCasesIntegrationTests
+  - PresentationTests
