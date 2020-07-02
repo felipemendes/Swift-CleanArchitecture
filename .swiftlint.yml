@@ -3,3 +3,4 @@ excluded:
   - InfrastructureTests
   - UseCasesIntegrationTests
   - PresentationTests
+  - UITests

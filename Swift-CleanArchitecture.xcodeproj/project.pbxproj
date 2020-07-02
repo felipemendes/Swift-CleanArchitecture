@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		DB119F0D249EAF0900C37D03 /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB119F0C249EAF0900C37D03 /* AlamofireAdapter.swift */; };
 		DB212C7C24AD6A9900FCAEF1 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB212C7324AD6A9900FCAEF1 /* UI.framework */; };
-		DB212C8124AD6A9900FCAEF1 /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB212C8024AD6A9900FCAEF1 /* SignUpViewControllerTests.swift */; };
 		DB212C8A24AD6C1200FCAEF1 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAB648524A5799800450E71 /* Presentation.framework */; };
 		DB212C8B24AD6C1200FCAEF1 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBAB648524A5799800450E71 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB212C9324AD706700FCAEF1 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB212C9224AD706700FCAEF1 /* SignUp.storyboard */; };
+		DB212C9524AD72F800FCAEF1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB212C9424AD72F800FCAEF1 /* SignUpViewController.swift */; };
+		DB212C9724AD738600FCAEF1 /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB212C9624AD738600FCAEF1 /* SignUpViewControllerTests.swift */; };
 		DB2A7D9424941E7D00DB59E9 /* Infrastructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2A7D8B24941E7D00DB59E9 /* Infrastructure.framework */; };
 		DB2A7D9924941E7D00DB59E9 /* AlamofireAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2A7D9824941E7D00DB59E9 /* AlamofireAdapterTests.swift */; };
 		DB2A7DA22494216800DB59E9 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154C2246A35D4003A04AC /* Data.framework */; };
@@ -186,8 +188,10 @@
 		DB212C7324AD6A9900FCAEF1 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB212C7624AD6A9900FCAEF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB212C7B24AD6A9900FCAEF1 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB212C8024AD6A9900FCAEF1 /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		DB212C8224AD6A9900FCAEF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB212C9224AD706700FCAEF1 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		DB212C9424AD72F800FCAEF1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DB212C9624AD738600FCAEF1 /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		DB2A7D8B24941E7D00DB59E9 /* Infrastructure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infrastructure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB2A7D8E24941E7D00DB59E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB2A7D9324941E7D00DB59E9 /* InfrastructureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfrastructureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -333,6 +337,8 @@
 		DB212C7424AD6A9900FCAEF1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DB212C9424AD72F800FCAEF1 /* SignUpViewController.swift */,
+				DB212C9224AD706700FCAEF1 /* SignUp.storyboard */,
 				DB212C7624AD6A9900FCAEF1 /* Info.plist */,
 			);
 			path = UI;
@@ -341,7 +347,7 @@
 		DB212C7F24AD6A9900FCAEF1 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				DB212C8024AD6A9900FCAEF1 /* SignUpViewControllerTests.swift */,
+				DB212C9624AD738600FCAEF1 /* SignUpViewControllerTests.swift */,
 				DB212C8224AD6A9900FCAEF1 /* Info.plist */,
 			);
 			path = UITests;
@@ -935,9 +941,11 @@
 				TargetAttributes = {
 					DB212C7224AD6A9900FCAEF1 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 					DB212C7A24AD6A9900FCAEF1 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 					DB2A7D8A24941E7D00DB59E9 = {
 						CreatedOnToolsVersion = 11.2.1;
@@ -1004,6 +1012,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB212C9324AD706700FCAEF1 /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1134,6 +1143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB212C9524AD72F800FCAEF1 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,7 +1151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB212C8124AD6A9900FCAEF1 /* SignUpViewControllerTests.swift in Sources */,
+				DB212C9724AD738600FCAEF1 /* SignUpViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1298,6 +1308,7 @@
 		DB212C8424AD6A9900FCAEF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1318,6 +1329,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1325,6 +1337,7 @@
 		DB212C8524AD6A9900FCAEF1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -1352,6 +1365,8 @@
 		DB212C8624AD6A9900FCAEF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KF69A89HVM;
@@ -1366,6 +1381,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1373,6 +1389,8 @@
 		DB212C8724AD6A9900FCAEF1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KF69A89HVM;
