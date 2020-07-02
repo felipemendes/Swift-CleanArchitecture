@@ -14,11 +14,29 @@ final class SignUpViewController: UIViewController {
     // MARK: - UI
 
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var saveButton: UIButton!
+
+    // MARK: - PUBLIC API
+
+    var signUp: ((SignUpViewModel) -> Void)?
 
     // MARK: - LIFE CYCLE
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+
+    // MARK: - SETUP
+
+    private func setupUI() {
+        saveButton.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
+    }
+
+    // MARK: SELECTORS
+
+    @objc private func saveButtonTap() {
+        signUp?(SignUpViewModel(name: nil, email: nil, password: nil, passwordConfirmation: nil))
     }
 }
 
