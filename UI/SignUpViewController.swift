@@ -6,6 +6,7 @@
 //  Copyright © 2020 Felipe Mendes. All rights reserved.
 //
 
+import Presentation
 import UIKit
 
 final class SignUpViewController: UIViewController {
@@ -18,5 +19,17 @@ final class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+// MARK: - LoadingViewProtocol
+
+extension SignUpViewController: LoadingViewProtocol {
+    func display(loadingViewModel: LoadingViewModel) {
+        if loadingViewModel.isLoading {
+            loadingIndicator.startAnimating()
+        } else {
+            loadingIndicator.stopAnimating()
+        }
     }
 }
