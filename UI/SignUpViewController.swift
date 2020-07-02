@@ -14,6 +14,10 @@ final class SignUpViewController: UIViewController {
     // MARK: - UI
 
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordConfirmationTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
 
     // MARK: - PUBLIC API
@@ -36,7 +40,11 @@ final class SignUpViewController: UIViewController {
     // MARK: SELECTORS
 
     @objc private func saveButtonTap() {
-        signUp?(SignUpViewModel(name: nil, email: nil, password: nil, passwordConfirmation: nil))
+        let signUpViewModel = SignUpViewModel(name: nameTextField.text,
+                                              email: emailTextField.text,
+                                              password: passwordTextField.text,
+                                              passwordConfirmation: passwordConfirmationTextField.text)
+        signUp?(signUpViewModel)
     }
 }
 

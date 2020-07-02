@@ -6,9 +6,10 @@
 //  Copyright © 2020 Felipe Mendes. All rights reserved.
 //
 
+import Domain
 import Foundation
 
-public struct SignUpViewModel {
+public struct SignUpViewModel: Model {
     public var name: String?
     public var email: String?
     public var password: String?
