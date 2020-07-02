@@ -33,3 +33,9 @@ extension SignUpViewController: LoadingViewProtocol {
         }
     }
 }
+
+// MARK: - AlertViewProtocol
+
+extension SignUpViewController: AlertViewProtocol {
+    func showMessage(alertViewModel: AlertViewModel) { }
+}

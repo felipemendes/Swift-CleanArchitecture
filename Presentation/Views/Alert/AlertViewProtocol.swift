@@ -9,8 +9,5 @@
 import Foundation
 
 public protocol AlertViewProtocol {
-    var emit: ((AlertViewModel) -> Void)? { get }
-
-    func observer(completion: @escaping (AlertViewModel) -> Void)
     func showMessage(alertViewModel: AlertViewModel)
 }

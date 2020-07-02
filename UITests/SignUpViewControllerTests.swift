@@ -23,4 +23,10 @@ class SignUpViewControllerTests: XCTestCase {
         let sut = sb.instantiateViewController(identifier: "SignUpViewController") as! SignUpViewController
         XCTAssertNotNil(sut as LoadingViewProtocol)
     }
+
+    func test_sut_conforms_alert_view_protocol() {
+        let sb = UIStoryboard(name: "SignUp", bundle: Bundle(for: SignUpViewController.self))
+        let sut = sb.instantiateViewController(identifier: "SignUpViewController") as! SignUpViewController
+        XCTAssertNotNil(sut as AlertViewProtocol)
+    }
 }
