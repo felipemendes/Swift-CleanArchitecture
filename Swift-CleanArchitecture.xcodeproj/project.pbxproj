@@ -21,6 +21,7 @@
 		DB2A7DA7249421A000DB59E9 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */; };
 		DB2A7DAA249421E900DB59E9 /* TestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2A7DA9249421E900DB59E9 /* TestFactory.swift */; };
 		DB2A7DAB249421F900DB59E9 /* TestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2A7DA9249421E900DB59E9 /* TestFactory.swift */; };
+		DB2EC09E24BFEFAA0019000A /* UIControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2EC09D24BFEFAA0019000A /* UIControl+Extensions.swift */; };
 		DB32CB4224906CD700C30E7D /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */; };
 		DB32CB4424906D9D00C30E7D /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */; };
 		DB32CB4624906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */; };
@@ -198,6 +199,7 @@
 		DB2A7D9824941E7D00DB59E9 /* AlamofireAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterTests.swift; sourceTree = "<group>"; };
 		DB2A7D9A24941E7D00DB59E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB2A7DA9249421E900DB59E9 /* TestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactory.swift; sourceTree = "<group>"; };
+		DB2EC09D24BFEFAA0019000A /* UIControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extensions.swift"; sourceTree = "<group>"; };
 		DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
 		DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteAddAccountTests+Extensions.swift"; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 		DB212C7F24AD6A9900FCAEF1 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
+				DB2EC09C24BFEF520019000A /* Utils */,
 				DB2EC09B24BFEEF40019000A /* Scenes */,
 				DB212C8224AD6A9900FCAEF1 /* Info.plist */,
 			);
@@ -402,6 +405,14 @@
 				DB2EC09924BFEE930019000A /* SignUp */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DB2EC09C24BFEF520019000A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DB2EC09D24BFEFAA0019000A /* UIControl+Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		DB32CB4024906CC100C30E7D /* Util */ = {
@@ -1184,6 +1195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB212C9724AD738600FCAEF1 /* SignUpViewControllerTests.swift in Sources */,
+				DB2EC09E24BFEFAA0019000A /* UIControl+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
