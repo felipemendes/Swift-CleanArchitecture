@@ -63,5 +63,11 @@ extension SignUpViewController: LoadingViewProtocol {
 // MARK: - AlertViewProtocol
 
 extension SignUpViewController: AlertViewProtocol {
-    func showMessage(alertViewModel: AlertViewModel) { }
+    func showMessage(alertViewModel: AlertViewModel) {
+        let alert = UIAlertController(title: alertViewModel.title,
+                                      message: alertViewModel.message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
 }
