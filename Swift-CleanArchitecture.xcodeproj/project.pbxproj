@@ -337,8 +337,7 @@
 		DB212C7424AD6A9900FCAEF1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				DB212C9424AD72F800FCAEF1 /* SignUpViewController.swift */,
-				DB212C9224AD706700FCAEF1 /* SignUp.storyboard */,
+				DB2EC09A24BFEEEA0019000A /* Scenes */,
 				DB212C7624AD6A9900FCAEF1 /* Info.plist */,
 			);
 			path = UI;
@@ -347,7 +346,7 @@
 		DB212C7F24AD6A9900FCAEF1 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				DB212C9624AD738600FCAEF1 /* SignUpViewControllerTests.swift */,
+				DB2EC09B24BFEEF40019000A /* Scenes */,
 				DB212C8224AD6A9900FCAEF1 /* Info.plist */,
 			);
 			path = UITests;
@@ -370,6 +369,39 @@
 				DB2A7D9A24941E7D00DB59E9 /* Info.plist */,
 			);
 			path = InfrastructureTests;
+			sourceTree = "<group>";
+		};
+		DB2EC09824BFEE870019000A /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				DB212C9424AD72F800FCAEF1 /* SignUpViewController.swift */,
+				DB212C9224AD706700FCAEF1 /* SignUp.storyboard */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		DB2EC09924BFEE930019000A /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				DB212C9624AD738600FCAEF1 /* SignUpViewControllerTests.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		DB2EC09A24BFEEEA0019000A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DB2EC09824BFEE870019000A /* SignUp */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		DB2EC09B24BFEEF40019000A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				DB2EC09924BFEE930019000A /* SignUp */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		DB32CB4024906CC100C30E7D /* Util */ = {
