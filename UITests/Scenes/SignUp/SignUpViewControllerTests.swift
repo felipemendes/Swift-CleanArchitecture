@@ -36,12 +36,3 @@ class SignUpViewControllerTests: XCTestCase {
         XCTAssertEqual(signUpViewModel, SignUpViewModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation))
     }
 }
-
-extension SignUpViewControllerTests {
-    func makeSut(signUpSpy: ((SignUpViewModel) -> Void)? = nil) -> SignUpViewController {
-        let sut = SignUpViewController.instantiate()
-        sut.signUp = signUpSpy
-        sut.loadViewIfNeeded()
-        return sut
-    }
-}

@@ -10,6 +10,7 @@
 		DB119F0D249EAF0900C37D03 /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB119F0C249EAF0900C37D03 /* AlamofireAdapter.swift */; };
 		DB15470F24C11F9300E3A361 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB15470E24C11F9300E3A361 /* UIViewController+Extensions.swift */; };
 		DB15471124C120A200E3A361 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB15471024C120A200E3A361 /* Storyboarded.swift */; };
+		DB15471424C124BD00E3A361 /* SignUpViewControllerTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB15471324C124BD00E3A361 /* SignUpViewControllerTests+Extensions.swift */; };
 		DB212C7C24AD6A9900FCAEF1 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB212C7324AD6A9900FCAEF1 /* UI.framework */; };
 		DB212C8A24AD6C1200FCAEF1 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAB648524A5799800450E71 /* Presentation.framework */; };
 		DB212C8B24AD6C1200FCAEF1 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBAB648524A5799800450E71 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -190,6 +191,7 @@
 		DB119F0C249EAF0900C37D03 /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
 		DB15470E24C11F9300E3A361 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		DB15471024C120A200E3A361 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		DB15471324C124BD00E3A361 /* SignUpViewControllerTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewControllerTests+Extensions.swift"; sourceTree = "<group>"; };
 		DB212C7324AD6A9900FCAEF1 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB212C7624AD6A9900FCAEF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB212C7B24AD6A9900FCAEF1 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -432,6 +434,7 @@
 		DB2EC09C24BFEF520019000A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DB15471324C124BD00E3A361 /* SignUpViewControllerTests+Extensions.swift */,
 				DB2EC09D24BFEFAA0019000A /* UIControl+Extensions.swift */,
 			);
 			path = Utils;
@@ -1219,6 +1222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB212C9724AD738600FCAEF1 /* SignUpViewControllerTests.swift in Sources */,
+				DB15471424C124BD00E3A361 /* SignUpViewControllerTests+Extensions.swift in Sources */,
 				DB2EC09E24BFEFAA0019000A /* UIControl+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
