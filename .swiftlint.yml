@@ -4,3 +4,4 @@ excluded:
   - UseCasesIntegrationTests
   - PresentationTests
   - UITests
+  - ValidationTests
