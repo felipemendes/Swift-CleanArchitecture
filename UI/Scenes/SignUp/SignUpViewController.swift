@@ -9,7 +9,7 @@
 import Presentation
 import UIKit
 
-final class SignUpViewController: UIViewController {
+final class SignUpViewController: UIViewController, Storyboarded {
 
     // MARK: - UI
 
