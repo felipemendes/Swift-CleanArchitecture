@@ -55,7 +55,7 @@
 		DB54F62A24C75B8800954099 /* Validation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB15471A24C1262600E3A361 /* Validation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB54F63224C77B8000954099 /* RemoteUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F63124C77B8000954099 /* RemoteUseCaseFactory.swift */; };
 		DB54F63524C77BF900954099 /* SignUpComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F63424C77BF900954099 /* SignUpComposer.swift */; };
-		DB54F63724C77DEF00954099 /* SignUpIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F63624C77DEF00954099 /* SignUpIntegrationTests.swift */; };
+		DB54F63724C77DEF00954099 /* SignUpComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F63624C77DEF00954099 /* SignUpComposerTests.swift */; };
 		DB54F63824C77EA100954099 /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0654A24AC250000C3E8F2 /* AddAccountSpy.swift */; };
 		DB54F63924C77EEE00954099 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */; };
 		DB86ECD524A63EF10067DDDA /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86ECD424A63EF10067DDDA /* EmailValidator.swift */; };
@@ -350,7 +350,7 @@
 		DB54F60E24C759A500954099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB54F63124C77B8000954099 /* RemoteUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUseCaseFactory.swift; sourceTree = "<group>"; };
 		DB54F63424C77BF900954099 /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
-		DB54F63624C77DEF00954099 /* SignUpIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntegrationTests.swift; sourceTree = "<group>"; };
+		DB54F63624C77DEF00954099 /* SignUpComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposerTests.swift; sourceTree = "<group>"; };
 		DB86ECD424A63EF10067DDDA /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		DBA1535F24A850F300031972 /* AccountModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModelFactory.swift; sourceTree = "<group>"; };
 		DBA1536424A97FA100031972 /* LoadingViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewProtocol.swift; sourceTree = "<group>"; };
@@ -685,6 +685,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DB3D289324C7AE9B00631421 /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				DB54F63624C77DEF00954099 /* SignUpComposerTests.swift */,
+			);
+			path = Composers;
+			sourceTree = "<group>";
+		};
 		DB3FFFB0248F1BCF00641666 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,7 +725,7 @@
 		DB54F60B24C759A500954099 /* MainTests */ = {
 			isa = PBXGroup;
 			children = (
-				DB54F63624C77DEF00954099 /* SignUpIntegrationTests.swift */,
+				DB3D289324C7AE9B00631421 /* Composers */,
 				DB54F60E24C759A500954099 /* Info.plist */,
 			);
 			path = MainTests;
@@ -1706,7 +1714,7 @@
 			files = (
 				DB54F63824C77EA100954099 /* AddAccountSpy.swift in Sources */,
 				DB54F63924C77EEE00954099 /* XCTestCase+Extensions.swift in Sources */,
-				DB54F63724C77DEF00954099 /* SignUpIntegrationTests.swift in Sources */,
+				DB54F63724C77DEF00954099 /* SignUpComposerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

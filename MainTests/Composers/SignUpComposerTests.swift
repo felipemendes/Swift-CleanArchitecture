@@ -1,5 +1,5 @@
 //
-//  SignUpIntegrationTests.swift
+//  SignUpComposerTests.swift
 //  MainTests
 //
 //  Created by Felipe Ribeiro Mendes on 21/07/20.
@@ -9,7 +9,7 @@
 import Main
 import XCTest
 
-class SignUpIntegrationTests: XCTestCase {
+class SignUpComposerTests: XCTestCase {
     func test_ui_presentation_integration() {
         let sut = SignUpComposer.composerViewController(addAccount: AddAccountSpy())
         checkMemoryLeak(for: sut)
