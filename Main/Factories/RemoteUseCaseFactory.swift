@@ -28,10 +28,9 @@ final class RemoteUseCaseFactory {
     }
 }
 
+// MARK: - HELPERS
+
 extension RemoteUseCaseFactory {
-
-    // MARK: - HELPERS
-
     private static func makeUrl(path: String) -> URL {
         guard let baseUrl = baseUrl,
               let url = URL(string: "\(baseUrl)/\(path)") else {

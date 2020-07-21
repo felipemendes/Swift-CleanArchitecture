@@ -666,6 +666,25 @@
 			path = Environment;
 			sourceTree = "<group>";
 		};
+		DB3D289124C7ABFA00631421 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DB54F5F524C759A100954099 /* AppDelegate.swift */,
+				DB54F5F724C759A100954099 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DB3D289224C7AC0D00631421 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DB54F60024C759A500954099 /* LaunchScreen.storyboard */,
+				DB54F5FE24C759A500954099 /* Assets.xcassets */,
+				DB54F60324C759A500954099 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		DB3FFFB0248F1BCF00641666 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,15 +704,12 @@
 		DB54F5F424C759A100954099 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DB3D289124C7ABFA00631421 /* App */,
 				DB3D288C24C7A46000631421 /* Environment */,
 				DB3D288924C7908200631421 /* Proxies */,
 				DB54F63324C77BE900954099 /* Composers */,
 				DB54F62E24C75D8800954099 /* Factories */,
-				DB54F5F524C759A100954099 /* AppDelegate.swift */,
-				DB54F5F724C759A100954099 /* SceneDelegate.swift */,
-				DB54F5FE24C759A500954099 /* Assets.xcassets */,
-				DB54F60024C759A500954099 /* LaunchScreen.storyboard */,
-				DB54F60324C759A500954099 /* Info.plist */,
+				DB3D289224C7AC0D00631421 /* Resources */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -901,10 +917,10 @@
 				DBD7B141249EC03700C10C78 /* UseCasesIntegrationTests */,
 				DBAB648624A5799800450E71 /* Presentation */,
 				DBAB649124A5799800450E71 /* PresentationTests */,
-				DB212C7424AD6A9900FCAEF1 /* UI */,
-				DB212C7F24AD6A9900FCAEF1 /* UITests */,
 				DB15471B24C1262600E3A361 /* Validation */,
 				DB15472624C1262600E3A361 /* ValidationTests */,
+				DB212C7424AD6A9900FCAEF1 /* UI */,
+				DB212C7F24AD6A9900FCAEF1 /* UITests */,
 				DB54F5F424C759A100954099 /* Main */,
 				DB54F60B24C759A500954099 /* MainTests */,
 				DBD1549D246A2DF3003A04AC /* Products */,
@@ -2193,7 +2209,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KF69A89HVM;
-				INFOPLIST_FILE = Main/Info.plist;
+				INFOPLIST_FILE = Main/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2212,7 +2228,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KF69A89HVM;
-				INFOPLIST_FILE = Main/Info.plist;
+				INFOPLIST_FILE = Main/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
