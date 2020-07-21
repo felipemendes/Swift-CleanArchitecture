@@ -52,7 +52,6 @@
 		DB54F62624C75B8800954099 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB212C7324AD6A9900FCAEF1 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB54F62924C75B8800954099 /* Validation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB15471A24C1262600E3A361 /* Validation.framework */; };
 		DB54F62A24C75B8800954099 /* Validation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB15471A24C1262600E3A361 /* Validation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DB54F63024C75D9B00954099 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F62F24C75D9B00954099 /* ControllerFactory.swift */; };
 		DB54F63224C77B8000954099 /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F63124C77B8000954099 /* UseCaseFactory.swift */; };
 		DB54F63524C77BF900954099 /* SignUpComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F63424C77BF900954099 /* SignUpComposer.swift */; };
 		DB54F63724C77DEF00954099 /* SignUpIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F63624C77DEF00954099 /* SignUpIntegrationTests.swift */; };
@@ -345,7 +344,6 @@
 		DB54F60324C759A500954099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB54F60824C759A500954099 /* MainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB54F60E24C759A500954099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB54F62F24C75D9B00954099 /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		DB54F63124C77B8000954099 /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		DB54F63424C77BF900954099 /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
 		DB54F63624C77DEF00954099 /* SignUpIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntegrationTests.swift; sourceTree = "<group>"; };
@@ -697,7 +695,6 @@
 		DB54F62E24C75D8800954099 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				DB54F62F24C75D9B00954099 /* ControllerFactory.swift */,
 				DB54F63124C77B8000954099 /* UseCaseFactory.swift */,
 			);
 			path = Factories;
@@ -1665,7 +1662,6 @@
 			files = (
 				DB54F63224C77B8000954099 /* UseCaseFactory.swift in Sources */,
 				DB54F5F624C759A100954099 /* AppDelegate.swift in Sources */,
-				DB54F63024C75D9B00954099 /* ControllerFactory.swift in Sources */,
 				DB54F5F824C759A100954099 /* SceneDelegate.swift in Sources */,
 				DB3D288B24C7909100631421 /* WeakVarProxy.swift in Sources */,
 				DB54F63524C77BF900954099 /* SignUpComposer.swift in Sources */,
