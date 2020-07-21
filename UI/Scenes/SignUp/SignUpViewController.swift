@@ -20,6 +20,21 @@ public final class SignUpViewController: UIViewController, Storyboarded {
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
 
+    // MARK: - ENUM
+
+    enum PageState {
+        case content
+        case loading
+    }
+
+    // MARK: - PRIVATE PROPERTIES
+
+    private var pageState: PageState = .loading {
+        willSet {
+            updatePageState(to: newValue)
+        }
+    }
+
     // MARK: - PUBLIC API
 
     public var signUp: ((SignUpViewModel) -> Void)?
@@ -32,10 +47,25 @@ public final class SignUpViewController: UIViewController, Storyboarded {
         hideKeyboardOnTap()
     }
 
-    // MARK: - SETUP
+    // MARK: - PRIVATE SETUP
 
     private func setupUI() {
         saveButton.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
+    }
+
+    private func updatePageState(to state: PageState) {
+        switch state {
+        case .content where pageState != .content:
+            view.isUserInteractionEnabled = true
+            saveButton.setTitle("Register", for: .normal)
+            loadingIndicator.stopAnimating()
+        case .loading where pageState != .loading:
+            view.isUserInteractionEnabled = false
+            saveButton.setTitle("Loading...", for: .normal)
+            loadingIndicator.startAnimating()
+        default:
+            break
+        }
     }
 
     // MARK: SELECTORS
@@ -53,13 +83,7 @@ public final class SignUpViewController: UIViewController, Storyboarded {
 
 extension SignUpViewController: LoadingViewProtocol {
     public func display(loadingViewModel: LoadingViewModel) {
-        if loadingViewModel.isLoading {
-            view.isUserInteractionEnabled = false
-            loadingIndicator.startAnimating()
-        } else {
-            view.isUserInteractionEnabled = true
-            loadingIndicator.stopAnimating()
-        }
+        pageState = loadingViewModel.isLoading ? .loading : .content
     }
 }
 
