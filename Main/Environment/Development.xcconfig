@@ -1,0 +1,9 @@
+//
+//  Debug.xcconfig
+//  Swift-CleanArchitecture
+//
+//  Created by Felipe Ribeiro Mendes on 21/07/20.
+//  Copyright © 2020 Felipe Mendes. All rights reserved.
+//
+
+BASE_URL = http:/$()/localhost:8888/api

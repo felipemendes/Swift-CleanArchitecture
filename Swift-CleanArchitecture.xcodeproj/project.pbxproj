@@ -33,6 +33,7 @@
 		DB32CB4424906D9D00C30E7D /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */; };
 		DB32CB4624906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */; };
 		DB3D288B24C7909100631421 /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D288A24C7909100631421 /* WeakVarProxy.swift */; };
+		DB3D289024C7A5D200631421 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D288F24C7A5D200631421 /* Environment.swift */; };
 		DB3FFFB2248F1BDC00641666 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FFFB1248F1BDC00641666 /* Data+Extensions.swift */; };
 		DB44FC6224C12D14007219CC /* EmailValidatorAdapter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44FC6124C12D14007219CC /* EmailValidatorAdapter+Extensions.swift */; };
 		DB44FC6424C12DB1007219CC /* EmailValidatorAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44FC6324C12DB1007219CC /* EmailValidatorAdapter.swift */; };
@@ -333,6 +334,9 @@
 		DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
 		DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteAddAccountTests+Extensions.swift"; sourceTree = "<group>"; };
 		DB3D288A24C7909100631421 /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
+		DB3D288D24C7A48300631421 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		DB3D288E24C7A53E00631421 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		DB3D288F24C7A5D200631421 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		DB3FFFB1248F1BDC00641666 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		DB44FC6124C12D14007219CC /* EmailValidatorAdapter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmailValidatorAdapter+Extensions.swift"; sourceTree = "<group>"; };
 		DB44FC6324C12DB1007219CC /* EmailValidatorAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapter.swift; sourceTree = "<group>"; };
@@ -652,6 +656,16 @@
 			path = Proxies;
 			sourceTree = "<group>";
 		};
+		DB3D288C24C7A46000631421 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				DB3D288F24C7A5D200631421 /* Environment.swift */,
+				DB3D288D24C7A48300631421 /* Development.xcconfig */,
+				DB3D288E24C7A53E00631421 /* Production.xcconfig */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
 		DB3FFFB0248F1BCF00641666 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +685,7 @@
 		DB54F5F424C759A100954099 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DB3D288C24C7A46000631421 /* Environment */,
 				DB3D288924C7908200631421 /* Proxies */,
 				DB54F63324C77BE900954099 /* Composers */,
 				DB54F62E24C75D8800954099 /* Factories */,
@@ -1661,6 +1676,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB54F63224C77B8000954099 /* RemoteUseCaseFactory.swift in Sources */,
+				DB3D289024C7A5D200631421 /* Environment.swift in Sources */,
 				DB54F5F624C759A100954099 /* AppDelegate.swift in Sources */,
 				DB54F5F824C759A100954099 /* SceneDelegate.swift in Sources */,
 				DB3D288B24C7909100631421 /* WeakVarProxy.swift in Sources */,
@@ -2172,6 +2188,7 @@
 		};
 		DB54F60F24C759A500954099 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB3D288D24C7A48300631421 /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -2190,6 +2207,7 @@
 		};
 		DB54F61024C759A500954099 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB3D288E24C7A53E00631421 /* Production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

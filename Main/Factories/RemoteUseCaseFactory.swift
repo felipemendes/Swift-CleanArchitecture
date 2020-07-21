@@ -16,7 +16,7 @@ final class RemoteUseCaseFactory {
     // MARK: - PRIVATE PROPERTIES
 
     private static let httpClient = AlamofireAdapter()
-    private static let baseUrl = "http://localhost:8888/api"
+    private static let baseUrl = Environment.variable(.baseUrl)
 
     // MARK: - FACTORIES
 
@@ -33,7 +33,8 @@ extension RemoteUseCaseFactory {
     // MARK: - HELPERS
 
     private static func makeUrl(path: String) -> URL {
-        guard let url = URL(string: "\(baseUrl)/\(path)") else {
+        guard let baseUrl = baseUrl,
+              let url = URL(string: "\(baseUrl)/\(path)") else {
             fatalError("Unconstructable \(path) URL")
         }
         return url
