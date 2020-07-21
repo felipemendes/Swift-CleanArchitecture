@@ -28,23 +28,3 @@ final class ControllerFactory {
         return signUpController
     }
 }
-
-class WeakVarProxy<T: AnyObject> {
-    private weak var instance: T?
-
-    init(_ instance: T) {
-        self.instance = instance
-    }
-}
-
-extension WeakVarProxy: AlertViewProtocol where T: AlertViewProtocol {
-    func showMessage(alertViewModel: AlertViewModel) {
-        instance?.showMessage(alertViewModel: alertViewModel)
-    }
-}
-
-extension WeakVarProxy: LoadingViewProtocol where T: LoadingViewProtocol {
-    func display(loadingViewModel: LoadingViewModel) {
-        instance?.display(loadingViewModel: loadingViewModel)
-    }
-}
