@@ -9,7 +9,7 @@
 import Presentation
 import UIKit
 
-final class SignUpViewController: UIViewController, Storyboarded {
+public final class SignUpViewController: UIViewController, Storyboarded {
 
     // MARK: - UI
 
@@ -22,11 +22,11 @@ final class SignUpViewController: UIViewController, Storyboarded {
 
     // MARK: - PUBLIC API
 
-    var signUp: ((SignUpViewModel) -> Void)?
+    public var signUp: ((SignUpViewModel) -> Void)?
 
     // MARK: - LIFE CYCLE
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         hideKeyboardOnTap()
@@ -52,7 +52,7 @@ final class SignUpViewController: UIViewController, Storyboarded {
 // MARK: - LoadingViewProtocol
 
 extension SignUpViewController: LoadingViewProtocol {
-    func display(loadingViewModel: LoadingViewModel) {
+    public func display(loadingViewModel: LoadingViewModel) {
         if loadingViewModel.isLoading {
             view.isUserInteractionEnabled = false
             loadingIndicator.startAnimating()
@@ -66,7 +66,7 @@ extension SignUpViewController: LoadingViewProtocol {
 // MARK: - AlertViewProtocol
 
 extension SignUpViewController: AlertViewProtocol {
-    func showMessage(alertViewModel: AlertViewModel) {
+    public func showMessage(alertViewModel: AlertViewModel) {
         let alert = UIAlertController(title: alertViewModel.title,
                                       message: alertViewModel.message,
                                       preferredStyle: .alert)

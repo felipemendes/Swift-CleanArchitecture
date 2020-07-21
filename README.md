@@ -9,7 +9,6 @@
 - MVP Architecture
 - Protocol-Oriented Programming
 - Swift Package Manager
-- View code layout
 - SwiftLint
 
 ## Modules

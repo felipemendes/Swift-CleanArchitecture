@@ -51,6 +51,7 @@
 		DB54F62624C75B8800954099 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB212C7324AD6A9900FCAEF1 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB54F62924C75B8800954099 /* Validation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB15471A24C1262600E3A361 /* Validation.framework */; };
 		DB54F62A24C75B8800954099 /* Validation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB15471A24C1262600E3A361 /* Validation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB54F63024C75D9B00954099 /* SignUpFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F62F24C75D9B00954099 /* SignUpFactory.swift */; };
 		DB86ECD524A63EF10067DDDA /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86ECD424A63EF10067DDDA /* EmailValidator.swift */; };
 		DBA1536024A850F300031972 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1535F24A850F300031972 /* AccountModelFactory.swift */; };
 		DBA1536124A8512400031972 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1535F24A850F300031972 /* AccountModelFactory.swift */; };
@@ -337,6 +338,7 @@
 		DB54F60324C759A500954099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB54F60824C759A500954099 /* MainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB54F60E24C759A500954099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB54F62F24C75D9B00954099 /* SignUpFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFactory.swift; sourceTree = "<group>"; };
 		DB86ECD424A63EF10067DDDA /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
 		DBA1535F24A850F300031972 /* AccountModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModelFactory.swift; sourceTree = "<group>"; };
 		DBA1536424A97FA100031972 /* LoadingViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewProtocol.swift; sourceTree = "<group>"; };
@@ -653,6 +655,7 @@
 		DB54F5F424C759A100954099 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DB54F62E24C75D8800954099 /* Factories */,
 				DB54F5F524C759A100954099 /* AppDelegate.swift */,
 				DB54F5F724C759A100954099 /* SceneDelegate.swift */,
 				DB54F5FE24C759A500954099 /* Assets.xcassets */,
@@ -668,6 +671,14 @@
 				DB54F60E24C759A500954099 /* Info.plist */,
 			);
 			path = MainTests;
+			sourceTree = "<group>";
+		};
+		DB54F62E24C75D8800954099 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				DB54F62F24C75D9B00954099 /* SignUpFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		DB86ECD324A63EE10067DDDA /* Validators */ = {
@@ -1622,6 +1633,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB54F5F624C759A100954099 /* AppDelegate.swift in Sources */,
+				DB54F63024C75D9B00954099 /* SignUpFactory.swift in Sources */,
 				DB54F5F824C759A100954099 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
