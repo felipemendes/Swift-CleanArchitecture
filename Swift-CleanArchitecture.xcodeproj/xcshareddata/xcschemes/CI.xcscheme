@@ -160,6 +160,34 @@
                ReferencedContainer = "container:Swift-CleanArchitecture.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DB54F5F224C759A100954099"
+               BuildableName = "Main.app"
+               BlueprintName = "Main"
+               ReferencedContainer = "container:Swift-CleanArchitecture.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DB54F60724C759A500954099"
+               BuildableName = "MainTests.xctest"
+               BlueprintName = "MainTests"
+               ReferencedContainer = "container:Swift-CleanArchitecture.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -210,6 +238,13 @@
             BlueprintIdentifier = "DB15471924C1262600E3A361"
             BuildableName = "Validation.framework"
             BlueprintName = "Validation"
+            ReferencedContainer = "container:Swift-CleanArchitecture.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DB54F5F224C759A100954099"
+            BuildableName = "Main.app"
+            BlueprintName = "Main"
             ReferencedContainer = "container:Swift-CleanArchitecture.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>

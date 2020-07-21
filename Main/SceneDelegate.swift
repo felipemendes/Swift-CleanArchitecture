@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = SignUpComposer.composerViewController(addAccount: UseCaseFactory.makeAddAccount())
+        let signUpComposer = SignUpComposer.composerViewController(addAccount: RemoteUseCaseFactory.makeAddAccount())
+        window?.rootViewController = signUpComposer
         window?.makeKeyAndVisible()
     }
 }

@@ -15,6 +15,14 @@ import UI
 import Validation
 
 public final class SignUpComposer {
+
+    // MARK: - FACTORIES
+
+    /// Builds a SignUpViewController
+    ///
+    /// - Parameters:
+    ///   - addAccount: An object that conforms to AddAccountUseCaseProtocol.
+    /// - Returns: An instantiated SignUpViewController
     public static func composerViewController(addAccount: AddAccountUseCaseProtocol) -> SignUpViewController {
         let signUpController = SignUpViewController.instantiate()
         let emailValidatorAdapter = EmailValidatorAdapter()
