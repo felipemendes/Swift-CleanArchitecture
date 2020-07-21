@@ -9,7 +9,5 @@
 import Foundation
 
 public protocol LoadingViewProtocol {
-    //var isLoading: Bool { get }
-
     func display(loadingViewModel: LoadingViewModel)
 }

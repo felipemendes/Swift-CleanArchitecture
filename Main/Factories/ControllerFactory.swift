@@ -15,16 +15,36 @@ import UI
 import Validation
 
 final class ControllerFactory {
-    static func makeSignUpController(addAccount: AddAccountUseCaseProtocol) -> SignUpViewController {
+    static func makeSignUp(addAccount: AddAccountUseCaseProtocol) -> SignUpViewController {
         let signUpController = SignUpViewController.instantiate()
         let emailValidatorAdapter = EmailValidatorAdapter()
 
-        let presenter = SignUpPresenter(alertView: signUpController,
+        let presenter = SignUpPresenter(alertView: WeakVarProxy(signUpController),
                                         emailValidator: emailValidatorAdapter,
                                         addAccount: addAccount,
-                                        loadingView: signUpController)
+                                        loadingView: WeakVarProxy(signUpController))
 
         signUpController.signUp = presenter.signUp
         return signUpController
+    }
+}
+
+class WeakVarProxy<T: AnyObject> {
+    private weak var instance: T?
+
+    init(_ instance: T) {
+        self.instance = instance
+    }
+}
+
+extension WeakVarProxy: AlertViewProtocol where T: AlertViewProtocol {
+    func showMessage(alertViewModel: AlertViewModel) {
+        instance?.showMessage(alertViewModel: alertViewModel)
+    }
+}
+
+extension WeakVarProxy: LoadingViewProtocol where T: LoadingViewProtocol {
+    func display(loadingViewModel: LoadingViewModel) {
+        instance?.display(loadingViewModel: loadingViewModel)
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 import UI
 
 public final class SignUpComposer {
-    static func composerViewController(addAccount: AddAccountUseCaseProtocol) -> SignUpViewController {
-        return ControllerFactory.makeSignUpController(addAccount: addAccount)
+    public static func composerViewController(addAccount: AddAccountUseCaseProtocol) -> SignUpViewController {
+        return ControllerFactory.makeSignUp(addAccount: addAccount)
     }
 }
