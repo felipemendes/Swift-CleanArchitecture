@@ -5,3 +5,4 @@ excluded:
   - PresentationTests
   - UITests
   - ValidationTests
+  - MainTests 
