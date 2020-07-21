@@ -1,5 +1,5 @@
 //
-//  SignUpFactory.swift
+//  ControllerFactory.swift
 //  Main
 //
 //  Created by Felipe Ribeiro Mendes on 21/07/20.
@@ -7,25 +7,21 @@
 //
 
 import Data
+import Domain
 import Foundation
 import Infrastructure
 import Presentation
 import UI
 import Validation
 
-class SignUpFactory {
-    static func makeSignUpController() -> SignUpViewController {
+final class ControllerFactory {
+    static func makeSignUpController(addAccount: AddAccountUseCaseProtocol) -> SignUpViewController {
         let signUpController = SignUpViewController.instantiate()
         let emailValidatorAdapter = EmailValidatorAdapter()
-        let alamofireAdapter = AlamofireAdapter()
-        guard let url = URL(string: "http://localhost:8888/api/signup") else {
-            fatalError("Unconstructable SignUp URL")
-        }
-        let remoteAddAccount = RemoteAddAccount(url: url,
-                                                httpClient: alamofireAdapter)
+
         let presenter = SignUpPresenter(alertView: signUpController,
                                         emailValidator: emailValidatorAdapter,
-                                        addAccount: remoteAddAccount,
+                                        addAccount: addAccount,
                                         loadingView: signUpController)
 
         signUpController.signUp = presenter.signUp
