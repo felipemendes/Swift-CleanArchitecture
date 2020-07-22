@@ -41,6 +41,8 @@ public final class SignUpPresenter {
             loadingView.display(loadingViewModel: LoadingViewModel(isLoading: true))
             addAccount.add(accountRequest: accountRequest) { [weak self] result in
                 guard let self = self else { return }
+                self.loadingView.display(loadingViewModel: LoadingViewModel(isLoading: false))
+
                 switch result {
                 case .success:
                     self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Sucesso",
@@ -49,7 +51,6 @@ public final class SignUpPresenter {
                     self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Erro",
                                                                               message: "Algo inesperado aconteceu."))
                 }
-                self.loadingView.display(loadingViewModel: LoadingViewModel(isLoading: false))
             }
         }
     }

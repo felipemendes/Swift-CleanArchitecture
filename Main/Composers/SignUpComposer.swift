@@ -26,7 +26,6 @@ public final class SignUpComposer {
     public static func composerViewController(addAccount: AddAccountUseCaseProtocol) -> SignUpViewController {
         let signUpController = SignUpViewController.instantiate()
         let emailValidatorAdapter = EmailValidatorAdapter()
-
         let presenter = SignUpPresenter(alertView: WeakVarProxy(signUpController),
                                         emailValidator: emailValidatorAdapter,
                                         addAccount: addAccount,

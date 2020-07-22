@@ -34,6 +34,8 @@
 		DB32CB4624906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */; };
 		DB3D288B24C7909100631421 /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D288A24C7909100631421 /* WeakVarProxy.swift */; };
 		DB3D289024C7A5D200631421 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D288F24C7A5D200631421 /* Environment.swift */; };
+		DB3D289424C7B10F00631421 /* TestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0654F24AC269B00C3E8F2 /* TestFactory.swift */; };
+		DB3D289724C7CB1D00631421 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D289624C7CB1D00631421 /* MainQueueDispatchDecorator.swift */; };
 		DB3FFFB2248F1BDC00641666 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FFFB1248F1BDC00641666 /* Data+Extensions.swift */; };
 		DB44FC6224C12D14007219CC /* EmailValidatorAdapter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44FC6124C12D14007219CC /* EmailValidatorAdapter+Extensions.swift */; };
 		DB44FC6424C12DB1007219CC /* EmailValidatorAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB44FC6324C12DB1007219CC /* EmailValidatorAdapter.swift */; };
@@ -337,6 +339,7 @@
 		DB3D288D24C7A48300631421 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		DB3D288E24C7A53E00631421 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		DB3D288F24C7A5D200631421 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		DB3D289624C7CB1D00631421 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		DB3FFFB1248F1BDC00641666 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		DB44FC6124C12D14007219CC /* EmailValidatorAdapter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmailValidatorAdapter+Extensions.swift"; sourceTree = "<group>"; };
 		DB44FC6324C12DB1007219CC /* EmailValidatorAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapter.swift; sourceTree = "<group>"; };
@@ -693,6 +696,14 @@
 			path = Composers;
 			sourceTree = "<group>";
 		};
+		DB3D289524C7CAF100631421 /* Decorators */ = {
+			isa = PBXGroup;
+			children = (
+				DB3D289624C7CB1D00631421 /* MainQueueDispatchDecorator.swift */,
+			);
+			path = Decorators;
+			sourceTree = "<group>";
+		};
 		DB3FFFB0248F1BCF00641666 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,6 +726,7 @@
 				DB3D289124C7ABFA00631421 /* App */,
 				DB3D288C24C7A46000631421 /* Environment */,
 				DB3D288924C7908200631421 /* Proxies */,
+				DB3D289524C7CAF100631421 /* Decorators */,
 				DB54F63324C77BE900954099 /* Composers */,
 				DB54F62E24C75D8800954099 /* Factories */,
 				DB3D289224C7AC0D00631421 /* Resources */,
@@ -1700,6 +1712,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB54F63224C77B8000954099 /* RemoteUseCaseFactory.swift in Sources */,
+				DB3D289724C7CB1D00631421 /* MainQueueDispatchDecorator.swift in Sources */,
 				DB3D289024C7A5D200631421 /* Environment.swift in Sources */,
 				DB54F5F624C759A100954099 /* AppDelegate.swift in Sources */,
 				DB54F5F824C759A100954099 /* SceneDelegate.swift in Sources */,
@@ -1712,6 +1725,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3D289424C7B10F00631421 /* TestFactory.swift in Sources */,
 				DB54F63824C77EA100954099 /* AddAccountSpy.swift in Sources */,
 				DB54F63924C77EEE00954099 /* XCTestCase+Extensions.swift in Sources */,
 				DB54F63724C77DEF00954099 /* SignUpComposerTests.swift in Sources */,

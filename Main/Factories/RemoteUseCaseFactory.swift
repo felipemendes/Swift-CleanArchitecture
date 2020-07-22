@@ -24,7 +24,8 @@ final class RemoteUseCaseFactory {
     ///
     /// - Returns: An instantiated AddAccountUseCaseProtocol
     static func makeAddAccount() -> AddAccountUseCaseProtocol {
-        return RemoteAddAccount(url: makeUrl(path: "signUp"), httpClient: httpClient)
+        let remoteAddAccount = RemoteAddAccount(url: makeUrl(path: "signUp"), httpClient: httpClient)
+        return MainQueueDispatchDecorator(remoteAddAccount)
     }
 }
 
@@ -33,8 +34,8 @@ final class RemoteUseCaseFactory {
 extension RemoteUseCaseFactory {
     private static func makeUrl(path: String) -> URL {
         guard let baseUrl = baseUrl,
-              let url = URL(string: "\(baseUrl)/\(path)") else {
-            fatalError("Unconstructable \(path) URL")
+            let url = URL(string: "\(baseUrl)/\(path)") else {
+                fatalError("Unconstructable \(path) URL")
         }
         return url
     }
