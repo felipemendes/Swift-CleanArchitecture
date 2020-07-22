@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Validation
+import Infrastructure
 
 extension EmailValidatorAdapterTests {
     func makeSut() -> EmailValidatorAdapter {

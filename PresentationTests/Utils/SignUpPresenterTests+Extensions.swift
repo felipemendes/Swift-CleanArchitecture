@@ -12,14 +12,15 @@ import Presentation
 
 extension SignUpPresenterTests {
     func makeSut(alertView: AlertViewProtocol = AlertViewSpy(),
-                 emailValidator: EmailValidator = EmailValidatorSpy(),
                  addAccount: AddAccountUseCaseProtocol = AddAccountSpy(),
                  loadingView: LoadingViewSpy = LoadingViewSpy(),
+                 validation: ValidationSpy = ValidationSpy(),
                  file: StaticString = #file,
                  line: UInt = #line) -> SignUpPresenter {
         let sut = SignUpPresenter(alertView: alertView,
-                                  emailValidator: emailValidator,
-                                  addAccount: addAccount, loadingView: loadingView)
+                                  addAccount: addAccount,
+                                  loadingView: loadingView,
+                                  validation: validation)
         checkMemoryLeak(for: sut, file: file, line: line)
         return sut
     }

@@ -14,26 +14,26 @@ public final class SignUpPresenter {
     // MARK: - PRIVATE PROPERTIES
 
     private let alertView: AlertViewProtocol
-    private let emailValidator: EmailValidator
     private let addAccount: AddAccountUseCaseProtocol
     private let loadingView: LoadingViewProtocol
+    private let validation: Validation
 
     // MARK: - INITIALIZER
 
     public init(alertView: AlertViewProtocol,
-                emailValidator: EmailValidator,
                 addAccount: AddAccountUseCaseProtocol,
-                loadingView: LoadingViewProtocol) {
+                loadingView: LoadingViewProtocol,
+                validation: Validation) {
         self.alertView = alertView
-        self.emailValidator = emailValidator
         self.addAccount = addAccount
         self.loadingView = loadingView
+        self.validation = validation
     }
 
     // MARK: - PUBLIC API
 
     public func signUp(signUpViewModel: SignUpViewModel) {
-        if let message = validate(signUpViewModel: signUpViewModel) {
+        if let message = validation.validate(data: signUpViewModel.toJson()) {
             alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: message))
         } else {
             guard let accountRequest = SignUpMapper.toAddAccount(signUpViewModel: signUpViewModel) else { return }
@@ -53,27 +53,5 @@ public final class SignUpPresenter {
                 }
             }
         }
-    }
-
-    // MARK: - PRIVATE FUNCTIONS
-
-    private func validate(signUpViewModel: SignUpViewModel) -> String? {
-        if signUpViewModel.name == nil || signUpViewModel.name!.isEmpty {
-            return "O campo Nome é obrigatório"
-        } else if signUpViewModel.email == nil || signUpViewModel.email!.isEmpty {
-            return "O campo Email é obrigatório"
-        } else if signUpViewModel.password == nil || signUpViewModel.password!.isEmpty {
-            return "O campo Senha é obrigatório"
-        } else if signUpViewModel.passwordConfirmation == nil || signUpViewModel.passwordConfirmation!.isEmpty {
-            return "O campo Confirmar Senha é obrigatório"
-        } else if signUpViewModel.password != signUpViewModel.passwordConfirmation {
-            return "O campo Confirmar Senha é inválido"
-        }
-
-        if let email = signUpViewModel.email, !emailValidator.isValid(email: email) {
-            return "O campo Email é inválido"
-        }
-
-        return nil
     }
 }

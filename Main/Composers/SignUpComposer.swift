@@ -25,13 +25,36 @@ public final class SignUpComposer {
     /// - Returns: An instantiated SignUpViewController
     public static func composerViewController(addAccount: AddAccountUseCaseProtocol) -> SignUpViewController {
         let signUpController = SignUpViewController.instantiate()
-        let emailValidatorAdapter = EmailValidatorAdapter()
+        let validationComposite = ValidationComposite(validations: makeValidations())
         let presenter = SignUpPresenter(alertView: WeakVarProxy(signUpController),
-                                        emailValidator: emailValidatorAdapter,
                                         addAccount: addAccount,
-                                        loadingView: WeakVarProxy(signUpController))
+                                        loadingView: WeakVarProxy(signUpController), validation: validationComposite)
 
         signUpController.signUp = presenter.signUp
         return signUpController
+    }
+}
+
+// MARK: - HELPERS
+
+extension SignUpComposer {
+    public static func makeValidations() -> [Validation] {
+        var fields = [Validation]()
+        fields.append(RequiredFieldValidation(fieldName: "name",
+                                              fieldLabel: "Nome"))
+        fields.append(RequiredFieldValidation(fieldName: "email",
+                                              fieldLabel: "E-mail"))
+        fields.append(EmailValidation(fieldName: "email",
+                                      fieldLabel: "E-mail",
+                                      emailValidator: EmailValidatorAdapter()))
+        fields.append(RequiredFieldValidation(fieldName: "password",
+                                              fieldLabel: "Senha"))
+        fields.append(RequiredFieldValidation(fieldName: "passwordConfirmation",
+                                              fieldLabel: "Confirmar Senha"))
+        fields.append(CompareFieldValidation(fieldName: "password",
+                                             fieldNameToCompare: "passwordConfirmation",
+                                             fieldLabel: "Confirmar Senha"))
+
+        return fields
     }
 }

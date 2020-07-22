@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Validation
+import Infrastructure
 
 class EmailValidatorAdapterTests: XCTestCase {
     func test_invalid_emails() {
