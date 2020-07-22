@@ -36,7 +36,7 @@ public final class SignUpPresenter {
         if let message = validation.validate(data: signUpViewModel.toJson()) {
             alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: message))
         } else {
-            guard let accountRequest = SignUpMapper.toAddAccount(signUpViewModel: signUpViewModel) else { return }
+            guard let accountRequest = signUpViewModel.toAccountRequest() else { return }
 
             loadingView.display(loadingViewModel: LoadingViewModel(isLoading: true))
             addAccount.add(accountRequest: accountRequest) { [weak self] result in

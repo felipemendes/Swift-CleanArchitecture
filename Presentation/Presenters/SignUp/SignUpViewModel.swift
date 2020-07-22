@@ -10,10 +10,15 @@ import Domain
 import Foundation
 
 public struct SignUpViewModel: Model {
+
+    // MARK: - PUBLIC PROPERTIES
+
     public var name: String?
     public var email: String?
     public var password: String?
     public var passwordConfirmation: String?
+
+    // MARK: - INITIALIZER
 
     public init(name: String? = nil,
                 email: String? = nil,
@@ -23,5 +28,19 @@ public struct SignUpViewModel: Model {
         self.email = email
         self.password = password
         self.passwordConfirmation = passwordConfirmation
+    }
+
+    // MARK: - PUBLIC API
+
+    public func toAccountRequest() -> AccountRequest? {
+        guard let name = name,
+            let email = email,
+            let password = password,
+            let passwordConfirmation = passwordConfirmation else { return nil }
+
+        return AccountRequest(name: name,
+                              email: email,
+                              password: password,
+                              passwordConfirmation: passwordConfirmation)
     }
 }
