@@ -10,9 +10,7 @@ import Foundation
 import Domain
 
 func makeAccountResponse() -> AccountResponse {
-    return AccountResponse(identifier: "123",
-                           name: "Felipe",
-                           email: "felipe@email.com")
+    return AccountResponse(accessToken: "any_token")
 }
 
 func makeAccountRequest() -> AccountRequest {

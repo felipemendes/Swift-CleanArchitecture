@@ -25,9 +25,7 @@ class AddAccountIntegrationTests: XCTestCase {
         sut.add(accountRequest: newAccount) { accountResponse in
             switch accountResponse {
             case .success(let account):
-                XCTAssertNotNil(account.identifier)
-                XCTAssertEqual(account.name, newAccount.name)
-                XCTAssertEqual(account.email, newAccount.email)
+                XCTAssertNotNil(account.accessToken)
             case .failure:
                 XCTFail("Expect success but received \(accountResponse) instead.")
             }

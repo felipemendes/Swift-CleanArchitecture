@@ -9,15 +9,9 @@
 import Foundation
 
 public struct AccountResponse: Model {
-    public var identifier: String
-    public var name: String
-    public var email: String
+    public var accessToken: String
 
-    public init(identifier: String,
-                name: String,
-                email: String) {
-        self.identifier = identifier
-        self.name = name
-        self.email = email
+    public init(accessToken: String) {
+        self.accessToken = accessToken
     }
 }
