@@ -11,9 +11,9 @@ import Foundation
 
 class AddAccountSpy: AddAccountUseCaseProtocol {
     var accountRequest: AccountRequest?
-    var completion: ((Result<AccountResponse, MessageError>) -> Void)?
+    var completion: ((AddAccountUseCaseProtocol.ServiceReturnType) -> Void)?
 
-    func add(accountRequest: AccountRequest, completion: @escaping (Result<AccountResponse, MessageError>) -> Void) {
+    func add(accountRequest: AccountRequest, completion: @escaping (AddAccountUseCaseProtocol.ServiceReturnType) -> Void) {
         self.accountRequest = accountRequest
         self.completion = completion
     }

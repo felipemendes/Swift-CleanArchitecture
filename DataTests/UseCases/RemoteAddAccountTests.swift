@@ -109,7 +109,7 @@ class RemoteAddAccountTests: XCTestCase {
         let accountRequest = makeAccountRequest()
         let httpClientSpy = HttpClientSpy()
         var sut: RemoteAddAccount? = RemoteAddAccount(url: makeUrl(), httpClient: httpClientSpy)
-        var result: Result<AccountResponse, MessageError>?
+        var result: AddAccountUseCaseProtocol.ServiceReturnType?
 
         sut?.add(accountRequest: accountRequest) { result = $0 }
         sut = nil

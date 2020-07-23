@@ -28,7 +28,7 @@ public final class MainQueueDispatchDecorator<T> {
 
 extension MainQueueDispatchDecorator: AddAccountUseCaseProtocol where T: AddAccountUseCaseProtocol {
     public func add(accountRequest: AccountRequest,
-                    completion: @escaping (Result<AccountResponse, MessageError>) -> Void) {
+                    completion: @escaping (AddAccountUseCaseProtocol.ServiceReturnType) -> Void) {
         self.instance.add(accountRequest: accountRequest) { [weak self] result in
             self?.dispatch { completion(result) }
         }
