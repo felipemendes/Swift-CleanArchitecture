@@ -43,13 +43,14 @@ public final class SignUpViewController: UIViewController, Storyboarded {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setupView()
         hideKeyboardOnTap()
     }
 
     // MARK: - PRIVATE SETUP
 
-    private func setupUI() {
+    private func setupView() {
+        title = "4Dev"
         saveButton.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
     }
 

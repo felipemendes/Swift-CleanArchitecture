@@ -60,6 +60,12 @@
 		DB9F1F7C24C91CEA0048D3D0 /* ApiUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F7B24C91CEA0048D3D0 /* ApiUrlFactory.swift */; };
 		DB9F1F7F24C91DBC0048D3D0 /* AlamofireAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F7E24C91DBC0048D3D0 /* AlamofireAdapterFactory.swift */; };
 		DB9F1F8324C9D2240048D3D0 /* EmailValidatorAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F8224C9D2240048D3D0 /* EmailValidatorAdapterFactory.swift */; };
+		DB9F1F8624C9D4D50048D3D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9F1F8524C9D4D50048D3D0 /* Images.xcassets */; };
+		DB9F1F8824C9D9A60048D3D0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F8724C9D9A60048D3D0 /* UIColor+Extensions.swift */; };
+		DB9F1F8A24C9D9E40048D3D0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F8924C9D9E40048D3D0 /* Color.swift */; };
+		DB9F1F8D24C9DB980048D3D0 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F8C24C9DB980048D3D0 /* RoundedTextField.swift */; };
+		DB9F1F8F24C9DCD70048D3D0 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F8E24C9DCD70048D3D0 /* RoundedButton.swift */; };
+		DB9F1F9124C9DD390048D3D0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F9024C9DD390048D3D0 /* NavigationController.swift */; };
 		DBA1536024A850F300031972 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1535F24A850F300031972 /* AccountModelFactory.swift */; };
 		DBA1536124A8512400031972 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1535F24A850F300031972 /* AccountModelFactory.swift */; };
 		DBA1536224A97ACD00031972 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */; };
@@ -387,6 +393,12 @@
 		DB9F1F7B24C91CEA0048D3D0 /* ApiUrlFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUrlFactory.swift; sourceTree = "<group>"; };
 		DB9F1F7E24C91DBC0048D3D0 /* AlamofireAdapterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterFactory.swift; sourceTree = "<group>"; };
 		DB9F1F8224C9D2240048D3D0 /* EmailValidatorAdapterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapterFactory.swift; sourceTree = "<group>"; };
+		DB9F1F8524C9D4D50048D3D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DB9F1F8724C9D9A60048D3D0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		DB9F1F8924C9D9E40048D3D0 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		DB9F1F8C24C9DB980048D3D0 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		DB9F1F8E24C9DCD70048D3D0 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		DB9F1F9024C9DD390048D3D0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		DBA1535F24A850F300031972 /* AccountModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModelFactory.swift; sourceTree = "<group>"; };
 		DBA1536424A97FA100031972 /* LoadingViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewProtocol.swift; sourceTree = "<group>"; };
 		DBA1536624A97FF200031972 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
@@ -573,6 +585,7 @@
 			isa = PBXGroup;
 			children = (
 				DB15470E24C11F9300E3A361 /* UIViewController+Extensions.swift */,
+				DB9F1F8724C9D9A60048D3D0 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -610,8 +623,9 @@
 			children = (
 				DB15470D24C11F7700E3A361 /* Extensions */,
 				DB15471224C123ED00E3A361 /* Protocols */,
+				DB9F1F8B24C9DB820048D3D0 /* Components */,
 				DB2EC09A24BFEEEA0019000A /* Scenes */,
-				DB212C7624AD6A9900FCAEF1 /* Info.plist */,
+				DB9F1F8424C9D4BD0048D3D0 /* Resources */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -826,6 +840,26 @@
 				DB54F63424C77BF900954099 /* SignUpControllerFactory.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DB9F1F8424C9D4BD0048D3D0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F1F8924C9D9E40048D3D0 /* Color.swift */,
+				DB9F1F8524C9D4D50048D3D0 /* Images.xcassets */,
+				DB212C7624AD6A9900FCAEF1 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DB9F1F8B24C9DB820048D3D0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F1F9024C9DD390048D3D0 /* NavigationController.swift */,
+				DB9F1F8C24C9DB980048D3D0 /* RoundedTextField.swift */,
+				DB9F1F8E24C9DCD70048D3D0 /* RoundedButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		DBA1536324A97F9800031972 /* Loading */ = {
@@ -1629,6 +1663,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB212C9324AD706700FCAEF1 /* SignUp.storyboard in Resources */,
+				DB9F1F8624C9D4D50048D3D0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1806,8 +1841,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB15470F24C11F9300E3A361 /* UIViewController+Extensions.swift in Sources */,
+				DB9F1F9124C9DD390048D3D0 /* NavigationController.swift in Sources */,
+				DB9F1F8D24C9DB980048D3D0 /* RoundedTextField.swift in Sources */,
+				DB9F1F8A24C9D9E40048D3D0 /* Color.swift in Sources */,
 				DB212C9524AD72F800FCAEF1 /* SignUpViewController.swift in Sources */,
+				DB9F1F8F24C9DCD70048D3D0 /* RoundedButton.swift in Sources */,
 				DB15471124C120A200E3A361 /* Storyboarded.swift in Sources */,
+				DB9F1F8824C9D9A60048D3D0 /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
