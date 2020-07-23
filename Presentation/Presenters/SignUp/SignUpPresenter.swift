@@ -47,9 +47,16 @@ public final class SignUpPresenter {
                 case .success:
                     self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Sucesso",
                                                                               message: "Conta criada com sucesso."))
-                case .failure:
+                case .failure(let error):
+                    var errorMessage = ""
+                    switch error {
+                    case .emailInUse:
+                        errorMessage = "Esse e-mail já está em uso."
+                    default:
+                        errorMessage = "Algo inesperado aconteceu."
+                    }
                     self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Erro",
-                                                                              message: "Algo inesperado aconteceu."))
+                                                                              message: errorMessage))
                 }
             }
         }
