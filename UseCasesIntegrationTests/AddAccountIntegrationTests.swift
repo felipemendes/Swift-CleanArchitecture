@@ -17,9 +17,9 @@ class AddAccountIntegrationTests: XCTestCase {
         let alamofireAdapter = AlamofireAdapter()
         let sut = RemoteAddAccount(url: url, httpClient: alamofireAdapter)
         let newAccount = AccountRequest(name: "Name",
-                                        email: "name@mail.com",
-                                        password: "123456",
-                                        passwordConfirmation: "123456")
+                                        email: "\(UUID().uuidString)@mail.com",
+            password: "123456",
+            passwordConfirmation: "123456")
 
         let exp = expectation(description: "waiting")
         sut.add(accountRequest: newAccount) { accountResponse in
@@ -33,5 +33,18 @@ class AddAccountIntegrationTests: XCTestCase {
         }
 
         wait(for: [exp], timeout: 5)
+
+        let exp2 = expectation(description: "waiting")
+        sut.add(accountRequest: newAccount) { accountResponse in
+            switch accountResponse {
+            case .failure(let error) where error == .emailInUse:
+                XCTAssertNotNil(error)
+            default:
+                XCTFail("Expect failure but received \(accountResponse) instead.")
+            }
+        }
+        exp2.fulfill()
     }
+
+    wait(for: [exp2], timeout: 5)
 }
