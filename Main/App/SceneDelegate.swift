@@ -18,8 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
-        let signUpComposer = SignUpComposer.composerViewController(addAccount: RemoteUseCaseFactory.makeAddAccount())
-        window?.rootViewController = signUpComposer
+
+        let httpClient = makeAlamofireAdapter()
+        let addAccount = makeAddAccount(httpClient: httpClient)
+        let signUpController = makeSignUpViewController(addAccount: addAccount)
+        window?.rootViewController = signUpController
+
         window?.makeKeyAndVisible()
     }
 }
