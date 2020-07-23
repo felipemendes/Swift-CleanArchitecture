@@ -47,6 +47,25 @@ class RemoteAddAccountTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
 
+    func test_add_should_complete_with_email_in_use_error_if_client_completes_forbidden() {
+        let (sut, httpClientSpy) = makeSut()
+        let accountRequest = makeAccountRequest()
+        let exp = expectation(description: "waiting")
+
+        sut.add(accountRequest: accountRequest) { result in
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .forbidden)
+            case .success:
+                XCTFail("Error: Expected error but received \(result) instead")
+            }
+            exp.fulfill()
+        }
+
+        httpClientSpy.completeWith(error: .emailInUse)
+        wait(for: [exp], timeout: 1)
+    }
+
     func test_add_should_complete_with_account_if_client_completes_with_valid_data() {
         let (sut, httpClientSpy) = makeSut()
         let accountRequest = makeAccountRequest()

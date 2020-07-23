@@ -40,8 +40,13 @@ public final class RemoteAddAccount: AddAccountUseCaseProtocol {
                 }
                 completion(.success(model))
 
-            case .failure:
-                completion(.failure(.unexpected))
+            case .failure(let error):
+                switch error {
+                case .forbidden:
+                    completion(.failure(.emailInUse))
+                default:
+                    completion(.failure(.unexpected))
+                }
             }
         }
     }
