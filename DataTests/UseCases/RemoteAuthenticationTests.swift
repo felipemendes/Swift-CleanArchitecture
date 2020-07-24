@@ -14,9 +14,17 @@ class RemoteAuthenticationTests: XCTestCase {
     func test_authentication_should_call_httpClient_with_correct_url() {
         let url = makeUrl()
         let (sut, httpClientSpy) = makeSut(url: url)
-        sut.auth()
+        sut.auth(authentication: makeAuthentication())
 
         XCTAssertEqual(httpClientSpy.url, url)
+    }
+
+    func test_authentication_should_call_httpClient_with_correct_data() {
+        let authentication = makeAuthentication()
+        let (sut, httpClientSpy) = makeSut()
+        sut.auth(authentication: authentication)
+
+        XCTAssertEqual(httpClientSpy.data, authentication.toData())
     }
 }
 

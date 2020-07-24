@@ -27,7 +27,7 @@ public final class RemoteAuthentication {
 
     // MARK: Add new account
 
-    public func auth() {
-        httpClient.post(to: url, with: nil) { _ in }
+    public func auth(authentication: Authentication) {
+        httpClient.post(to: url, with: authentication.toData()) { _ in }
     }
 }
