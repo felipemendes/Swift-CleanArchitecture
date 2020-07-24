@@ -9,6 +9,12 @@
 import Foundation
 
 public protocol AddAccountUseCaseProtocol {
+
+    // MARK: - ALIASES
+
     typealias ServiceReturnType = Result<AccountResponse, MessageError>
+
+    // MARK: - REQUIRED METHODS
+
     func add(accountRequest: AccountRequest, completion: @escaping (ServiceReturnType) -> Void)
 }
