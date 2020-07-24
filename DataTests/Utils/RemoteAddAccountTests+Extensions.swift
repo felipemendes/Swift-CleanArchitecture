@@ -12,7 +12,7 @@ import Foundation
 
 extension RemoteAddAccountTests {
 
-    // MARK: - Factory
+    // MARK: - FACTORY
 
     func makeSut(url: URL = URL(string: "http://url.com")!,
                  file: StaticString = #file,

@@ -19,3 +19,8 @@ func makeAccountRequest() -> AccountRequest {
                           password: "123456",
                           passwordConfirmation: "123456")
 }
+
+func makeAuthentication() -> Authentication {
+    return Authentication(email: "felipe@email.com",
+                          password: "123456")
+}

@@ -30,6 +30,8 @@
 		DB2EC09E24BFEFAA0019000A /* UIControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2EC09D24BFEFAA0019000A /* UIControl+Extensions.swift */; };
 		DB2FB92524CB1BB00097715B /* AuthenticationUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FB92424CB1BB00097715B /* AuthenticationUseCaseProtocol.swift */; };
 		DB2FB92724CB1CB10097715B /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FB92624CB1CB10097715B /* Authentication.swift */; };
+		DB2FB92B24CB1DB90097715B /* RemoteAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FB92A24CB1DB90097715B /* RemoteAuthenticationTests.swift */; };
+		DB2FB92D24CB1F560097715B /* RemoteAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FB92C24CB1F560097715B /* RemoteAuthentication.swift */; };
 		DB32CB4224906CD700C30E7D /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */; };
 		DB32CB4424906D9D00C30E7D /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */; };
 		DB32CB4624906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */; };
@@ -371,6 +373,8 @@
 		DB2EC09D24BFEFAA0019000A /* UIControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extensions.swift"; sourceTree = "<group>"; };
 		DB2FB92424CB1BB00097715B /* AuthenticationUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUseCaseProtocol.swift; sourceTree = "<group>"; };
 		DB2FB92624CB1CB10097715B /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		DB2FB92A24CB1DB90097715B /* RemoteAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationTests.swift; sourceTree = "<group>"; };
+		DB2FB92C24CB1F560097715B /* RemoteAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthentication.swift; sourceTree = "<group>"; };
 		DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
 		DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteAddAccountTests+Extensions.swift"; sourceTree = "<group>"; };
@@ -879,6 +883,7 @@
 			isa = PBXGroup;
 			children = (
 				DBA7E329246B934D002D67FE /* RemoteAddAccount.swift */,
+				DB2FB92C24CB1F560097715B /* RemoteAuthentication.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -895,6 +900,7 @@
 			isa = PBXGroup;
 			children = (
 				DBD154D7246A3B7E003A04AC /* RemoteAddAccountTests.swift */,
+				DB2FB92A24CB1DB90097715B /* RemoteAuthenticationTests.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1968,6 +1974,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB3FFFB2248F1BDC00641666 /* Data+Extensions.swift in Sources */,
+				DB2FB92D24CB1F560097715B /* RemoteAuthentication.swift in Sources */,
 				DBA7E32C246B93D8002D67FE /* HttpPostClientProtocol.swift in Sources */,
 				DBA7E32A246B934D002D67FE /* RemoteAddAccount.swift in Sources */,
 			);
@@ -1982,6 +1989,7 @@
 				DBA1536024A850F300031972 /* AccountModelFactory.swift in Sources */,
 				DB32CB4224906CD700C30E7D /* XCTestCase+Extensions.swift in Sources */,
 				DB32CB4424906D9D00C30E7D /* HttpClientSpy.swift in Sources */,
+				DB2FB92B24CB1DB90097715B /* RemoteAuthenticationTests.swift in Sources */,
 				DBD154D8246A3B7E003A04AC /* RemoteAddAccountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
