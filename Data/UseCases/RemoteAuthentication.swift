@@ -27,7 +27,15 @@ public final class RemoteAuthentication {
 
     // MARK: Add new account
 
-    public func auth(authentication: Authentication) {
-        httpClient.post(to: url, with: authentication.toData()) { _ in }
+    public func auth(authentication: Authentication,
+                     completion: @escaping (AuthenticationUseCaseProtocol.ServiceReturnType) -> Void) {
+        httpClient.post(to: url, with: authentication.toData()) { result in
+            switch result {
+            case .success:
+                break
+            case .failure:
+                completion(.failure(.unexpected))
+            }
+        }
     }
 }
