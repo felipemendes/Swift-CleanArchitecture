@@ -9,6 +9,7 @@
 import Foundation
 
 public struct Authentication: Model {
+
     public var email: String
     public var password: String
 

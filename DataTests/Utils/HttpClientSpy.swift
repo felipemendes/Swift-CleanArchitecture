@@ -13,6 +13,7 @@ import Foundation
 // MARK: - HttpClient Test Double
 
 class HttpClientSpy: HttpPostClientProtocol {
+    
     var url: URL?
     var data: Data?
     var completion: ((Result<Data?, MessageError>) -> Void)?

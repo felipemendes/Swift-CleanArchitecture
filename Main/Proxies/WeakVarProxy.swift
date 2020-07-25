@@ -10,6 +10,7 @@ import Foundation
 import Presentation
 
 final class WeakVarProxy<T: AnyObject> {
+
     private weak var instance: T?
 
     init(_ instance: T) {

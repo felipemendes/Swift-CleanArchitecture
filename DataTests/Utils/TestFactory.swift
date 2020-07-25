@@ -17,7 +17,7 @@ func makeEmptyData() -> Data {
 }
 
 func makeValidData() -> Data {
-    return Data("{\"name\":\"Felip\"}".utf8)
+    return Data("{\"name\":\"Felipe\"}".utf8)
 }
 
 func makeInvalidData() -> Data {

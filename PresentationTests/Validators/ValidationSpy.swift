@@ -10,6 +10,7 @@ import Foundation
 import Presentation
 
 class ValidationSpy: Validation {
+
     var data: [String: Any]?
     var errorMessage: String?
 

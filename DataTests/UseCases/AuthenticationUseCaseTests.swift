@@ -1,8 +1,8 @@
 //
-//  RemoteAddAccountTests.swift
+//  AuthenticationUseCaseTests.swift
 //  DataTests
 //
-//  Created by Felipe Ribeiro Mendes on 11/05/20.
+//  Created by Felipe Ribeiro Mendes on 24/07/20.
 //  Copyright © 2020 Felipe Mendes. All rights reserved.
 //
 
@@ -10,30 +10,29 @@ import Data
 import Domain
 import XCTest
 
-class RemoteAddAccountTests: XCTestCase {
-    func test_add_should_call_httpClient_with_correct_url() {
+class AuthenticationUseCaseTests: XCTestCase {
+    func test_auth_should_call_httpClient_with_correct_url() {
         let url = makeUrl()
         let (sut, httpClientSpy) = makeSut(url: url)
-        let accountRequest = makeAccountRequest()
-        sut.add(accountRequest: accountRequest) { _ in }
+        sut.auth(authentication: makeAuthentication()) { _ in }
 
         XCTAssertEqual(httpClientSpy.url, url)
     }
 
-    func test_add_should_call_httpClient_with_correct_data() {
-        let accountRequest = makeAccountRequest()
+    func test_auth_should_call_httpClient_with_correct_data() {
+        let authentication = makeAuthentication()
         let (sut, httpClientSpy) = makeSut()
-        sut.add(accountRequest: accountRequest) { _ in }
+        sut.auth(authentication: authentication) { _ in }
 
-        XCTAssertEqual(httpClientSpy.data, accountRequest.toData())
+        XCTAssertEqual(httpClientSpy.data, authentication.toData())
     }
 
-    func test_add_should_complete_with_error_if_client_completes_with_error() {
+    func test_auth_should_complete_with_error_if_client_completes_with_error() {
         let (sut, httpClientSpy) = makeSut()
-        let accountRequest = makeAccountRequest()
+        let authentication = makeAuthentication()
         let exp = expectation(description: "waiting")
 
-        sut.add(accountRequest: accountRequest) { result in
+        sut.auth(authentication: authentication) { result in
             switch result {
             case .failure(let error):
                 XCTAssertEqual(error, .unexpected)
@@ -47,32 +46,32 @@ class RemoteAddAccountTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
 
-    func test_add_should_complete_with_email_in_use_error_if_client_completes_forbidden() {
+    func test_auth_should_complete_with_expired_session_if_client_completes_unauthorized() {
         let (sut, httpClientSpy) = makeSut()
-        let accountRequest = makeAccountRequest()
+        let authentication = makeAuthentication()
         let exp = expectation(description: "waiting")
 
-        sut.add(accountRequest: accountRequest) { result in
+        sut.auth(authentication: authentication) { result in
             switch result {
             case .failure(let error):
-                XCTAssertEqual(error, .forbidden)
+                XCTAssertEqual(error, .expiredSession)
             case .success:
                 XCTFail("Error: Expected error but received \(result) instead")
             }
             exp.fulfill()
         }
 
-        httpClientSpy.completeWith(error: .emailInUse)
+        httpClientSpy.completeWith(error: .unauthorized)
         wait(for: [exp], timeout: 1)
     }
 
-    func test_add_should_complete_with_account_if_client_completes_with_valid_data() {
+    func test_auth_should_complete_with_account_if_client_completes_with_valid_data() {
         let (sut, httpClientSpy) = makeSut()
-        let accountRequest = makeAccountRequest()
+        let authentication = makeAuthentication()
         let expectedAccount = makeAccountResponse()
         let exp = expectation(description: "waiting")
 
-        sut.add(accountRequest: accountRequest) { result in
+        sut.auth(authentication: authentication) { result in
             switch result {
             case .failure:
                 XCTFail("Error: Expected success but received \(result) instead")
@@ -86,12 +85,12 @@ class RemoteAddAccountTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
 
-    func test_add_should_complete_with_error_if_client_completes_with_invalid_data() {
+    func test_auth_should_complete_with_error_if_client_completes_with_invalid_data() {
         let (sut, httpClientSpy) = makeSut()
-        let accountRequest = makeAccountRequest()
+        let authentication = makeAuthentication()
         let exp = expectation(description: "waiting")
 
-        sut.add(accountRequest: accountRequest) { result in
+        sut.auth(authentication: authentication) { result in
             switch result {
             case .failure(let error):
                 XCTAssertEqual(error, .unexpected)
@@ -105,15 +104,15 @@ class RemoteAddAccountTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
 
-    func test_add_should_not_complete_if_sut_has_been_deallocated() {
-        let accountRequest = makeAccountRequest()
+    func test_auth_should_not_complete_if_sut_has_been_deallocated() {
+        let authentication = makeAuthentication()
         let httpClientSpy = HttpClientSpy()
-        var sut: RemoteAddAccount? = RemoteAddAccount(url: makeUrl(), httpClient: httpClientSpy)
-        var result: AddAccountUseCaseProtocol.ServiceReturnType?
+        var sut: AuthenticationUseCase? = AuthenticationUseCase(url: makeUrl(), httpClient: httpClientSpy)
+        var result: AuthenticationUseCaseProtocol.ServiceReturnType?
 
-        sut?.add(accountRequest: accountRequest) { result = $0 }
+        sut?.auth(authentication: authentication) { result = $0 }
         sut = nil
-        httpClientSpy.completeWith(error: .unexpected)
+        httpClientSpy.completeWith(error: .noConnectivity)
         XCTAssertNil(result)
     }
 }

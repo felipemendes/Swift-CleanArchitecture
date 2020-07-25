@@ -10,6 +10,7 @@ import Foundation
 import Presentation
 
 class AlertViewSpy: AlertViewProtocol {
+    
     var emit: ((AlertViewModel) -> Void)?
 
     func observer(completion: @escaping (AlertViewModel) -> Void) {

@@ -30,11 +30,12 @@
 		DB2EC09E24BFEFAA0019000A /* UIControl+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2EC09D24BFEFAA0019000A /* UIControl+Extensions.swift */; };
 		DB2FB92524CB1BB00097715B /* AuthenticationUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FB92424CB1BB00097715B /* AuthenticationUseCaseProtocol.swift */; };
 		DB2FB92724CB1CB10097715B /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FB92624CB1CB10097715B /* Authentication.swift */; };
-		DB2FB92B24CB1DB90097715B /* RemoteAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FB92A24CB1DB90097715B /* RemoteAuthenticationTests.swift */; };
-		DB2FB92D24CB1F560097715B /* RemoteAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FB92C24CB1F560097715B /* RemoteAuthentication.swift */; };
+		DB2FB92B24CB1DB90097715B /* AuthenticationUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FB92A24CB1DB90097715B /* AuthenticationUseCaseTests.swift */; };
+		DB2FB92D24CB1F560097715B /* AuthenticationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FB92C24CB1F560097715B /* AuthenticationUseCase.swift */; };
+		DB2FB92F24CC89CC0097715B /* AuthenticationUseCaseTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2FB92E24CC89CC0097715B /* AuthenticationUseCaseTests+Extensions.swift */; };
 		DB32CB4224906CD700C30E7D /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */; };
 		DB32CB4424906D9D00C30E7D /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */; };
-		DB32CB4624906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */; };
+		DB32CB4624906E6D00C30E7D /* AddAccountUseCaseTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4524906E6D00C30E7D /* AddAccountUseCaseTests+Extensions.swift */; };
 		DB3D288B24C7909100631421 /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D288A24C7909100631421 /* WeakVarProxy.swift */; };
 		DB3D289024C7A5D200631421 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D288F24C7A5D200631421 /* Environment.swift */; };
 		DB3D289424C7B10F00631421 /* TestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0654F24AC269B00C3E8F2 /* TestFactory.swift */; };
@@ -56,7 +57,7 @@
 		DB54F62624C75B8800954099 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB212C7324AD6A9900FCAEF1 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DB54F62924C75B8800954099 /* Validation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB15471A24C1262600E3A361 /* Validation.framework */; };
 		DB54F62A24C75B8800954099 /* Validation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB15471A24C1262600E3A361 /* Validation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DB54F63224C77B8000954099 /* RemoteAddAccountFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F63124C77B8000954099 /* RemoteAddAccountFactory.swift */; };
+		DB54F63224C77B8000954099 /* RemoteUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F63124C77B8000954099 /* RemoteUseCaseFactory.swift */; };
 		DB54F63524C77BF900954099 /* SignUpControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F63424C77BF900954099 /* SignUpControllerFactory.swift */; };
 		DB54F63724C77DEF00954099 /* SignUpControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F63624C77DEF00954099 /* SignUpControllerFactoryTests.swift */; };
 		DB54F63824C77EA100954099 /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0654A24AC250000C3E8F2 /* AddAccountSpy.swift */; };
@@ -76,7 +77,7 @@
 		DBA1536524A97FA100031972 /* LoadingViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1536424A97FA100031972 /* LoadingViewProtocol.swift */; };
 		DBA1536724A97FF200031972 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA1536624A97FF200031972 /* LoadingViewModel.swift */; };
 		DBA7E328246B9230002D67FE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7E327246B9230002D67FE /* Model.swift */; };
-		DBA7E32A246B934D002D67FE /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7E329246B934D002D67FE /* RemoteAddAccount.swift */; };
+		DBA7E32A246B934D002D67FE /* AddAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7E329246B934D002D67FE /* AddAccountUseCase.swift */; };
 		DBA7E32C246B93D8002D67FE /* HttpPostClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7E32B246B93D8002D67FE /* HttpPostClientProtocol.swift */; };
 		DBAB648E24A5799800450E71 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAB648524A5799800450E71 /* Presentation.framework */; };
 		DBAB649324A5799800450E71 /* SignUpPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB649224A5799800450E71 /* SignUpPresenterTests.swift */; };
@@ -105,7 +106,7 @@
 		DBD154BA246A33A3003A04AC /* AccountRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154B9246A33A3003A04AC /* AccountRequest.swift */; };
 		DBD154CC246A363A003A04AC /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; };
 		DBD154CD246A363A003A04AC /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DBD154D8246A3B7E003A04AC /* RemoteAddAccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154D7246A3B7E003A04AC /* RemoteAddAccountTests.swift */; };
+		DBD154D8246A3B7E003A04AC /* AddAccountUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD154D7246A3B7E003A04AC /* AddAccountUseCaseTests.swift */; };
 		DBD7B13B249EB62400C10C78 /* UrlProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7B13A249EB62400C10C78 /* UrlProtocolStub.swift */; };
 		DBD7B143249EC03700C10C78 /* AddAccountIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD7B142249EC03700C10C78 /* AddAccountIntegrationTests.swift */; };
 		DBD7B145249EC03700C10C78 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD154AC246A3151003A04AC /* Domain.framework */; };
@@ -373,11 +374,12 @@
 		DB2EC09D24BFEFAA0019000A /* UIControl+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Extensions.swift"; sourceTree = "<group>"; };
 		DB2FB92424CB1BB00097715B /* AuthenticationUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUseCaseProtocol.swift; sourceTree = "<group>"; };
 		DB2FB92624CB1CB10097715B /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		DB2FB92A24CB1DB90097715B /* RemoteAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationTests.swift; sourceTree = "<group>"; };
-		DB2FB92C24CB1F560097715B /* RemoteAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthentication.swift; sourceTree = "<group>"; };
+		DB2FB92A24CB1DB90097715B /* AuthenticationUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUseCaseTests.swift; sourceTree = "<group>"; };
+		DB2FB92C24CB1F560097715B /* AuthenticationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUseCase.swift; sourceTree = "<group>"; };
+		DB2FB92E24CC89CC0097715B /* AuthenticationUseCaseTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticationUseCaseTests+Extensions.swift"; sourceTree = "<group>"; };
 		DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
-		DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteAddAccountTests+Extensions.swift"; sourceTree = "<group>"; };
+		DB32CB4524906E6D00C30E7D /* AddAccountUseCaseTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddAccountUseCaseTests+Extensions.swift"; sourceTree = "<group>"; };
 		DB3D288A24C7909100631421 /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 		DB3D288D24C7A48300631421 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		DB3D288E24C7A53E00631421 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
@@ -394,7 +396,7 @@
 		DB54F60324C759A500954099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB54F60824C759A500954099 /* MainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB54F60E24C759A500954099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB54F63124C77B8000954099 /* RemoteAddAccountFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccountFactory.swift; sourceTree = "<group>"; };
+		DB54F63124C77B8000954099 /* RemoteUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUseCaseFactory.swift; sourceTree = "<group>"; };
 		DB54F63424C77BF900954099 /* SignUpControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpControllerFactory.swift; sourceTree = "<group>"; };
 		DB54F63624C77DEF00954099 /* SignUpControllerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpControllerFactoryTests.swift; sourceTree = "<group>"; };
 		DB86ECD424A63EF10067DDDA /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -411,7 +413,7 @@
 		DBA1536424A97FA100031972 /* LoadingViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewProtocol.swift; sourceTree = "<group>"; };
 		DBA1536624A97FF200031972 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 		DBA7E327246B9230002D67FE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		DBA7E329246B934D002D67FE /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
+		DBA7E329246B934D002D67FE /* AddAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountUseCase.swift; sourceTree = "<group>"; };
 		DBA7E32B246B93D8002D67FE /* HttpPostClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClientProtocol.swift; sourceTree = "<group>"; };
 		DBAB648524A5799800450E71 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBAB648824A5799800450E71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -438,7 +440,7 @@
 		DBD154C2246A35D4003A04AC /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD154C5246A35D4003A04AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD154D5246A3B7E003A04AC /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBD154D7246A3B7E003A04AC /* RemoteAddAccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccountTests.swift; sourceTree = "<group>"; };
+		DBD154D7246A3B7E003A04AC /* AddAccountUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountUseCaseTests.swift; sourceTree = "<group>"; };
 		DBD154D9246A3B7E003A04AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBD7B13A249EB62400C10C78 /* UrlProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolStub.swift; sourceTree = "<group>"; };
 		DBD7B140249EC03700C10C78 /* UseCasesIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseCasesIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -714,11 +716,12 @@
 		DB32CB4024906CC100C30E7D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */,
-				DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */,
-				DB32CB4524906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift */,
 				DB2A7DA9249421E900DB59E9 /* TestFactory.swift */,
 				DBA1535F24A850F300031972 /* AccountModelFactory.swift */,
+				DB32CB4324906D9D00C30E7D /* HttpClientSpy.swift */,
+				DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */,
+				DB32CB4524906E6D00C30E7D /* AddAccountUseCaseTests+Extensions.swift */,
+				DB2FB92E24CC89CC0097715B /* AuthenticationUseCaseTests+Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -828,7 +831,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9F1F7B24C91CEA0048D3D0 /* ApiUrlFactory.swift */,
-				DB54F63124C77B8000954099 /* RemoteAddAccountFactory.swift */,
+				DB54F63124C77B8000954099 /* RemoteUseCaseFactory.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -882,8 +885,8 @@
 		DBA7E32D246B94BD002D67FE /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				DBA7E329246B934D002D67FE /* RemoteAddAccount.swift */,
-				DB2FB92C24CB1F560097715B /* RemoteAuthentication.swift */,
+				DBA7E329246B934D002D67FE /* AddAccountUseCase.swift */,
+				DB2FB92C24CB1F560097715B /* AuthenticationUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -899,8 +902,8 @@
 		DBA7E32F246B94DB002D67FE /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				DBD154D7246A3B7E003A04AC /* RemoteAddAccountTests.swift */,
-				DB2FB92A24CB1DB90097715B /* RemoteAuthenticationTests.swift */,
+				DBD154D7246A3B7E003A04AC /* AddAccountUseCaseTests.swift */,
+				DB2FB92A24CB1DB90097715B /* AuthenticationUseCaseTests.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1902,7 +1905,7 @@
 			files = (
 				DB9F1F7F24C91DBC0048D3D0 /* AlamofireAdapterFactory.swift in Sources */,
 				DB9F1F8324C9D2240048D3D0 /* EmailValidatorAdapterFactory.swift in Sources */,
-				DB54F63224C77B8000954099 /* RemoteAddAccountFactory.swift in Sources */,
+				DB54F63224C77B8000954099 /* RemoteUseCaseFactory.swift in Sources */,
 				DB3D289724C7CB1D00631421 /* MainQueueDispatchDecorator.swift in Sources */,
 				DB3D289024C7A5D200631421 /* Environment.swift in Sources */,
 				DB9F1F7C24C91CEA0048D3D0 /* ApiUrlFactory.swift in Sources */,
@@ -1974,9 +1977,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB3FFFB2248F1BDC00641666 /* Data+Extensions.swift in Sources */,
-				DB2FB92D24CB1F560097715B /* RemoteAuthentication.swift in Sources */,
+				DB2FB92D24CB1F560097715B /* AuthenticationUseCase.swift in Sources */,
 				DBA7E32C246B93D8002D67FE /* HttpPostClientProtocol.swift in Sources */,
-				DBA7E32A246B934D002D67FE /* RemoteAddAccount.swift in Sources */,
+				DBA7E32A246B934D002D67FE /* AddAccountUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1985,12 +1988,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB2A7DAA249421E900DB59E9 /* TestFactory.swift in Sources */,
-				DB32CB4624906E6D00C30E7D /* RemoteAddAccountTests+Extensions.swift in Sources */,
+				DB32CB4624906E6D00C30E7D /* AddAccountUseCaseTests+Extensions.swift in Sources */,
 				DBA1536024A850F300031972 /* AccountModelFactory.swift in Sources */,
 				DB32CB4224906CD700C30E7D /* XCTestCase+Extensions.swift in Sources */,
 				DB32CB4424906D9D00C30E7D /* HttpClientSpy.swift in Sources */,
-				DB2FB92B24CB1DB90097715B /* RemoteAuthenticationTests.swift in Sources */,
-				DBD154D8246A3B7E003A04AC /* RemoteAddAccountTests.swift in Sources */,
+				DB2FB92B24CB1DB90097715B /* AuthenticationUseCaseTests.swift in Sources */,
+				DBD154D8246A3B7E003A04AC /* AddAccountUseCaseTests.swift in Sources */,
+				DB2FB92F24CC89CC0097715B /* AuthenticationUseCaseTests+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

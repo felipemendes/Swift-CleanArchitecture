@@ -10,6 +10,7 @@ import Foundation
 import Presentation
 
 class LoadingViewSpy: LoadingViewProtocol {
+    
     var emit: ((LoadingViewModel) -> Void)?
 
     func observer(completion: @escaping (LoadingViewModel) -> Void) {

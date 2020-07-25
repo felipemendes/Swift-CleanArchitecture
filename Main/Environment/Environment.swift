@@ -9,7 +9,6 @@
 import Foundation
 
 public final class Environment {
-
     public enum EnvironmentVariables: String {
         case baseUrl = "BASE_URL"
     }

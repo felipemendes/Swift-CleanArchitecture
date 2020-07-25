@@ -9,6 +9,7 @@
 import Foundation
 
 public struct AlertViewModel: Equatable {
+
     public var title: String
     public var message: String
 

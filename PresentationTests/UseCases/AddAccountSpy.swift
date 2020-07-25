@@ -10,6 +10,7 @@ import Domain
 import Foundation
 
 class AddAccountSpy: AddAccountUseCaseProtocol {
+
     var accountRequest: AccountRequest?
     var completion: ((AddAccountUseCaseProtocol.ServiceReturnType) -> Void)?
 

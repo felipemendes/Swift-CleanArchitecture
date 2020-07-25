@@ -14,6 +14,6 @@ import Foundation
 ///
 /// - Returns: An instantiated AddAccountUseCaseProtocol
 func makeAddAccount(httpClient: HttpPostClientProtocol) -> AddAccountUseCaseProtocol {
-    let remoteAddAccount = RemoteAddAccount(url: makeApiUrl(path: "signup"), httpClient: httpClient)
-    return MainQueueDispatchDecorator(remoteAddAccount)
+    let addAccountUseCase = AddAccountUseCase(url: makeApiUrl(path: "signup"), httpClient: httpClient)
+    return MainQueueDispatchDecorator(addAccountUseCase)
 }

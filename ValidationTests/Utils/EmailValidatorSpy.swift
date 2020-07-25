@@ -10,6 +10,7 @@ import Foundation
 import Validation
 
 class EmailValidatorSpy: EmailValidator {
+    
     var isValid = true
     var email: String?
 

@@ -10,6 +10,7 @@ import Domain
 import Foundation
 
 public final class MainQueueDispatchDecorator<T> {
+
     private let instance: T
 
     public init(_ instance: T) {

@@ -15,7 +15,7 @@ class AddAccountIntegrationTests: XCTestCase {
     func test_add_account() {
         let url = URL(string: "http://localhost:8888/api/signup")!
         let alamofireAdapter = AlamofireAdapter()
-        let sut = RemoteAddAccount(url: url, httpClient: alamofireAdapter)
+        let sut = AddAccountUseCase(url: url, httpClient: alamofireAdapter)
         let newAccount = AccountRequest(name: "Name",
                                         email: "\(UUID().uuidString)@mail.com",
             password: "123456",

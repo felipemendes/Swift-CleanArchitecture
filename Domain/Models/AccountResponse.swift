@@ -9,6 +9,7 @@
 import Foundation
 
 public struct AccountResponse: Model {
+
     public var accessToken: String
 
     public init(accessToken: String) {
