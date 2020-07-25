@@ -32,7 +32,10 @@ public final class RemoteAuthentication {
         httpClient.post(to: url, with: authentication.toData()) { result in
             switch result {
             case .success(let data):
-                guard let model: AccountResponse = data?.toModel() else { return }
+                guard let model: AccountResponse = data?.toModel() else {
+                    completion(.failure(.unexpected))
+                    return
+                }
                 completion(.success(model))
             case .failure(let error):
                 switch error {
