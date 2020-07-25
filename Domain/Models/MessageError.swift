@@ -17,4 +17,5 @@ public enum MessageError: Error, Equatable {
     case serverError
     case noConnectivity
     case emailInUse
+    case expiredSession
 }
