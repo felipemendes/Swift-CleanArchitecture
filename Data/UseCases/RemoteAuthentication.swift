@@ -29,7 +29,9 @@ public final class RemoteAuthentication {
 
     public func auth(authentication: Authentication,
                      completion: @escaping (AuthenticationUseCaseProtocol.ServiceReturnType) -> Void) {
-        httpClient.post(to: url, with: authentication.toData()) { result in
+        httpClient.post(to: url, with: authentication.toData()) { [weak self] result in
+            guard self != nil else { return }
+
             switch result {
             case .success(let data):
                 guard let model: AccountResponse = data?.toModel() else {
