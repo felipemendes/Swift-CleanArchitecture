@@ -64,6 +64,26 @@ class RemoteAuthenticationTests: XCTestCase {
         httpClientSpy.completeWith(error: .unauthorized)
         wait(for: [exp], timeout: 1)
     }
+
+    func test_auth_should_complete_with_account_if_client_completes_with_valid_data() {
+        let (sut, httpClientSpy) = makeSut()
+        let authentication = makeAuthentication()
+        let expectedAccount = makeAccountResponse()
+        let exp = expectation(description: "waiting")
+
+        sut.auth(authentication: authentication) { result in
+            switch result {
+            case .failure:
+                XCTFail("Error: Expected success but received \(result) instead")
+            case .success(let receivedAcccount):
+                XCTAssertEqual(receivedAcccount, expectedAccount)
+            }
+            exp.fulfill()
+        }
+
+        httpClientSpy.completeWith(data: expectedAccount.toData()!)
+        wait(for: [exp], timeout: 1)
+    }
 }
 
 extension RemoteAuthenticationTests {

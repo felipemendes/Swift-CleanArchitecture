@@ -31,8 +31,9 @@ public final class RemoteAuthentication {
                      completion: @escaping (AuthenticationUseCaseProtocol.ServiceReturnType) -> Void) {
         httpClient.post(to: url, with: authentication.toData()) { result in
             switch result {
-            case .success:
-                break
+            case .success(let data):
+                guard let model: AccountResponse = data?.toModel() else { return }
+                completion(.success(model))
             case .failure(let error):
                 switch error {
                 case .unauthorized:
