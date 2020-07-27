@@ -66,6 +66,7 @@
 		DB97625924CF5F2E00F307DA /* LoginPresenterTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB97625824CF5F2E00F307DA /* LoginPresenterTests+Extensions.swift */; };
 		DB97625C24CF5FDC00F307DA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB97625B24CF5FDC00F307DA /* LoginViewModel.swift */; };
 		DB97625E24CF604300F307DA /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB97625D24CF604300F307DA /* LoginPresenter.swift */; };
+		DB97626024CF627900F307DA /* AuthenticationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB97625F24CF627900F307DA /* AuthenticationSpy.swift */; };
 		DB9F1F7C24C91CEA0048D3D0 /* ApiUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F7B24C91CEA0048D3D0 /* ApiUrlFactory.swift */; };
 		DB9F1F7F24C91DBC0048D3D0 /* AlamofireAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F7E24C91DBC0048D3D0 /* AlamofireAdapterFactory.swift */; };
 		DB9F1F8324C9D2240048D3D0 /* EmailValidatorAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F8224C9D2240048D3D0 /* EmailValidatorAdapterFactory.swift */; };
@@ -408,6 +409,7 @@
 		DB97625824CF5F2E00F307DA /* LoginPresenterTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginPresenterTests+Extensions.swift"; sourceTree = "<group>"; };
 		DB97625B24CF5FDC00F307DA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DB97625D24CF604300F307DA /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		DB97625F24CF627900F307DA /* AuthenticationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSpy.swift; sourceTree = "<group>"; };
 		DB9F1F7B24C91CEA0048D3D0 /* ApiUrlFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUrlFactory.swift; sourceTree = "<group>"; };
 		DB9F1F7E24C91DBC0048D3D0 /* AlamofireAdapterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterFactory.swift; sourceTree = "<group>"; };
 		DB9F1F8224C9D2240048D3D0 /* EmailValidatorAdapterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapterFactory.swift; sourceTree = "<group>"; };
@@ -1046,6 +1048,7 @@
 		DBC0654924AC24F100C3E8F2 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				DB97625F24CF627900F307DA /* AuthenticationSpy.swift */,
 				DBC0654A24AC250000C3E8F2 /* AddAccountSpy.swift */,
 			);
 			path = UseCases;
@@ -1986,6 +1989,7 @@
 				DBC0655024AC269B00C3E8F2 /* TestFactory.swift in Sources */,
 				DBC0655224AC26E800C3E8F2 /* SignUpPresenterTests+Extensions.swift in Sources */,
 				DBA1536224A97ACD00031972 /* XCTestCase+Extensions.swift in Sources */,
+				DB97626024CF627900F307DA /* AuthenticationSpy.swift in Sources */,
 				DBAB649324A5799800450E71 /* SignUpPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

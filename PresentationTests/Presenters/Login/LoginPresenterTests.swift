@@ -35,4 +35,13 @@ class LoginPresenterTests: XCTestCase {
         sut.login(loginViewModel: makeLoginViewModel())
         wait(for: [exp], timeout: 1)
     }
+
+    func test_login_should_call_authentication_with_correct_data() {
+        let authenticationSpy = AuthenticationSpy()
+        let sut = makeSut(authenticationUseCase: authenticationSpy)
+
+        sut.login(loginViewModel: makeLoginViewModel())
+
+        XCTAssertEqual(authenticationSpy.authentication, makeAuthentication())
+    }
 }
