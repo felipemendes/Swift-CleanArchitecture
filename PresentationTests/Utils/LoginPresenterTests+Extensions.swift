@@ -11,10 +11,12 @@ import Foundation
 import Presentation
 
 extension LoginPresenterTests {
-    func makeSut(validation: ValidationSpy = ValidationSpy(),
+    func makeSut(alertView: AlertViewProtocol = AlertViewSpy(),
+                 validation: ValidationSpy = ValidationSpy(),
                  file: StaticString = #file,
                  line: UInt = #line) -> LoginPresenter {
-        let sut = LoginPresenter(validation: validation)
+        let sut = LoginPresenter(alertView: alertView,
+                                 validation: validation)
         checkMemoryLeak(for: sut, file: file, line: line)
         return sut
     }

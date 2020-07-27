@@ -114,5 +114,4 @@ class SignUpPresenterTests: XCTestCase {
         sut.signUp(signUpViewModel: makeSignUpViewModel(name: nil))
         wait(for: [exp], timeout: 1)
     }
-
 }

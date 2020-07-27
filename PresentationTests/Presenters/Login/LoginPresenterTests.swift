@@ -19,4 +19,20 @@ class LoginPresenterTests: XCTestCase {
 
         XCTAssertTrue(NSDictionary(dictionary: validationSpy.data!).isEqual(to: viewModel.toJson()!))
     }
+
+    func test_login_should_show_error_message_if_validation_fails() {
+        let alertViewSpy = AlertViewSpy()
+        let validationSpy = ValidationSpy()
+        let sut = makeSut(alertView: alertViewSpy, validation: validationSpy)
+        let exp = expectation(description: "waiting")
+
+        alertViewSpy.observer { viewModel in
+            XCTAssertEqual(viewModel, AlertViewModel(title: "Falha na validação", message: "Erro"))
+            exp.fulfill()
+        }
+
+        validationSpy.simulateError()
+        sut.login(loginViewModel: makeLoginViewModel())
+        wait(for: [exp], timeout: 1)
+    }
 }

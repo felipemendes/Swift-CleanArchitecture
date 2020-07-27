@@ -13,17 +13,22 @@ public final class LoginPresenter {
 
     // MARK: - PRIVATE PROPERTIES
 
+    private let alertView: AlertViewProtocol
     private let validation: Validation
 
     // MARK: - INITIALIZER
 
-    public init(validation: Validation) {
+    public init(alertView: AlertViewProtocol,
+                validation: Validation) {
+        self.alertView = alertView
         self.validation = validation
     }
 
     // MARK: - PUBLIC API
 
     public func login(loginViewModel: LoginViewModel) {
-        _ = validation.validate(data: loginViewModel.toJson())
+        if let message = validation.validate(data: loginViewModel.toJson()) {
+            alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: message))
+        }
     }
 }
