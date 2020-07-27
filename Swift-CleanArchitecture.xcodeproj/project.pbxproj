@@ -62,6 +62,10 @@
 		DB54F63724C77DEF00954099 /* SignUpControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F63624C77DEF00954099 /* SignUpControllerFactoryTests.swift */; };
 		DB54F63824C77EA100954099 /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0654A24AC250000C3E8F2 /* AddAccountSpy.swift */; };
 		DB54F63924C77EEE00954099 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */; };
+		DB97625724CF5ED900F307DA /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB97625624CF5ED900F307DA /* LoginPresenterTests.swift */; };
+		DB97625924CF5F2E00F307DA /* LoginPresenterTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB97625824CF5F2E00F307DA /* LoginPresenterTests+Extensions.swift */; };
+		DB97625C24CF5FDC00F307DA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB97625B24CF5FDC00F307DA /* LoginViewModel.swift */; };
+		DB97625E24CF604300F307DA /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB97625D24CF604300F307DA /* LoginPresenter.swift */; };
 		DB9F1F7C24C91CEA0048D3D0 /* ApiUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F7B24C91CEA0048D3D0 /* ApiUrlFactory.swift */; };
 		DB9F1F7F24C91DBC0048D3D0 /* AlamofireAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F7E24C91DBC0048D3D0 /* AlamofireAdapterFactory.swift */; };
 		DB9F1F8324C9D2240048D3D0 /* EmailValidatorAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F1F8224C9D2240048D3D0 /* EmailValidatorAdapterFactory.swift */; };
@@ -400,6 +404,10 @@
 		DB54F63424C77BF900954099 /* SignUpControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpControllerFactory.swift; sourceTree = "<group>"; };
 		DB54F63624C77DEF00954099 /* SignUpControllerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpControllerFactoryTests.swift; sourceTree = "<group>"; };
 		DB86ECD424A63EF10067DDDA /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		DB97625624CF5ED900F307DA /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		DB97625824CF5F2E00F307DA /* LoginPresenterTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginPresenterTests+Extensions.swift"; sourceTree = "<group>"; };
+		DB97625B24CF5FDC00F307DA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		DB97625D24CF604300F307DA /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		DB9F1F7B24C91CEA0048D3D0 /* ApiUrlFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUrlFactory.swift; sourceTree = "<group>"; };
 		DB9F1F7E24C91DBC0048D3D0 /* AlamofireAdapterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterFactory.swift; sourceTree = "<group>"; };
 		DB9F1F8224C9D2240048D3D0 /* EmailValidatorAdapterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapterFactory.swift; sourceTree = "<group>"; };
@@ -827,6 +835,23 @@
 			path = Validators;
 			sourceTree = "<group>";
 		};
+		DB97625524CF5EA400F307DA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DB97625624CF5ED900F307DA /* LoginPresenterTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DB97625A24CF5FCB00F307DA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DB97625D24CF604300F307DA /* LoginPresenter.swift */,
+				DB97625B24CF5FDC00F307DA /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		DB9F1F7D24C91D3E0048D3D0 /* Http */ = {
 			isa = PBXGroup;
 			children = (
@@ -935,6 +960,7 @@
 		DBAB64A124A6333700450E71 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				DB97625524CF5EA400F307DA /* Login */,
 				DBAB64AF24A636E800450E71 /* SignUp */,
 			);
 			path = Presenters;
@@ -970,6 +996,7 @@
 		DBAB64AE24A6362400450E71 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				DB97625A24CF5FCB00F307DA /* Login */,
 				DBAB64A224A6333E00450E71 /* SignUp */,
 			);
 			path = Presenters;
@@ -1027,6 +1054,7 @@
 		DBC0654E24AC268900C3E8F2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DB97625824CF5F2E00F307DA /* LoginPresenterTests+Extensions.swift */,
 				DBC0655124AC26E800C3E8F2 /* SignUpPresenterTests+Extensions.swift */,
 				DBC0654F24AC269B00C3E8F2 /* TestFactory.swift */,
 			);
@@ -1935,7 +1963,9 @@
 				DBAB64A824A633C000450E71 /* SignUpViewModel.swift in Sources */,
 				DBAB64A524A6338E00450E71 /* SignUpPresenter.swift in Sources */,
 				DBB00A0124C88A440030C70A /* Validation.swift in Sources */,
+				DB97625E24CF604300F307DA /* LoginPresenter.swift in Sources */,
 				DBA1536724A97FF200031972 /* LoadingViewModel.swift in Sources */,
+				DB97625C24CF5FDC00F307DA /* LoginViewModel.swift in Sources */,
 				DBA1536524A97FA100031972 /* LoadingViewProtocol.swift in Sources */,
 				DBAB64AB24A633E600450E71 /* AlertViewProtocol.swift in Sources */,
 				DBAB64AD24A633F200450E71 /* AlertViewModel.swift in Sources */,
@@ -1950,7 +1980,9 @@
 				DBC0654D24AC255200C3E8F2 /* LoadingViewSpy.swift in Sources */,
 				DBC0654B24AC250000C3E8F2 /* AddAccountSpy.swift in Sources */,
 				DBC0654524AC249500C3E8F2 /* AlertViewSpy.swift in Sources */,
+				DB97625724CF5ED900F307DA /* LoginPresenterTests.swift in Sources */,
 				DBA1536124A8512400031972 /* AccountModelFactory.swift in Sources */,
+				DB97625924CF5F2E00F307DA /* LoginPresenterTests+Extensions.swift in Sources */,
 				DBC0655024AC269B00C3E8F2 /* TestFactory.swift in Sources */,
 				DBC0655224AC26E800C3E8F2 /* SignUpPresenterTests+Extensions.swift in Sources */,
 				DBA1536224A97ACD00031972 /* XCTestCase+Extensions.swift in Sources */,
