@@ -14,18 +14,18 @@ public final class SignUpPresenter {
     // MARK: - PRIVATE PROPERTIES
 
     private let alertView: AlertViewProtocol
-    private let addAccount: AddAccountUseCaseProtocol
+    private let addAccountUseCase: AddAccountUseCaseProtocol
     private let loadingView: LoadingViewProtocol
     private let validation: ValidationProtocol
 
     // MARK: - INITIALIZER
 
     public init(alertView: AlertViewProtocol,
-                addAccount: AddAccountUseCaseProtocol,
+                addAccountUseCase: AddAccountUseCaseProtocol,
                 loadingView: LoadingViewProtocol,
                 validation: ValidationProtocol) {
         self.alertView = alertView
-        self.addAccount = addAccount
+        self.addAccountUseCase = addAccountUseCase
         self.loadingView = loadingView
         self.validation = validation
     }
@@ -39,7 +39,7 @@ public final class SignUpPresenter {
             guard let accountRequest = signUpViewModel.toAccountRequest() else { return }
 
             loadingView.display(loadingViewModel: LoadingViewModel(isLoading: true))
-            addAccount.add(accountRequest: accountRequest) { [weak self] result in
+            addAccountUseCase.add(accountRequest: accountRequest) { [weak self] result in
                 guard let self = self else { return }
                 self.loadingView.display(loadingViewModel: LoadingViewModel(isLoading: false))
 

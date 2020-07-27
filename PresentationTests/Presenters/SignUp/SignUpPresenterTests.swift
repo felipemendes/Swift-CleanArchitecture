@@ -12,7 +12,7 @@ import Presentation
 class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_call_addAccount_with_correct_data() {
         let addAccountSpy = AddAccountSpy()
-        let sut = makeSut(addAccount: addAccountSpy)
+        let sut = makeSut(addAccountUseCase: addAccountSpy)
 
         sut.signUp(signUpViewModel: makeSignUpViewModel())
 
@@ -22,7 +22,7 @@ class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_show_generic_error_message_if_addAccount_fails() {
         let alertViewSpy = AlertViewSpy()
         let addAccountSpy = AddAccountSpy()
-        let sut = makeSut(alertView: alertViewSpy, addAccount: addAccountSpy)
+        let sut = makeSut(alertView: alertViewSpy, addAccountUseCase: addAccountSpy)
         let exp = expectation(description: "waiting")
 
         alertViewSpy.observer { viewModel in
@@ -38,7 +38,7 @@ class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_show_email_in_use_error_message_if_addAccount_returns_email_in_use_error() {
         let alertViewSpy = AlertViewSpy()
         let addAccountSpy = AddAccountSpy()
-        let sut = makeSut(alertView: alertViewSpy, addAccount: addAccountSpy)
+        let sut = makeSut(alertView: alertViewSpy, addAccountUseCase: addAccountSpy)
         let exp = expectation(description: "waiting")
 
         alertViewSpy.observer { viewModel in
@@ -54,7 +54,7 @@ class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_show_success_message_if_addAccount_succedds() {
         let alertViewSpy = AlertViewSpy()
         let addAccountSpy = AddAccountSpy()
-        let sut = makeSut(alertView: alertViewSpy, addAccount: addAccountSpy)
+        let sut = makeSut(alertView: alertViewSpy, addAccountUseCase: addAccountSpy)
         let exp = expectation(description: "waiting")
 
         alertViewSpy.observer { viewModel in
@@ -70,7 +70,7 @@ class SignUpPresenterTests: XCTestCase {
     func test_signUp_should_show_loading_before_and_after_addAccount_been_call() {
         let loadingViewSpy = LoadingViewSpy()
         let addAccountSpy = AddAccountSpy()
-        let sut = makeSut(addAccount: addAccountSpy, loadingView: loadingViewSpy)
+        let sut = makeSut(addAccountUseCase: addAccountSpy, loadingView: loadingViewSpy)
 
         let expBefore = expectation(description: "waiting LoadingView before")
         loadingViewSpy.observer { loadingViewModel in
