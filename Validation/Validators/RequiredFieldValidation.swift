@@ -9,7 +9,7 @@
 import Foundation
 import Presentation
 
-public final class RequiredFieldValidation: Validation, Equatable {
+public final class RequiredFieldValidation: ValidationProtocol, Equatable {
 
     private let fieldName: String
     private let fieldLabel: String

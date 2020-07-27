@@ -16,14 +16,14 @@ public final class SignUpPresenter {
     private let alertView: AlertViewProtocol
     private let addAccount: AddAccountUseCaseProtocol
     private let loadingView: LoadingViewProtocol
-    private let validation: Validation
+    private let validation: ValidationProtocol
 
     // MARK: - INITIALIZER
 
     public init(alertView: AlertViewProtocol,
                 addAccount: AddAccountUseCaseProtocol,
                 loadingView: LoadingViewProtocol,
-                validation: Validation) {
+                validation: ValidationProtocol) {
         self.alertView = alertView
         self.addAccount = addAccount
         self.loadingView = loadingView

@@ -9,11 +9,11 @@
 import Foundation
 import Presentation
 
-public final class ValidationComposite: Validation {
+public final class ValidationComposite: ValidationProtocol {
 
-    private let validations: [Validation]
+    private let validations: [ValidationProtocol]
 
-    public init(validations: [Validation]) {
+    public init(validations: [ValidationProtocol]) {
         self.validations = validations
     }
 

@@ -9,7 +9,7 @@
 import Foundation
 import Presentation
 
-public final class EmailValidation: Validation, Equatable {
+public final class EmailValidation: ValidationProtocol, Equatable {
 
     private let fieldName: String
     private let fieldLabel: String

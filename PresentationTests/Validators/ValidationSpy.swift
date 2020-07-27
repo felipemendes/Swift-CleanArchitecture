@@ -9,7 +9,7 @@
 import Foundation
 import Presentation
 
-class ValidationSpy: Validation {
+class ValidationSpy: ValidationProtocol {
 
     var data: [String: Any]?
     var errorMessage: String?

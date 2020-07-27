@@ -10,7 +10,7 @@ import Presentation
 import Validation
 
 extension RequiredFieldsValidationTests {
-    func makeSut(fieldName: String, fieldLabel: String, file: StaticString = #file, line: UInt = #line) -> Validation {
+    func makeSut(fieldName: String, fieldLabel: String, file: StaticString = #file, line: UInt = #line) -> ValidationProtocol {
         let sut = RequiredFieldValidation(fieldName: fieldName, fieldLabel: fieldLabel)
         checkMemoryLeak(for: sut, file: file, line: line)
         return sut

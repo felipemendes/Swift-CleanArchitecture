@@ -11,7 +11,7 @@ import Presentation
 import Validation
 
 extension ValidationCompositeTests {
-    func makeSut(validations: [ValidationSpy], file: StaticString = #file, line: UInt = #line) -> Validation {
+    func makeSut(validations: [ValidationSpy], file: StaticString = #file, line: UInt = #line) -> ValidationProtocol {
         let sut = ValidationComposite(validations: validations)
         checkMemoryLeak(for: sut, file: file, line: line)
         return sut

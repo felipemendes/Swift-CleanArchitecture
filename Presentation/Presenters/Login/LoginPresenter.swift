@@ -14,12 +14,12 @@ public final class LoginPresenter {
     // MARK: - PRIVATE PROPERTIES
 
     private let alertView: AlertViewProtocol
-    private let validation: Validation
+    private let validation: ValidationProtocol
 
     // MARK: - INITIALIZER
 
     public init(alertView: AlertViewProtocol,
-                validation: Validation) {
+                validation: ValidationProtocol) {
         self.alertView = alertView
         self.validation = validation
     }

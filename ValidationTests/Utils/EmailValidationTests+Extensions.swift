@@ -11,7 +11,7 @@ import Presentation
 import Validation
 
 extension EmailValidationTests {
-    func makeSut(fieldName: String, fieldLabel: String, emailValidator: EmailValidatorSpy, file: StaticString = #file, line: UInt = #line) -> Validation {
+    func makeSut(fieldName: String, fieldLabel: String, emailValidator: EmailValidatorSpy, file: StaticString = #file, line: UInt = #line) -> ValidationProtocol {
         let sut = EmailValidation(fieldName: fieldName, fieldLabel: fieldLabel, emailValidator: emailValidator)
         checkMemoryLeak(for: sut, file: file, line: line)
         return sut

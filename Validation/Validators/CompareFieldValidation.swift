@@ -9,7 +9,7 @@
 import Foundation
 import Presentation
 
-public final class CompareFieldValidation: Validation, Equatable {
+public final class CompareFieldValidation: ValidationProtocol, Equatable {
 
     private let fieldName: String
     private let fieldNameToCompare: String

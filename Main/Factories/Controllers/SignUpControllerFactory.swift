@@ -31,8 +31,8 @@ public func makeSignUpViewController(addAccount: AddAccountUseCaseProtocol) -> S
 
 // MARK: - PUBLIC API
 
-public func makeSignUpValidations() -> [Validation] {
-    var fields = [Validation]()
+public func makeSignUpValidations() -> [ValidationProtocol] {
+    var fields = [ValidationProtocol]()
     fields.append(RequiredFieldValidation(fieldName: "name",
                                           fieldLabel: "Nome"))
     fields.append(RequiredFieldValidation(fieldName: "email",

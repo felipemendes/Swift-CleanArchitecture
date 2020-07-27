@@ -10,7 +10,7 @@ import Presentation
 import Validation
 
 extension CompareFieldsValidationTests {
-    func makeSut(fieldName: String, fieldNameToCompare: String, fieldLabel: String, file: StaticString = #file, line: UInt = #line) -> Validation {
+    func makeSut(fieldName: String, fieldNameToCompare: String, fieldLabel: String, file: StaticString = #file, line: UInt = #line) -> ValidationProtocol {
         let sut = CompareFieldValidation(fieldName: fieldName, fieldNameToCompare: fieldNameToCompare, fieldLabel: fieldLabel)
         checkMemoryLeak(for: sut, file: file, line: line)
         return sut

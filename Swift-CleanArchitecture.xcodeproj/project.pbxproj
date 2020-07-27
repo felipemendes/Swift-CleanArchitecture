@@ -91,7 +91,7 @@
 		DBAB64A824A633C000450E71 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB64A724A633C000450E71 /* SignUpViewModel.swift */; };
 		DBAB64AB24A633E600450E71 /* AlertViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB64AA24A633E600450E71 /* AlertViewProtocol.swift */; };
 		DBAB64AD24A633F200450E71 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB64AC24A633F200450E71 /* AlertViewModel.swift */; };
-		DBB00A0124C88A440030C70A /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB00A0024C88A440030C70A /* Validation.swift */; };
+		DBB00A0124C88A440030C70A /* ValidationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB00A0024C88A440030C70A /* ValidationProtocol.swift */; };
 		DBB00A0224C88A7C0030C70A /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB86ECD424A63EF10067DDDA /* EmailValidator.swift */; };
 		DBB00A0324C88AA40030C70A /* EmailValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0654724AC24C700C3E8F2 /* EmailValidatorSpy.swift */; };
 		DBB00A0624C88AE70030C70A /* ValidationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB00A0524C88AE70030C70A /* ValidationSpy.swift */; };
@@ -432,7 +432,7 @@
 		DBAB64A724A633C000450E71 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		DBAB64AA24A633E600450E71 /* AlertViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewProtocol.swift; sourceTree = "<group>"; };
 		DBAB64AC24A633F200450E71 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
-		DBB00A0024C88A440030C70A /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		DBB00A0024C88A440030C70A /* ValidationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationProtocol.swift; sourceTree = "<group>"; };
 		DBB00A0524C88AE70030C70A /* ValidationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSpy.swift; sourceTree = "<group>"; };
 		DBC0654424AC249500C3E8F2 /* AlertViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewSpy.swift; sourceTree = "<group>"; };
 		DBC0654724AC24C700C3E8F2 /* EmailValidatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorSpy.swift; sourceTree = "<group>"; };
@@ -830,7 +830,7 @@
 		DB86ECD324A63EE10067DDDA /* Validators */ = {
 			isa = PBXGroup;
 			children = (
-				DBB00A0024C88A440030C70A /* Validation.swift */,
+				DBB00A0024C88A440030C70A /* ValidationProtocol.swift */,
 			);
 			path = Validators;
 			sourceTree = "<group>";
@@ -1962,7 +1962,7 @@
 			files = (
 				DBAB64A824A633C000450E71 /* SignUpViewModel.swift in Sources */,
 				DBAB64A524A6338E00450E71 /* SignUpPresenter.swift in Sources */,
-				DBB00A0124C88A440030C70A /* Validation.swift in Sources */,
+				DBB00A0124C88A440030C70A /* ValidationProtocol.swift in Sources */,
 				DB97625E24CF604300F307DA /* LoginPresenter.swift in Sources */,
 				DBA1536724A97FF200031972 /* LoadingViewModel.swift in Sources */,
 				DB97625C24CF5FDC00F307DA /* LoginViewModel.swift in Sources */,

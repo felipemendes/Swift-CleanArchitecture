@@ -1,5 +1,5 @@
 //
-//  Validation.swift
+//  ValidationProtocol.swift
 //  Presentation
 //
 //  Created by Felipe Ribeiro Mendes on 22/07/20.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol Validation {
+public protocol ValidationProtocol {
     func validate(data: [String: Any]?) -> String?
 }
