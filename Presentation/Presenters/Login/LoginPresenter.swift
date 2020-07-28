@@ -40,7 +40,8 @@ public final class LoginPresenter {
 
                 switch result {
                 case .success:
-                    break
+                    self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Sucesso",
+                                                                              message: "Login realizado com sucesso."))
                 case .failure(let error):
                     var errorMessage = ""
                     switch error {
