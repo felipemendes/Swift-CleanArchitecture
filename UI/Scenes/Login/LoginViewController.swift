@@ -33,6 +33,10 @@ public final class LoginViewController: UIViewController, Storyboarded {
         }
     }
 
+    // MARK: - PUBLIC API
+
+    public var login: ((LoginViewModel) -> Void)?
+
     // MARK: - LIFE CYCLE
 
     public override func viewDidLoad() {
@@ -45,6 +49,7 @@ public final class LoginViewController: UIViewController, Storyboarded {
 
     private func setupView() {
         title = "4Dev"
+        loginButton.addTarget(self, action: #selector(loginTap), for: .touchUpInside)
     }
 
     private func updatePageState(to state: PageState) {
@@ -60,6 +65,14 @@ public final class LoginViewController: UIViewController, Storyboarded {
         default:
             break
         }
+    }
+
+    // MARK: SELECTORS
+
+    @objc private func loginTap() {
+        let loginViewModel = LoginViewModel(email: emailTextField.text,
+                                            password: passwordTextField.text)
+        login?(loginViewModel)
     }
 }
 

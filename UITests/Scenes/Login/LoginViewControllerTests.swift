@@ -22,4 +22,15 @@ class LoginViewControllerTests: XCTestCase {
     func test_sut_conforms_alert_view_protocol() {
         XCTAssertNotNil(makeSut() as AlertViewProtocol)
     }
+
+    func test_sut_loginButton_calls_login_on_tap() {
+        var loginViewModel: LoginViewModel?
+        let sut = makeSut(loginSpy: { loginViewModel = $0 })
+        let email = sut.emailTextField.text
+        let password = sut.passwordTextField.text
+
+        sut.loginButton?.simulateTap()
+
+        XCTAssertEqual(loginViewModel, LoginViewModel(email: email, password: password))
+    }
 }

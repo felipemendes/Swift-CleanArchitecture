@@ -11,9 +11,11 @@ import Presentation
 @testable import UI
 
 extension LoginViewControllerTests {
-    func makeSut() -> LoginViewController {
+    func makeSut(loginSpy: ((LoginViewModel) -> Void)? = nil) -> LoginViewController {
         let sut = LoginViewController.instantiate()
+        sut.login = loginSpy
         sut.loadViewIfNeeded()
+        checkMemoryLeak(for: sut)
         return sut
     }
 }

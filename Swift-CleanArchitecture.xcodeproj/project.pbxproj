@@ -134,6 +134,7 @@
 		DBEFCDC924C8C49C00EF4980 /* ValidationComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEFCDC824C8C49C00EF4980 /* ValidationComposite.swift */; };
 		DBEFCDCC24C8C54200EF4980 /* ValidationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEFCDCB24C8C54200EF4980 /* ValidationSpy.swift */; };
 		DBEFCDCD24C8D1B000EF4980 /* EmailValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0654724AC24C700C3E8F2 /* EmailValidatorSpy.swift */; };
+		DBF51DB924D0B11F00CEABF5 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB32CB4124906CD700C30E7D /* XCTestCase+Extensions.swift */; };
 		DBFC085224708F6000E11FF2 /* MessageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFC085124708F6000E11FF2 /* MessageError.swift */; };
 		DBFF0E51249564570055D207 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DBFF0E50249564570055D207 /* Alamofire */; };
 		DBFF0E542495709C0055D207 /* AlamofireAdapterTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFF0E532495709C0055D207 /* AlamofireAdapterTests+Extensions.swift */; };
@@ -1935,6 +1936,7 @@
 				DB212C9724AD738600FCAEF1 /* SignUpViewControllerTests.swift in Sources */,
 				DB15471424C124BD00E3A361 /* SignUpViewControllerTests+Extensions.swift in Sources */,
 				DB2EC09E24BFEFAA0019000A /* UIControl+Extensions.swift in Sources */,
+				DBF51DB924D0B11F00CEABF5 /* XCTestCase+Extensions.swift in Sources */,
 				DB43A76424D0AB2D0050774E /* LoginViewControllerTests+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
