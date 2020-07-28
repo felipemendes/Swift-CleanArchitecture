@@ -15,15 +15,18 @@ public final class LoginPresenter {
 
     private let alertView: AlertViewProtocol
     private let authenticationUseCase: AuthenticationUseCaseProtocol
+    private let loadingView: LoadingViewProtocol
     private let validation: ValidationProtocol
 
     // MARK: - INITIALIZER
 
     public init(alertView: AlertViewProtocol,
                 authenticationUseCase: AuthenticationUseCaseProtocol,
+                loadingView: LoadingViewProtocol,
                 validation: ValidationProtocol) {
         self.alertView = alertView
         self.authenticationUseCase = authenticationUseCase
+        self.loadingView = loadingView
         self.validation = validation
     }
 
@@ -35,8 +38,10 @@ public final class LoginPresenter {
         } else {
             guard let authentication = loginViewModel.toAuthentication() else { return }
 
+            loadingView.display(loadingViewModel: LoadingViewModel(isLoading: true))
             authenticationUseCase.auth(authentication: authentication) { [weak self] result in
                 guard let self = self else { return }
+                self.loadingView.display(loadingViewModel: LoadingViewModel(isLoading: false))
 
                 switch result {
                 case .success:
