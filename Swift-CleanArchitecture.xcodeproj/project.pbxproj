@@ -139,6 +139,9 @@
 		DBF51DBD24D0BA7C00CEABF5 /* LoginControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF51DBC24D0BA7C00CEABF5 /* LoginControllerFactory.swift */; };
 		DBF51DBE24D0BB2C00CEABF5 /* AuthenticationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB97625F24CF627900F307DA /* AuthenticationSpy.swift */; };
 		DBF51DC124D0CDC700CEABF5 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF51DC024D0CDC700CEABF5 /* Welcome.storyboard */; };
+		DBF51DC424D0D24200CEABF5 /* WelcomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF51DC324D0D24200CEABF5 /* WelcomeViewControllerTests.swift */; };
+		DBF51DC624D0D26100CEABF5 /* WelcomeViewControllerTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF51DC524D0D26100CEABF5 /* WelcomeViewControllerTests+Extensions.swift */; };
+		DBF51DC824D0D3B700CEABF5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF51DC724D0D3B700CEABF5 /* WelcomeViewController.swift */; };
 		DBFC085224708F6000E11FF2 /* MessageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFC085124708F6000E11FF2 /* MessageError.swift */; };
 		DBFF0E51249564570055D207 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DBFF0E50249564570055D207 /* Alamofire */; };
 		DBFF0E542495709C0055D207 /* AlamofireAdapterTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFF0E532495709C0055D207 /* AlamofireAdapterTests+Extensions.swift */; };
@@ -485,6 +488,9 @@
 		DBF51DBA24D0B45C00CEABF5 /* LoginViewControllerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerFactoryTests.swift; sourceTree = "<group>"; };
 		DBF51DBC24D0BA7C00CEABF5 /* LoginControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginControllerFactory.swift; sourceTree = "<group>"; };
 		DBF51DC024D0CDC700CEABF5 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Welcome.storyboard; path = UI/Scenes/Welcome/Welcome.storyboard; sourceTree = SOURCE_ROOT; };
+		DBF51DC324D0D24200CEABF5 /* WelcomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewControllerTests.swift; sourceTree = "<group>"; };
+		DBF51DC524D0D26100CEABF5 /* WelcomeViewControllerTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeViewControllerTests+Extensions.swift"; sourceTree = "<group>"; };
+		DBF51DC724D0D3B700CEABF5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		DBFC085124708F6000E11FF2 /* MessageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageError.swift; sourceTree = "<group>"; };
 		DBFF0E532495709C0055D207 /* AlamofireAdapterTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlamofireAdapterTests+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -727,6 +733,7 @@
 		DB2EC09B24BFEEF40019000A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DBF51DC224D0D22D00CEABF5 /* Welcome */,
 				DB43A76024D0AAF60050774E /* Login */,
 				DB2EC09924BFEE930019000A /* SignUp */,
 			);
@@ -736,6 +743,7 @@
 		DB2EC09C24BFEF520019000A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DBF51DC524D0D26100CEABF5 /* WelcomeViewControllerTests+Extensions.swift */,
 				DB43A76324D0AB2D0050774E /* LoginViewControllerTests+Extensions.swift */,
 				DB15471324C124BD00E3A361 /* SignUpViewControllerTests+Extensions.swift */,
 				DB2EC09D24BFEFAA0019000A /* UIControl+Extensions.swift */,
@@ -1300,7 +1308,16 @@
 		DBF51DBF24D0CDAE00CEABF5 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				DBF51DC724D0D3B700CEABF5 /* WelcomeViewController.swift */,
 				DBF51DC024D0CDC700CEABF5 /* Welcome.storyboard */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		DBF51DC224D0D22D00CEABF5 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				DBF51DC324D0D24200CEABF5 /* WelcomeViewControllerTests.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -1936,6 +1953,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB43A76624D0AB8D0050774E /* LoginViewController.swift in Sources */,
+				DBF51DC824D0D3B700CEABF5 /* WelcomeViewController.swift in Sources */,
 				DB15470F24C11F9300E3A361 /* UIViewController+Extensions.swift in Sources */,
 				DB9F1F9124C9DD390048D3D0 /* NavigationController.swift in Sources */,
 				DB9F1F8D24C9DB980048D3D0 /* RoundedTextField.swift in Sources */,
@@ -1957,6 +1975,8 @@
 				DB2EC09E24BFEFAA0019000A /* UIControl+Extensions.swift in Sources */,
 				DBF51DB924D0B11F00CEABF5 /* XCTestCase+Extensions.swift in Sources */,
 				DB43A76424D0AB2D0050774E /* LoginViewControllerTests+Extensions.swift in Sources */,
+				DBF51DC424D0D24200CEABF5 /* WelcomeViewControllerTests.swift in Sources */,
+				DBF51DC624D0D26100CEABF5 /* WelcomeViewControllerTests+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
