@@ -41,9 +41,16 @@ public final class LoginPresenter {
                 switch result {
                 case .success:
                     break
-                case .failure:
+                case .failure(let error):
+                    var errorMessage = ""
+                    switch error {
+                    case .expiredSession:
+                        errorMessage = "E-mail e/ou senha inválido(s)."
+                    default:
+                        errorMessage = "Algo inesperado aconteceu."
+                    }
                     self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Erro",
-                                                                              message: "Algo inesperado aconteceu."))
+                                                                              message: errorMessage))
                 }
             }
         }
