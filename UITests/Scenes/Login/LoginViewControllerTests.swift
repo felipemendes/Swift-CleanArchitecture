@@ -18,4 +18,8 @@ class LoginViewControllerTests: XCTestCase {
     func test_sut_conforms_loading_view_protocol() {
         XCTAssertNotNil(makeSut() as LoadingViewProtocol)
     }
+
+    func test_sut_conforms_alert_view_protocol() {
+        XCTAssertNotNil(makeSut() as AlertViewProtocol)
+    }
 }
