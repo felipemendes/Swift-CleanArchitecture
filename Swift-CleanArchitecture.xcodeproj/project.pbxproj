@@ -41,6 +41,7 @@
 		DB3D289424C7B10F00631421 /* TestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC0654F24AC269B00C3E8F2 /* TestFactory.swift */; };
 		DB3D289724C7CB1D00631421 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D289624C7CB1D00631421 /* MainQueueDispatchDecorator.swift */; };
 		DB3FFFB2248F1BDC00641666 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FFFB1248F1BDC00641666 /* Data+Extensions.swift */; };
+		DB43A75F24D0AA6F0050774E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB43A75E24D0AA6F0050774E /* Login.storyboard */; };
 		DB54F5F624C759A100954099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F5F524C759A100954099 /* AppDelegate.swift */; };
 		DB54F5F824C759A100954099 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54F5F724C759A100954099 /* SceneDelegate.swift */; };
 		DB54F5FF24C759A500954099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB54F5FE24C759A500954099 /* Assets.xcassets */; };
@@ -391,6 +392,7 @@
 		DB3D288F24C7A5D200631421 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		DB3D289624C7CB1D00631421 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		DB3FFFB1248F1BDC00641666 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		DB43A75E24D0AA6F0050774E /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = UI/Scenes/Login/Login.storyboard; sourceTree = SOURCE_ROOT; };
 		DB44FC6124C12D14007219CC /* EmailValidatorAdapter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmailValidatorAdapter+Extensions.swift"; sourceTree = "<group>"; };
 		DB44FC6324C12DB1007219CC /* EmailValidatorAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapter.swift; sourceTree = "<group>"; };
 		DB54F5F324C759A100954099 /* 4Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 4Dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -701,6 +703,7 @@
 		DB2EC09A24BFEEEA0019000A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DB43A75D24D0AA5D0050774E /* Login */,
 				DB2EC09824BFEE870019000A /* SignUp */,
 			);
 			path = Scenes;
@@ -795,6 +798,14 @@
 				DB3FFFB1248F1BDC00641666 /* Data+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DB43A75D24D0AA5D0050774E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DB43A75E24D0AA6F0050774E /* Login.storyboard */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		DB54F5F424C759A100954099 /* Main */ = {
@@ -1710,6 +1721,7 @@
 			files = (
 				DB212C9324AD706700FCAEF1 /* SignUp.storyboard in Resources */,
 				DB9F1F8624C9D4D50048D3D0 /* Images.xcassets in Resources */,
+				DB43A75F24D0AA6F0050774E /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
