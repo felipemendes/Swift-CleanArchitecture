@@ -12,6 +12,19 @@ import Validation
 import XCTest
 
 class LoginViewControllerFactoryTests: XCTestCase {
+    func test_background_request_should_complete_on_main_thread() {
+        let (sut, authenticationSpy) = makeSut()
+        let exp = expectation(description: "waiting")
+        sut.loadViewIfNeeded()
+        sut.login?(makeLoginViewModel())
+
+        DispatchQueue.global().async {
+            authenticationSpy.completeWith(error: .unexpected)
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
+    }
+
     func test_login_compose_with_correct_validations() {
         let validations = makeSignUpValidations()
         XCTAssertEqual(validations[0] as! RequiredFieldValidation, RequiredFieldValidation(fieldName: "email", fieldLabel: "E-mail"))
@@ -23,7 +36,7 @@ class LoginViewControllerFactoryTests: XCTestCase {
 extension LoginViewControllerFactoryTests {
     func makeSut(file: StaticString = #file, line: UInt = #line) -> (sut: LoginViewController, authenticationSpy: AuthenticationSpy) {
         let authenticationSpy = AuthenticationSpy()
-        let sut = makeLoginViewController(authentication: authenticationSpy)
+        let sut = makeLoginViewController(authentication: MainQueueDispatchDecorator(authenticationSpy))
 
         checkMemoryLeak(for: authenticationSpy, file: file, line: line)
         checkMemoryLeak(for: sut, file: file, line: line)
