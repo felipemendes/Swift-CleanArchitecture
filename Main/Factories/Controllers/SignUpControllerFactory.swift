@@ -22,7 +22,7 @@ public func makeSignUpViewController(addAccount: AddAccountUseCaseProtocol) -> S
     let signUpController = SignUpViewController.instantiate()
     let validationComposite = ValidationComposite(validations: makeSignUpValidations())
     let presenter = SignUpPresenter(alertView: WeakVarProxy(signUpController),
-                                    addAccount: addAccount,
+                                    addAccountUseCase: addAccount,
                                     loadingView: WeakVarProxy(signUpController), validation: validationComposite)
 
     signUpController.signUp = presenter.signUp
