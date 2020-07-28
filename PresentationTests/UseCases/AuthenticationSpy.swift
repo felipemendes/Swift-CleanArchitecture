@@ -18,4 +18,13 @@ class AuthenticationSpy: AuthenticationUseCaseProtocol {
         self.authentication = authentication
         self.completion = completion
     }
+
+
+    func completeWith(error: MessageError) {
+        completion?(.failure(error))
+    }
+
+    func completeWith(account: AccountResponse) {
+        completion?(.success(account))
+    }
 }

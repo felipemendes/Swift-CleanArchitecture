@@ -35,7 +35,17 @@ public final class LoginPresenter {
         } else {
             guard let authentication = loginViewModel.toAuthentication() else { return }
 
-            authenticationUseCase.auth(authentication: authentication) { _ in }
+            authenticationUseCase.auth(authentication: authentication) { [weak self] result in
+                guard let self = self else { return }
+
+                switch result {
+                case .success:
+                    break
+                case .failure:
+                    self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Erro",
+                                                                              message: "Algo inesperado aconteceu."))
+                }
+            }
         }
     }
 }
