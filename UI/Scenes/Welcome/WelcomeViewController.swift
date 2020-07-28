@@ -18,13 +18,13 @@ public final class WelcomeViewController: UIViewController, Storyboarded {
     // MARK: - PUBLIC API
 
     public var login: (() -> Void)?
+    public var signUp: (() -> Void)?
 
     // MARK: - LIFE CYCLE
 
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        hideKeyboardOnTap()
     }
 
     // MARK: - PRIVATE SETUP
@@ -32,11 +32,16 @@ public final class WelcomeViewController: UIViewController, Storyboarded {
     private func setupView() {
         title = "4Dev"
         loginButton.addTarget(self, action: #selector(loginTap), for: .touchUpInside)
+        sigUpButton.addTarget(self, action: #selector(sigUpTap), for: .touchUpInside)
     }
 
     // MARK: SELECTORS
 
     @objc private func loginTap() {
         login?()
+    }
+
+    @objc private func sigUpTap() {
+        signUp?()
     }
 }
