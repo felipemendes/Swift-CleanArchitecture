@@ -58,11 +58,11 @@ public final class SignUpViewController: UIViewController, Storyboarded {
         switch state {
         case .content where pageState != .content:
             view.isUserInteractionEnabled = true
-            saveButton.setTitle("Register", for: .normal)
+            saveButton.setTitle("Criar conta".uppercased(), for: .normal)
             loadingIndicator.stopAnimating()
         case .loading where pageState != .loading:
             view.isUserInteractionEnabled = false
-            saveButton.setTitle("Loading...", for: .normal)
+            saveButton.setTitle("Loading...".uppercased(), for: .normal)
             loadingIndicator.startAnimating()
         default:
             break

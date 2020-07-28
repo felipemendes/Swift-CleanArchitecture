@@ -18,6 +18,21 @@ public final class LoginViewController: UIViewController, Storyboarded {
     @IBOutlet weak var passwordTextField: RoundedTextField!
     @IBOutlet weak var loginButton: RoundedButton!
 
+    // MARK: - ENUM
+
+    enum PageState {
+        case content
+        case loading
+    }
+
+    // MARK: - PRIVATE PROPERTIES
+
+    private var pageState: PageState = .loading {
+        willSet {
+            updatePageState(to: newValue)
+        }
+    }
+
     // MARK: - LIFE CYCLE
 
     public override func viewDidLoad() {
@@ -30,5 +45,28 @@ public final class LoginViewController: UIViewController, Storyboarded {
 
     private func setupView() {
         title = "4Dev"
+    }
+
+    private func updatePageState(to state: PageState) {
+        switch state {
+        case .content where pageState != .content:
+            view.isUserInteractionEnabled = true
+            loginButton.setTitle("Entrar".uppercased(), for: .normal)
+            loadingIndicator.stopAnimating()
+        case .loading where pageState != .loading:
+            view.isUserInteractionEnabled = false
+            loginButton.setTitle("Carregando...".uppercased(), for: .normal)
+            loadingIndicator.startAnimating()
+        default:
+            break
+        }
+    }
+}
+
+// MARK: - LoadingViewProtocol
+
+extension LoginViewController: LoadingViewProtocol {
+    public func display(loadingViewModel: LoadingViewModel) {
+        pageState = loadingViewModel.isLoading ? .loading : .content
     }
 }
