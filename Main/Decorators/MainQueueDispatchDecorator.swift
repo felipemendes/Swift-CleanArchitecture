@@ -35,3 +35,14 @@ extension MainQueueDispatchDecorator: AddAccountUseCaseProtocol where T: AddAcco
         }
     }
 }
+
+// MARK: - AuthenticationUseCaseProtocol
+
+extension MainQueueDispatchDecorator: AuthenticationUseCaseProtocol where T: AuthenticationUseCaseProtocol {
+    public func auth(authentication: Authentication,
+                     completion: @escaping (AuthenticationUseCaseProtocol.ServiceReturnType) -> Void) {
+        self.instance.auth(authentication: authentication) { [weak self] result in
+            self?.dispatch { completion(result) }
+        }
+    }
+}

@@ -17,3 +17,11 @@ func makeAddAccount(httpClient: HttpPostClientProtocol) -> AddAccountUseCaseProt
     let addAccountUseCase = AddAccountUseCase(url: makeApiUrl(path: "signup"), httpClient: httpClient)
     return MainQueueDispatchDecorator(addAccountUseCase)
 }
+
+/// Builds a AuthenticationUseCaseProtocol
+///
+/// - Returns: An instantiated AuthenticationUseCaseProtocol
+func makeAuthentication(httpClient: HttpPostClientProtocol) -> AuthenticationUseCaseProtocol {
+    let authenticationUseCase = AuthenticationUseCase(url: makeApiUrl(path: "login"), httpClient: httpClient)
+    return MainQueueDispatchDecorator(authenticationUseCase)
+}
