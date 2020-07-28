@@ -1,5 +1,5 @@
 //
-//  LoginViewModel.swift
+//  LoginRequest.swift
 //  Presentation
 //
 //  Created by Felipe Ribeiro Mendes on 27/07/20.
@@ -9,7 +9,7 @@
 import Domain
 import Foundation
 
-public struct LoginViewModel: Model {
+public struct LoginRequest: Model {
 
     // MARK: - PUBLIC PROPERTIES
 

@@ -1,5 +1,5 @@
 //
-//  SignUpViewModel.swift
+//  SignUpRequest.swift
 //  Presentation
 //
 //  Created by Felipe Ribeiro Mendes on 26/06/20.
@@ -9,7 +9,7 @@
 import Domain
 import Foundation
 
-public struct SignUpViewModel: Model {
+public struct SignUpRequest: Model {
 
     // MARK: - PUBLIC PROPERTIES
 

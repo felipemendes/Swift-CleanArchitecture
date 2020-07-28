@@ -37,7 +37,7 @@ public final class SignUpViewController: UIViewController, Storyboarded {
 
     // MARK: - PUBLIC API
 
-    public var signUp: ((SignUpViewModel) -> Void)?
+    public var signUp: ((SignUpRequest) -> Void)?
 
     // MARK: - LIFE CYCLE
 
@@ -72,11 +72,11 @@ public final class SignUpViewController: UIViewController, Storyboarded {
     // MARK: SELECTORS
 
     @objc private func saveButtonTap() {
-        let signUpViewModel = SignUpViewModel(name: nameTextField.text,
-                                              email: emailTextField.text,
-                                              password: passwordTextField.text,
-                                              passwordConfirmation: passwordConfirmationTextField.text)
-        signUp?(signUpViewModel)
+        let signUpRequest = SignUpRequest(name: nameTextField.text,
+                                          email: emailTextField.text,
+                                          password: passwordTextField.text,
+                                          passwordConfirmation: passwordConfirmationTextField.text)
+        signUp?(signUpRequest)
     }
 }
 

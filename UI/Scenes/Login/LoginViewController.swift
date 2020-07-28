@@ -35,7 +35,7 @@ public final class LoginViewController: UIViewController, Storyboarded {
 
     // MARK: - PUBLIC API
 
-    public var login: ((LoginViewModel) -> Void)?
+    public var login: ((LoginRequest) -> Void)?
 
     // MARK: - LIFE CYCLE
 
@@ -70,9 +70,9 @@ public final class LoginViewController: UIViewController, Storyboarded {
     // MARK: SELECTORS
 
     @objc private func loginTap() {
-        let loginViewModel = LoginViewModel(email: emailTextField.text,
-                                            password: passwordTextField.text)
-        login?(loginViewModel)
+        let loginRequest = LoginRequest(email: emailTextField.text,
+                                        password: passwordTextField.text)
+        login?(loginRequest)
     }
 }
 

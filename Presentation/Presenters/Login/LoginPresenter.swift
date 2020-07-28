@@ -32,11 +32,11 @@ public final class LoginPresenter {
 
     // MARK: - PUBLIC API
 
-    public func login(loginViewModel: LoginViewModel) {
-        if let message = validation.validate(data: loginViewModel.toJson()) {
+    public func login(loginRequest: LoginRequest) {
+        if let message = validation.validate(data: loginRequest.toJson()) {
             alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: message))
         } else {
-            guard let authentication = loginViewModel.toAuthentication() else { return }
+            guard let authentication = loginRequest.toAuthentication() else { return }
 
             loadingView.display(loadingViewModel: LoadingViewModel(isLoading: true))
             authenticationUseCase.auth(authentication: authentication) { [weak self] result in

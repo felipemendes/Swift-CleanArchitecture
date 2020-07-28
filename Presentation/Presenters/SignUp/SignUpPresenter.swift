@@ -32,11 +32,11 @@ public final class SignUpPresenter {
 
     // MARK: - PUBLIC API
 
-    public func signUp(signUpViewModel: SignUpViewModel) {
-        if let message = validation.validate(data: signUpViewModel.toJson()) {
+    public func signUp(signUpRequest: SignUpRequest) {
+        if let message = validation.validate(data: signUpRequest.toJson()) {
             alertView.showMessage(alertViewModel: AlertViewModel(title: "Falha na validação", message: message))
         } else {
-            guard let accountRequest = signUpViewModel.toAccountRequest() else { return }
+            guard let accountRequest = signUpRequest.toAccountRequest() else { return }
 
             loadingView.display(loadingViewModel: LoadingViewModel(isLoading: true))
             addAccountUseCase.add(accountRequest: accountRequest) { [weak self] result in

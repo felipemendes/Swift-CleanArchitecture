@@ -9,18 +9,18 @@
 import Foundation
 import Presentation
 
-func makeSignUpViewModel(name: String? = "Felipe",
-                         email: String? = "felipe@email.com",
-                         password: String? = "123456",
-                         passwordConfirmation: String? = "123456") -> SignUpViewModel {
-    return SignUpViewModel(name: name,
-                           email: email,
-                           password: password,
-                           passwordConfirmation: passwordConfirmation)
+func makeSignUpRequest(name: String? = "Felipe",
+                       email: String? = "felipe@email.com",
+                       password: String? = "123456",
+                       passwordConfirmation: String? = "123456") -> SignUpRequest {
+    return SignUpRequest(name: name,
+                         email: email,
+                         password: password,
+                         passwordConfirmation: passwordConfirmation)
 }
 
-func makeLoginViewModel(email: String? = "felipe@email.com",
-                        password: String? = "123456") -> LoginViewModel {
-    return LoginViewModel(email: email,
-                          password: password)
+func makeLoginRequest(email: String? = "felipe@email.com",
+                      password: String? = "123456") -> LoginRequest {
+    return LoginRequest(email: email,
+                        password: password)
 }
