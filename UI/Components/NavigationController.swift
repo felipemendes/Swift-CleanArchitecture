@@ -16,14 +16,28 @@ public final class NavigationController: UINavigationController {
 
     // MARK: - INITIALIZERS
 
-    public override init(rootViewController: UIViewController) {
-        super.init(rootViewController: rootViewController)
+    public convenience init() {
+        self.init(nibName: nil, bundle: nil)
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
 
-    public required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
+    }
+
+    // MARK: - PUBLIC API
+
+    public func setRootViewController(_ viewController: UIViewController) {
+        setViewControllers([viewController], animated: true)
+    }
+
+    public func pushViewController(_ viewController: UIViewController) {
+        pushViewController(viewController, animated: true)
     }
 
     // MARK: - PRIVATE FUNCTIONS
