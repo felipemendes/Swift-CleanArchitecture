@@ -1,5 +1,8 @@
 # Swift Clean Architecture
 
+This sample project is inspired by Rodrigo Manguinho's [course](https://www.udemy.com/course/swift-tdd-com-mango/).
+
+
 ## Project includes
 - TDD
 - Code Coverage
@@ -13,6 +16,4 @@
 
 ## Modules
 
-## Tests
-
-## Getting Started
+![Diagram](Images/diagram.png)
