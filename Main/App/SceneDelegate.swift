@@ -13,6 +13,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    private let signUpFactory: () -> SignUpViewController = {
+        let alamofireAdapter = makeAlamofireAdapter()
+        let addAccount = makeAddAccount(httpClient: alamofireAdapter)
+        return makeSignUpViewController(addAccount: addAccount)
+    }
+
+    private let loginFactory: () -> LoginViewController = {
+        let alamofireAdapter = makeAlamofireAdapter()
+        let authentication = makeAuthentication(httpClient: alamofireAdapter)
+        return makeLoginViewController(authentication: authentication)
+    }
+
     func scene(_ scene: UIScene,
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
@@ -21,10 +33,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
 
         let navigation = NavigationController()
-        let httpClient = makeAlamofireAdapter()
-        let addAccount = makeAddAccount(httpClient: httpClient)
-        let signUpController = makeSignUpViewController(addAccount: addAccount)
-        navigation.setRootViewController(signUpController)
+        let welcomeRouter = WelcomeRouter(navigation: navigation,
+                                          loginFactory: loginFactory,
+                                          signUpFactory: signUpFactory)
+        let welcomeViewController = WelcomeViewController.instantiate()
+
+        welcomeViewController.signUp = welcomeRouter.goToSignUp
+        welcomeViewController.login = welcomeRouter.goToLogin
+        navigation.setRootViewController(welcomeViewController)
 
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()

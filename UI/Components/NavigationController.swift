@@ -34,10 +34,14 @@ public final class NavigationController: UINavigationController {
 
     public func setRootViewController(_ viewController: UIViewController) {
         setViewControllers([viewController], animated: true)
+        currentViewController = viewController
+        hideBackButtonTest()
     }
 
     public func pushViewController(_ viewController: UIViewController) {
         pushViewController(viewController, animated: true)
+        currentViewController = viewController
+        hideBackButtonTest()
     }
 
     // MARK: - PRIVATE FUNCTIONS
@@ -48,5 +52,10 @@ public final class NavigationController: UINavigationController {
         navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationBar.isTranslucent = false
         navigationBar.barStyle = .black
+    }
+
+    private func hideBackButtonTest() {
+        let backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
+        currentViewController?.navigationItem.backBarButtonItem = backBarButtonItem
     }
 }
