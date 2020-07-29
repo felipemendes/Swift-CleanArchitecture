@@ -143,6 +143,8 @@
 		DBF51DC624D0D26100CEABF5 /* WelcomeViewControllerTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF51DC524D0D26100CEABF5 /* WelcomeViewControllerTests+Extensions.swift */; };
 		DBF51DC824D0D3B700CEABF5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF51DC724D0D3B700CEABF5 /* WelcomeViewController.swift */; };
 		DBF51DCA24D1088700CEABF5 /* WelcomeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF51DC924D1088700CEABF5 /* WelcomeRouterTests.swift */; };
+		DBF51DEB24D1F9D500CEABF5 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF51DEA24D1F9D500CEABF5 /* WelcomeRouter.swift */; };
+		DBF51DED24D1FA0C00CEABF5 /* WelcomeRouterTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF51DEC24D1FA0C00CEABF5 /* WelcomeRouterTests+Extensions.swift */; };
 		DBFC085224708F6000E11FF2 /* MessageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFC085124708F6000E11FF2 /* MessageError.swift */; };
 		DBFF0E51249564570055D207 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DBFF0E50249564570055D207 /* Alamofire */; };
 		DBFF0E542495709C0055D207 /* AlamofireAdapterTests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFF0E532495709C0055D207 /* AlamofireAdapterTests+Extensions.swift */; };
@@ -493,6 +495,8 @@
 		DBF51DC524D0D26100CEABF5 /* WelcomeViewControllerTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeViewControllerTests+Extensions.swift"; sourceTree = "<group>"; };
 		DBF51DC724D0D3B700CEABF5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		DBF51DC924D1088700CEABF5 /* WelcomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouterTests.swift; sourceTree = "<group>"; };
+		DBF51DEA24D1F9D500CEABF5 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
+		DBF51DEC24D1FA0C00CEABF5 /* WelcomeRouterTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeRouterTests+Extensions.swift"; sourceTree = "<group>"; };
 		DBFC085124708F6000E11FF2 /* MessageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageError.swift; sourceTree = "<group>"; };
 		DBFF0E532495709C0055D207 /* AlamofireAdapterTests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlamofireAdapterTests+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -745,6 +749,7 @@
 		DB2EC09C24BFEF520019000A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DBF51DEC24D1FA0C00CEABF5 /* WelcomeRouterTests+Extensions.swift */,
 				DBF51DC524D0D26100CEABF5 /* WelcomeViewControllerTests+Extensions.swift */,
 				DB43A76324D0AB2D0050774E /* LoginViewControllerTests+Extensions.swift */,
 				DB15471324C124BD00E3A361 /* SignUpViewControllerTests+Extensions.swift */,
@@ -1310,6 +1315,7 @@
 		DBF51DBF24D0CDAE00CEABF5 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				DBF51DEA24D1F9D500CEABF5 /* WelcomeRouter.swift */,
 				DBF51DC724D0D3B700CEABF5 /* WelcomeViewController.swift */,
 				DBF51DC024D0CDC700CEABF5 /* Welcome.storyboard */,
 			);
@@ -1962,6 +1968,7 @@
 				DB9F1F8D24C9DB980048D3D0 /* RoundedTextField.swift in Sources */,
 				DB9F1F8A24C9D9E40048D3D0 /* Color.swift in Sources */,
 				DB212C9524AD72F800FCAEF1 /* SignUpViewController.swift in Sources */,
+				DBF51DEB24D1F9D500CEABF5 /* WelcomeRouter.swift in Sources */,
 				DB9F1F8F24C9DCD70048D3D0 /* RoundedButton.swift in Sources */,
 				DB15471124C120A200E3A361 /* Storyboarded.swift in Sources */,
 				DB9F1F8824C9D9A60048D3D0 /* UIColor+Extensions.swift in Sources */,
@@ -1979,6 +1986,7 @@
 				DBF51DB924D0B11F00CEABF5 /* XCTestCase+Extensions.swift in Sources */,
 				DBF51DCA24D1088700CEABF5 /* WelcomeRouterTests.swift in Sources */,
 				DB43A76424D0AB2D0050774E /* LoginViewControllerTests+Extensions.swift in Sources */,
+				DBF51DED24D1FA0C00CEABF5 /* WelcomeRouterTests+Extensions.swift in Sources */,
 				DBF51DC424D0D24200CEABF5 /* WelcomeViewControllerTests.swift in Sources */,
 				DBF51DC624D0D26100CEABF5 /* WelcomeViewControllerTests+Extensions.swift in Sources */,
 			);
