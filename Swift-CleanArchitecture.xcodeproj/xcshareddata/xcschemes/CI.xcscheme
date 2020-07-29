@@ -169,7 +169,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DB54F5F224C759A100954099"
-               BuildableName = "4Dev.app"
+               BuildableName = "Main.app"
                BlueprintName = "Main"
                ReferencedContainer = "container:Swift-CleanArchitecture.xcodeproj">
             </BuildableReference>
@@ -243,7 +243,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DB54F5F224C759A100954099"
-            BuildableName = "4Dev.app"
+            BuildableName = "Main.app"
             BlueprintName = "Main"
             ReferencedContainer = "container:Swift-CleanArchitecture.xcodeproj">
          </BuildableReference>
